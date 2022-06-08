@@ -3,7 +3,7 @@ Workshop de 2 jours autour de d'Azure Kubernetes Services et services associés
 
 tags: #workshop #aks #github #kubernetes
 
-<img width='800' src='https://github.com/FrenchBarbusCorp/Workshop-Terraform-AKS-2days/blob/main/images/logoworkshop.jpg'/> 
+<img width='800' src='./images/Banner-workshop.jpg'/> 
 
 
 ## Objectifs
