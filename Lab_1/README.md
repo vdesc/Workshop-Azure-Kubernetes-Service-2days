@@ -41,4 +41,29 @@ Dans la console Azure :
 <img width='800' src='../images/Lab_1/Lab_1_14.png'/>
 <img width='800' src='../images/Lab_1/Lab_1_15.png'/>
 4. visualisation des ressources via le portail Azure
+<img width='800' src='../images/Lab_1/Lab_1_16.png'/>
+<img width='800' src='../images/Lab_1/Lab_1_17.png'/>
+Kubernetes resources
+<img width='800' src='../images/Lab_1/Lab_1_18.png'/>
+<img width='800' src='../images/Lab_1/Lab_1_19.png'/>
+<img width='800' src='../images/Lab_1/Lab_1_20.png'/>
+<img width='800' src='../images/Lab_1/Lab_1_21.png'/>
+<img width='800' src='../images/Lab_1/Lab_1_22.png'/>
+<img width='800' src='../images/Lab_1/Lab_1_23.png'/>
+<img width='800' src='../images/Lab_1/Lab_1_24.png'/>
+<img width='800' src='../images/Lab_1/Lab_1_25.png'/>
+<img width='800' src='../images/Lab_1/Lab_1_26.png'/>
+<img width='800' src='../images/Lab_1/Lab_1_27.png'/>
+Settings
+<img width='800' src='../images/Lab_1/Lab_1_28.png'/>
+<img width='800' src='../images/Lab_1/Lab_1_29.png'/>
+<img width='800' src='../images/Lab_1/Lab_1_30.png'/>
+<img width='800' src='../images/Lab_1/Lab_1_31.png'/>
+<img width='800' src='../images/Lab_1/Lab_1_32.png'/>
+<img width='800' src='../images/Lab_1/Lab_1_33.png'/>
+Ressources du cluster AKS
+<img width='800' src='../images/Lab_1/Lab_1_34.png'/>
+<img width='800' src='../images/Lab_1/Lab_1_35.png'/>
+Test de connexion
+
 
