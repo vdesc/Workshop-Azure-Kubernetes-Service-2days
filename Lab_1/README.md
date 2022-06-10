@@ -12,7 +12,7 @@ Dans la console Azure :
 <a href="https://docs.microsoft.com/en-us/azure/aks/availability-zones#overview-of-availability-zones-for-aks-clusters">Information sur les "Avaibility zones"</a><br>
 <a href="https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG/CHANGELOG-1.24.md">Changes Log</a><br>
 <a href="https://docs.microsoft.com/fr-fr/azure/aks/supported-kubernetes-versions?tabs=azure-cli">Versions de Kubernetes prises en charge dans Azure Kubernetes Service</a><br>
-<a href="https://docs.microsoft.com/en-us/azure/aks/uptime-sla">API server availability</a><br><br><br>
+<a href="https://docs.microsoft.com/en-us/azure/aks/uptime-sla">API server availability</a><br><br><br><br>
 <img width='800' src='../images/Lab_1/Lab_1_6.png'/>
 <a href="https://docs.microsoft.com/fr-fr/azure/aks/concepts-scale">Scale method</a><br>
 <a href="https://docs.microsoft.com/en-us/azure/aks/use-multiple-node-pools">Create and manage multiple node pools for a cluster in Azure Kubernetes Service</a><br>
