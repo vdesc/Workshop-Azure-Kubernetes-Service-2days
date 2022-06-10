@@ -24,13 +24,14 @@ Dans la console Azure :
 <a href="https://docs.microsoft.com/en-us/azure/aks/manage-azure-rbac">Use Azure RBAC for Kubernetes Authorization</a><br>
 <a href="https://docs.microsoft.com/en-us/azure/aks/azure-ad-rbac">Control access to cluster resources using Kubernetes role-based access control and Azure Active Directory identities in Azure Kubernetes Service</a><br>
 <img width='800' src='../images/Lab_1/Lab_1_8.png'/>
+<a href=""></a><br>
 [Configure Azure CNI networking in Azure Kubernetes Service](https://docs.microsoft.com/en-us/azure/aks/configure-azure-cni)
 <img width='800' src='../images/Lab_1/Lab_1_9.png'/>
-[Use a public Standard Load Balancer in Azure Kubernetes Service](https://docs.microsoft.com/en-us/azure/aks/load-balancer-standard)
-[HTTP application routing](https://docs.microsoft.com/en-us/azure/aks/http-application-routing)
-[Create a private Azure Kubernetes Service cluster](https://docs.microsoft.com/en-us/azure/aks/private-clusters)
-[Secure access to the API server using authorized IP address ranges in Azure Kubernetes Service](https://docs.microsoft.com/en-us/azure/aks/api-server-authorized-ip-ranges)
-[Secure traffic between pods using network policies in Azure Kubernetes Service](https://docs.microsoft.com/en-us/azure/aks/use-network-policies)
+<a href="https://docs.microsoft.com/en-us/azure/aks/load-balancer-standard">Use a public Standard Load Balancer in Azure Kubernetes Service</a><br>
+<a href="https://docs.microsoft.com/en-us/azure/aks/http-application-routing">HTTP application routing</a><br>
+<a href="https://docs.microsoft.com/en-us/azure/aks/private-clusters">Create a private Azure Kubernetes Service cluster</a><br>
+<a href="https://docs.microsoft.com/en-us/azure/aks/api-server-authorized-ip-ranges">Secure access to the API server using authorized IP address ranges in Azure Kubernetes Service</a><br>
+<a href="https://docs.microsoft.com/en-us/azure/aks/use-network-policies">Secure traffic between pods using network policies in Azure Kubernetes Service</a><br>
 <img width='800' src='../images/Lab_1/Lab_1_10.png'/>
 [Container insights overview](https://docs.microsoft.com/en-us/azure/azure-monitor/containers/container-insights-overview)
 [Understand Azure Policy for Kubernetes clusters](https://docs.microsoft.com/en-us/azure/governance/policy/concepts/policy-for-kubernetes)
