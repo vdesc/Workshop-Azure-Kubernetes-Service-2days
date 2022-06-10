@@ -32,21 +32,11 @@ Dans la console Azure :
 <a href="https://docs.microsoft.com/en-us/azure/aks/api-server-authorized-ip-ranges">Secure access to the API server using authorized IP address ranges in Azure Kubernetes Service</a><br>
 <a href="https://docs.microsoft.com/en-us/azure/aks/use-network-policies">Secure traffic between pods using network policies in Azure Kubernetes Service</a><br>
 <img width='800' src='../images/Lab_1/Lab_1_10.png'/>
-[Container insights overview](https://docs.microsoft.com/en-us/azure/azure-monitor/containers/container-insights-overview)
-[Understand Azure Policy for Kubernetes clusters](https://docs.microsoft.com/en-us/azure/governance/policy/concepts/policy-for-kubernetes)
+<a href="https://docs.microsoft.com/en-us/azure/azure-monitor/containers">Container insights overview</a><br>
+<a href="https://docs.microsoft.com/en-us/azure/governance/policy/concepts/policy-for-kubernetes">Understand Azure Policy for Kubernetes clusters</a><br>
 <img width='800' src='../images/Lab_1/Lab_1_11.png'/>
-[Use the Azure Key Vault Provider for Secrets Store CSI Driver in an AKS cluster](https://docs.microsoft.com/en-us/azure/aks/csi-secrets-store-driver)
+<a href="https://docs.microsoft.com/en-us/azure/aks/csi-secrets-store-driver">Use the Azure Key Vault Provider for Secrets Store CSI Driver in an AKS cluster</a><br>
 <img width='800' src='../images/Lab_1/Lab_1_12.png'/>
 <img width='800' src='../images/Lab_1/Lab_1_13.png'/>
 <img width='800' src='../images/Lab_1/Lab_1_14.png'/>
 <img width='800' src='../images/Lab_1/Lab_1_15.png'/>
-
-[]()
-[]()
-
-
-
-
-
-
-
