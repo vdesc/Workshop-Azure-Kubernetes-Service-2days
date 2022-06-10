@@ -2,7 +2,7 @@
 1. Cloud Shell et prérequis<br>
 Allez: https://shell.azure.com<br>
 Prende le "Bash"<br>
-Checkez votre abonnement:`az account show -o table`<br>
+Checkez votre abonnement: `az account show -o table`<br>
 Option: Pour se mettre dans son abonnement `az account set --subscription 'mon_abonnement'`<br>
 Checkez les providers: Microsoft.OperationsManagement & Microsoft.OperationalInsights<br>
 `az provider show -n Microsoft.OperationsManagement -o table`<br>
