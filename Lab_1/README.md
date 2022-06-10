@@ -16,26 +16,26 @@ Dans la console Azure :
 <img width='800' src='../images/Lab_1/Lab_1_6.png'/>
 <a href="https://docs.microsoft.com/fr-fr/azure/aks/concepts-scale">Scale method</a><br>
 <a href="https://docs.microsoft.com/en-us/azure/aks/use-multiple-node-pools">Create and manage multiple node pools for a cluster in Azure Kubernetes Service</a><br>
-<a href="https://docs.microsoft.com/en-us/azure/aks/azure-disk-customer-managed-keys">Bring your own keys (BYOK) with Azure disks in Azure Kubernetes Service</a><br>
+<a href="https://docs.microsoft.com/en-us/azure/aks/azure-disk-customer-managed-keys">Bring your own keys (BYOK) with Azure disks in Azure Kubernetes Service</a><br><br><br><br>
 <img width='800' src='../images/Lab_1/Lab_1_7.png'/>
 <a href="https://docs.microsoft.com/en-us/azure/aks/kubernetes-service-principal?tabs=azure-cli">Use a service principal with Azure Kubernetes Service</a><br>
 <a href="https://docs.microsoft.com/en-us/azure/aks/use-managed-identity">Use a managed identity in Azure Kubernetes Service</a><br>
 <a href="https://docs.microsoft.com/en-us/azure/aks/managed-aad">AKS-managed Azure Active Directory integration</a><br>
 <a href="https://docs.microsoft.com/en-us/azure/aks/manage-azure-rbac">Use Azure RBAC for Kubernetes Authorization</a><br>
-<a href="https://docs.microsoft.com/en-us/azure/aks/azure-ad-rbac">Control access to cluster resources using Kubernetes role-based access control and Azure Active Directory identities in Azure Kubernetes Service</a><br>
+<a href="https://docs.microsoft.com/en-us/azure/aks/azure-ad-rbac">Control access to cluster resources using Kubernetes role-based access control and Azure Active Directory identities in Azure Kubernetes Service</a><br><br><br><br>
 <img width='800' src='../images/Lab_1/Lab_1_8.png'/>
-<a href="https://docs.microsoft.com/en-us/azure/aks/configure-azure-cni">Configure Azure CNI networking in Azure Kubernetes Service</a><br>
+<a href="https://docs.microsoft.com/en-us/azure/aks/configure-azure-cni">Configure Azure CNI networking in Azure Kubernetes Service</a><br><br><br><br>
 <img width='800' src='../images/Lab_1/Lab_1_9.png'/>
 <a href="https://docs.microsoft.com/en-us/azure/aks/load-balancer-standard">Use a public Standard Load Balancer in Azure Kubernetes Service</a><br>
 <a href="https://docs.microsoft.com/en-us/azure/aks/http-application-routing">HTTP application routing</a><br>
 <a href="https://docs.microsoft.com/en-us/azure/aks/private-clusters">Create a private Azure Kubernetes Service cluster</a><br>
 <a href="https://docs.microsoft.com/en-us/azure/aks/api-server-authorized-ip-ranges">Secure access to the API server using authorized IP address ranges in Azure Kubernetes Service</a><br>
-<a href="https://docs.microsoft.com/en-us/azure/aks/use-network-policies">Secure traffic between pods using network policies in Azure Kubernetes Service</a><br>
+<a href="https://docs.microsoft.com/en-us/azure/aks/use-network-policies">Secure traffic between pods using network policies in Azure Kubernetes Service</a><br><br><br><br>
 <img width='800' src='../images/Lab_1/Lab_1_10.png'/>
 <a href="https://docs.microsoft.com/en-us/azure/azure-monitor/containers">Container insights overview</a><br>
-<a href="https://docs.microsoft.com/en-us/azure/governance/policy/concepts/policy-for-kubernetes">Understand Azure Policy for Kubernetes clusters</a><br>
+<a href="https://docs.microsoft.com/en-us/azure/governance/policy/concepts/policy-for-kubernetes">Understand Azure Policy for Kubernetes clusters</a><br><br><br><br>
 <img width='800' src='../images/Lab_1/Lab_1_11.png'/>
-<a href="https://docs.microsoft.com/en-us/azure/aks/csi-secrets-store-driver">Use the Azure Key Vault Provider for Secrets Store CSI Driver in an AKS cluster</a><br>
+<a href="https://docs.microsoft.com/en-us/azure/aks/csi-secrets-store-driver">Use the Azure Key Vault Provider for Secrets Store CSI Driver in an AKS cluster</a><br><br><br><br>
 <img width='800' src='../images/Lab_1/Lab_1_12.png'/>
 <img width='800' src='../images/Lab_1/Lab_1_13.png'/>
 <img width='800' src='../images/Lab_1/Lab_1_14.png'/>
