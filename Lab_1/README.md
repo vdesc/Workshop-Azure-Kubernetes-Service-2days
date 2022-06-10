@@ -9,20 +9,20 @@ Dans la console Azure :
 <img width='800' src='../images/Lab_1/Lab_1_3.png'/>
 <img width='800' src='../images/Lab_1/Lab_1_4.png'/>
 <img width='800' src='../images/Lab_1/Lab_1_5.png'/>
-[Information sur les "Avaibility zones"](https://docs.microsoft.com/en-us/azure/aks/availability-zones#overview-of-availability-zones-for-aks-clusters)
-[Changes Log](https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG/CHANGELOG-1.24.md)
-[Versions de Kubernetes prises en charge dans Azure Kubernetes Service](https://docs.microsoft.com/fr-fr/azure/aks/supported-kubernetes-versions?tabs=azure-cli)
-[API server availability](https://docs.microsoft.com/en-us/azure/aks/uptime-sla)
+<a href="https://docs.microsoft.com/en-us/azure/aks/availability-zones#overview-of-availability-zones-for-aks-clusters">Information sur les "Avaibility zones"</a>
+<a href="https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG/CHANGELOG-1.24.md">Changes Log</a>
+<a href="https://docs.microsoft.com/fr-fr/azure/aks/supported-kubernetes-versions?tabs=azure-cli">Versions de Kubernetes prises en charge dans Azure Kubernetes Service</a>
+<a href="https://docs.microsoft.com/en-us/azure/aks/uptime-sla">API server availability</a>
 <img width='800' src='../images/Lab_1/Lab_1_6.png'/>
-[Scale method](https://docs.microsoft.com/fr-fr/azure/aks/concepts-scale)
-[Create and manage multiple node pools for a cluster in Azure Kubernetes Service](https://docs.microsoft.com/en-us/azure/aks/use-multiple-node-pools)
-[Bring your own keys (BYOK) with Azure disks in Azure Kubernetes Service](https://docs.microsoft.com/en-us/azure/aks/azure-disk-customer-managed-keys)
+<a href="https://docs.microsoft.com/fr-fr/azure/aks/concepts-scale">Scale method</a>
+<a href="https://docs.microsoft.com/en-us/azure/aks/use-multiple-node-pools">Create and manage multiple node pools for a cluster in Azure Kubernetes Service</a>
+<a href="https://docs.microsoft.com/en-us/azure/aks/azure-disk-customer-managed-keys">Bring your own keys (BYOK) with Azure disks in Azure Kubernetes Service</a>
 <img width='800' src='../images/Lab_1/Lab_1_7.png'/>
-[Use a service principal with Azure Kubernetes Service](https://docs.microsoft.com/en-us/azure/aks/kubernetes-service-principal?tabs=azure-cli)
-[Use a managed identity in Azure Kubernetes Service](https://docs.microsoft.com/en-us/azure/aks/use-managed-identity)
-[AKS-managed Azure Active Directory integration](https://docs.microsoft.com/en-us/azure/aks/managed-aad)
-[Use Azure RBAC for Kubernetes Authorization](https://docs.microsoft.com/en-us/azure/aks/manage-azure-rbac)
-[Control access to cluster resources using Kubernetes role-based access control and Azure Active Directory identities in Azure Kubernetes Service](https://docs.microsoft.com/en-us/azure/aks/azure-ad-rbac)
+<a href="https://docs.microsoft.com/en-us/azure/aks/kubernetes-service-principal?tabs=azure-cli">Use a service principal with Azure Kubernetes Service</a>
+<a href="https://docs.microsoft.com/en-us/azure/aks/use-managed-identity">Use a managed identity in Azure Kubernetes Service</a>
+<a href="https://docs.microsoft.com/en-us/azure/aks/managed-aad">AKS-managed Azure Active Directory integration</a>
+<a href="https://docs.microsoft.com/en-us/azure/aks/manage-azure-rbac">Use Azure RBAC for Kubernetes Authorization</a>
+<a href="https://docs.microsoft.com/en-us/azure/aks/azure-ad-rbac">Control access to cluster resources using Kubernetes role-based access control and Azure Active Directory identities in Azure Kubernetes Service</a>
 <img width='800' src='../images/Lab_1/Lab_1_8.png'/>
 [Configure Azure CNI networking in Azure Kubernetes Service](https://docs.microsoft.com/en-us/azure/aks/configure-azure-cni)
 <img width='800' src='../images/Lab_1/Lab_1_9.png'/>
