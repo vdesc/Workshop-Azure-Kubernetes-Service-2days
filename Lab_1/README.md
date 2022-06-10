@@ -10,7 +10,7 @@ Dans la console Azure :
 <img width='800' src='../images/Lab_1/Lab_1_4.png'/>
 <img width='800' src='../images/Lab_1/Lab_1_5.png'/>
 <a href="https://docs.microsoft.com/en-us/azure/aks/availability-zones#overview-of-availability-zones-for-aks-clusters" target="_blank">Information sur les "Avaibility zones"</a><br>
-<a href="https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG/CHANGELOG-1.24.md">Changes Log</a><br>
+<a href="https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG/CHANGELOG-1.24.md target="_blank"" >Changes Log</a><br>
 <a href="https://docs.microsoft.com/fr-fr/azure/aks/supported-kubernetes-versions?tabs=azure-cli">Versions de Kubernetes prises en charge dans Azure Kubernetes Service</a><br>
 <a href="https://docs.microsoft.com/en-us/azure/aks/uptime-sla">API server availability</a><br><br><br><br>
 <img width='800' src='../images/Lab_1/Lab_1_6.png'/>
