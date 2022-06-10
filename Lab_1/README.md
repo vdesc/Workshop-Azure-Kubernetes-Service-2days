@@ -40,3 +40,4 @@ Dans la console Azure :
 <img width='800' src='../images/Lab_1/Lab_1_13.png'/>
 <img width='800' src='../images/Lab_1/Lab_1_14.png'/>
 <img width='800' src='../images/Lab_1/Lab_1_15.png'/>
+4. Blabla 
