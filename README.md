@@ -20,10 +20,11 @@ Découverte de Kubernetes dans Azure avec des exercices pratiques
 - Lab 2 : création d'un cluster plus avancé via Azure CLI, connexion et utilisation basique de kubectl
 - Lab 3 : création d'un cluster avec plusieurs node pools avec autoscaling via Terraform + déploiement basique d'une application (service de type load balancer)
 ### Après midi
-- Intégration avec d'autres services Azure : Azure Monitor, Azure Policy, Azure Container Registry, Azure Log Anaytics, Azure Application Gateway, Azure NAT Gateway, Microsoft Defender for Cloud...
+- Intégration avec d'autres services Azure : Azure Monitor, Azure Policy, Azure Container Registry, Azure Log Anaytics, Azure Application Gateway, Azure NAT Gateway, Microsoft Defender for Cloud, Azure Key Vault...
 - Lab 4 : Activation du monitoring avec Azure Monitor
 - Lab 5 : Azure Container Registry : configuration, importation et utilisation avec AKS 
 - Lab 6 : Installation d'AGIC, déploiement d'Azure Application Gateway et déploiement d'une application basique
+- Lab 7 : Intégration avec Azure Key Vault (CSI Secret Store driver)
 
 
 ## Jour 2

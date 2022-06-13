@@ -4,7 +4,6 @@ variable "resource_group" {
   default = "RG-AKSCluster"
 }
 
-
 #KeyVault Resource Group and KeyVaultName
 variable "keyvault_rg" {
   type = string
