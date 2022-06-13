@@ -45,7 +45,7 @@ On Kubernetes, these Terraform files will :
 - Deploy Grafana using Bitnami Helm Chart and exposed Grafana Dashboard using Ingress (and AGIC)
 - Create a pod, a service and an ingress (the file associated is renamed in .old because of issue during first terraform plan) 
 
-__Prerequisites sur le poste d'administration :__
+## Prerequisites sur le poste d'administration
 
 - An Azure Subscription with enough privileges (create RG, AKS...)
 - Azure CLI 2.37 or >: <https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest>
@@ -54,7 +54,7 @@ __Prerequisites sur le poste d'administration :__
 - Helm CLI 3.9.0 or > : <https://helm.sh/docs/intro/install/> if you need to test Helm charts
 
 
-__Préparation de l'environnement AVANT le déploiement avec Terraform__
+## Préparation de l'environnement AVANT le déploiement avec Terraform
 
 - Ouvrir une session Bash et se connecter à votre abonnement Azure
 
@@ -102,7 +102,7 @@ az keyvault create --name "<your-unique-keyvault-name>" --resource-group "RG-Adm
 
 
 
-__To deploy this infrastructure :__
+## Déploiement du Cluster AKS
 
 1. Log to your Azure subscription (az login)
 2. Create an Azure Key Vault and create all secrets defined in datasource.tf
@@ -114,6 +114,7 @@ __To deploy this infrastructure :__
 
 
 After deployment is succeeded, you can check your cluster using portal or better with azure cli and the following command: 
+
 ```bash
 az aks show --resource-group NAMEOFYOURRESOURCEGROUP --name NAMEOFYOURAKSCLUSTER -o jsonc
 ```
