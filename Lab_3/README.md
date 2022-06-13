@@ -37,7 +37,6 @@ Les ressources déployées par ce code Terraform sont les suivantes :
 - Une Azure Public IP
 - Un Virtual Network avec ses Subnets (subnet pour les pods AKS, de subnets pour AzureBastion,Azure Firewall, Azure Application Gateway
 - Un Azure Log Analytics Workspace (used for Azure Monitor Container Insight)
-
 - Azure Application Gateway + Application Gateway Ingress Controller AKS add-on
 - An Azure Log Analytics Workspace (used for Azure Monitor Container Insight)
 
@@ -81,7 +80,9 @@ az storage account create \
 ```
 
 - Création d'un container TFState dans la partie Blobs du compte de stockage. Ce container contiendra le(s) Remote TFState(s) des déploiements Terraform
+
 cf. https://docs.microsoft.com/en-us/cli/azure/storage/container?view=azure-cli-latest
+
 cf. https://www.terraform.io/language/settings/backends/azurerm
 
 ```bash
@@ -89,6 +90,7 @@ az storage container create --name "TFState" --account-name "<your-unique-storag
 ```
 
 - Création d'un Azure Key Vault dans RG_AdminZone
+
 cf. https://docs.microsoft.com/en-us/cli/azure/keyvault?view=azure-cli-latest#az-keyvault-create
 
 ```bash
