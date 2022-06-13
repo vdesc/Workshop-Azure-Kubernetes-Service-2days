@@ -1,8 +1,6 @@
 #
 # Lab 3 : déploiement et gestion de la configuration d'Azure Kubernetes Service avec Terraform
 #
-
-# Azure Kubernetes Service Cluster deployment with Terraform
       
 === version up to date June 2022 ===
 
@@ -45,7 +43,7 @@ On Kubernetes, these Terraform files will :
 - Deploy Grafana using Bitnami Helm Chart and exposed Grafana Dashboard using Ingress (and AGIC)
 - Create a pod, a service and an ingress (the file associated is renamed in .old because of issue during first terraform plan) 
 
-## Prerequisites sur le poste d'administration
+## Pré-requis sur le poste d'administration
 
 - An Azure Subscription with enough privileges (create RG, AKS...)
 - Azure CLI 2.37 or >: <https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest>
@@ -74,9 +72,9 @@ az group create --name "RG-AdminZone" --location "eastus2"
 az storage account create \
   --name "<your-unique-storageaccount-name>" \
   --resource-group "RG-AdminZone" \
-  --location eastus2 \
-  --sku Standard_LRS \
-  --kind StorageV2
+  --location "eastus2" \
+  --sku "Standard_LRS" \
+  --kind "StorageV2"
 ```
 
 - Création d'un container TFState dans la partie Blobs du compte de stockage. Ce container contiendra le(s) Remote TFState(s) des déploiements Terraform
@@ -86,7 +84,7 @@ cf. https://docs.microsoft.com/en-us/cli/azure/storage/container?view=azure-cli-
 cf. https://www.terraform.io/language/settings/backends/azurerm
 
 ```bash
-az storage container create --name "TFState" --account-name "<your-unique-storageaccount-name>" --auth-mode login --resource-group "RG-AdminZone" --public-access off
+az storage container create --name "tfstate" --account-name "<your-unique-storageaccount-name>" --resource-group "RG-AdminZone" --public-access "off"
 ```
 
 - Création d'un Azure Key Vault dans RG_AdminZone
@@ -99,7 +97,11 @@ az keyvault create --name "<your-unique-keyvault-name>" --resource-group "RG-Adm
 
 - Création d'un secret monsecret dans Azure Key Vault
 
+cf. https://docs.microsoft.com/en-us/cli/azure/keyvault/secret?view=azure-cli-latest#az-keyvault-secret-set 
 
+```bash
+az keyvault secret set --name "MySecretName" --vault-name "<your-unique-keyvault-name>" --value "<laveurdemonsecret>"
+```
 
 
 ## Déploiement du Cluster AKS
@@ -112,6 +114,7 @@ az keyvault create --name "<your-unique-keyvault-name>" --resource-group "RG-Adm
 6. Apply your terraform deployment : `terraform apply --var-file=myconf.tfvars`
 
 
+## Vérification du déploiement du cluster
 
 After deployment is succeeded, you can check your cluster using portal or better with azure cli and the following command: 
 
