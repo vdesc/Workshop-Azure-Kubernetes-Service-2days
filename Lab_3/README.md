@@ -23,7 +23,7 @@ Ceci est un ensemble de fichiers Terraform pour déployer un cluster Azure Kuber
 - Les Node pools sont configurés en mode autoscaling
 - pool1 est le node pool system sous Linux  a linux (exécute les pods dans le namespace kube system pods)
 - pool2 (optionnel) est un node pool Windows Server 2022 avec une "taint"
-- les node pool ont des System Managed Identities 
+- les node pool ont des Managed Identities 
 - Choix possible de la SKU du Control Plane (Free or Paid)
 - Les add-ons suivants : Azure Monitor
 
@@ -38,8 +38,8 @@ Les ressources déployées par ce code Terraform sont les suivantes :
 - Un Virtual Network avec ses Subnets (subnet pour les pods AKS, de subnets pour AzureBastion,Azure Firewall, Azure Application Gateway
 - Un Azure Log Analytics Workspace (used for Azure Monitor Container Insight)
 
-# - Azure Application Gateway + Application Gateway Ingress Controller AKS add-on
-# - An Azure Log Analytics Workspace (used for Azure Monitor Container Insight)
+- Azure Application Gateway + Application Gateway Ingress Controller AKS add-on
+- An Azure Log Analytics Workspace (used for Azure Monitor Container Insight)
 
 On Kubernetes, these Terraform files will :
 
@@ -65,11 +65,35 @@ az login
 
 - Création d'un resource group RG-AdminZone
 
+```bash
+az group create --name "RG-AdminZone" --location "eastus2"
+```
+
 - Création d'un compte de Stockage Azure dans RG-AdminZone
 
-- Création d'un container TFState dans la partie Blobs du compte de stockage
+```bash
+az storage account create \
+  --name "<your-unique-storageaccount-name>" \
+  --resource-group "RG-AdminZone" \
+  --location eastus2 \
+  --sku Standard_LRS \
+  --kind StorageV2
+```
+
+- Création d'un container TFState dans la partie Blobs du compte de stockage. Ce container contiendra le(s) Remote TFState(s) des déploiements Terraform
+cf. https://docs.microsoft.com/en-us/cli/azure/storage/container?view=azure-cli-latest
+cf. https://www.terraform.io/language/settings/backends/azurerm
+
+```bash
+az storage container create --name "TFState" --account-name "<your-unique-storageaccount-name>" --auth-mode login --resource-group "RG-AdminZone" --public-access off
+```
 
 - Création d'un Azure Key Vault dans RG_AdminZone
+cf. https://docs.microsoft.com/en-us/cli/azure/keyvault?view=azure-cli-latest#az-keyvault-create
+
+```bash
+az keyvault create --name "<your-unique-keyvault-name>" --resource-group "RG-AdminZone" --location "eastus2"
+```
 
 - Création d'un secret monsecret dans Azure Key Vault
 
