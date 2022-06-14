@@ -276,12 +276,12 @@ resource "azurerm_kubernetes_cluster" "Terra_aks" {
 
   # Enable Azure Application Gateway Ingress Controller
   # cf. https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/kubernetes_cluster#:~:text=An%20ingress_application_gateway-,block,-supports%20the%20following
-  ingress_application_gateway {
-    # gateway_id = ""                       # for Brownfield deployment if you already set up an Application Gateway
-    gateway_name = "appgw-aks-april22" # Greenfield deployment, this gateway will be created in cluster resource group.
-    # subnet_cidr = "10.252.0.0/16"
-    subnet_id = azurerm_subnet.Terra_aks_appgw_subnet.id
-  }
+  # ingress_application_gateway {
+  #   # gateway_id = ""                       # for Brownfield deployment if you already set up an Application Gateway
+  #   gateway_name = "appgw-aks-april22" # Greenfield deployment, this gateway will be created in cluster resource group.
+  #   # subnet_cidr = "10.252.0.0/16"
+  #   subnet_id = azurerm_subnet.Terra_aks_appgw_subnet.id
+  # }
 
   # (Optional) Open Service Mesh add-on 
   # cf. https://docs.microsoft.com/en-us/azure/aks/open-service-mesh-about

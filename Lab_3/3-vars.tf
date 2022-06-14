@@ -1,4 +1,4 @@
-#  Resource Group Name
+#  Resource Group Name for AKS Managed Service (Control Plane)
 variable "resource_group" {
   type    = string
   default = "RG-AKSCluster"
@@ -20,7 +20,6 @@ variable "azure_region" {
   default = "westeurope"
 }
 
-
 #
 # Respect AKS naming rules !!!
 # https://aka.ms/aks-naming-rules
@@ -39,7 +38,6 @@ variable "dns_name" {
   type    = string
   default = "aksstan1"
 }
-
 
 #(Optional) The upgrade channel for this Kubernetes Cluster. 
 # Possible values are patch, rapid, node-image and stable. Omitting this field sets this value to none
@@ -98,7 +96,7 @@ variable "windows_admin_username" {
 variable "kubernetes_version" {
   description = "Version of Kubernetes to deploy"
   type        = string
-  default     = "1.21.2"
+  default     = "1.23.3"
 }
 
 

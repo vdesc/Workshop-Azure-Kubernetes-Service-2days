@@ -10,8 +10,8 @@
 terraform {
   required_version = "= 1.2.2"
   backend "azurerm" {
-    resource_group_name  = "RG-AKSCluster" # mettre ici le nom du resource group de vos ressource
-    storage_account_name = "terraformstan" # /!\ mettre le nom du compte de stockage créer dans le lab 1
+    resource_group_name  = "RG-AdminZone" # mettre ici le nom du resource group de vos ressource
+    storage_account_name = "workshopstan22" # /!\ mettre le nom du compte de stockage créer dans le lab 1
     container_name       = "tfstate"
     key                  = "aks.terraform.tfstate"
   }
@@ -48,10 +48,10 @@ terraform {
       version = "0.7.2"
     }
 
-    grafana = {
-      source  = "grafana/grafana"
-      version = "1.22.0"
-    }
+    # grafana = {
+    #   source  = "grafana/grafana"
+    #   version = "1.22.0"
+    # }
   }
 }
 
@@ -100,9 +100,6 @@ provider "time" {
 #   url  = "http://${var.a-record-dns-ingress}.${var.dns-zone-name-for-ingress}"
 #   auth = "${var.grafana_admin_username}:${data.azurerm_key_vault_secret.grafana_admin_password.value}"
 # }
-
-
-
 
 
 # A remote backend must be used for production (especially if deployments are done through CI/CD pipelines) 

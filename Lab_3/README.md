@@ -4,16 +4,16 @@
       
 === version up to date June 2022 ===
 
-= Tested with success with 
-Terraform v1.2.2
-on linux_amd64 (WSL2)
-+ provider registry.terraform.io/hashicorp/azurerm v3.1.0
+= Tested with success with Terraform v1.2.2 on linux_amd64 (WSL2)
++ provider registry.terraform.io/hashicorp/azurerm v3.10.0
 + provider registry.terraform.io/hashicorp/helm v2.5.0
 + provider registry.terraform.io/hashicorp/kubernetes v2.10.0
-+ provider registry.terraform.io/hashicorp/random v3.1.0
++ provider registry.terraform.io/hashicorp/random v3.3.1
 + provider registry.terraform.io/providers/hashicorp/time v0.7.2
 
 --------------------------------------------------------------------------------------------------------
+
+## Objectifs
 
 Ceci est un ensemble de fichiers Terraform pour déployer un cluster Azure Kubernetes Cluster avec les options suivantes: 
 
@@ -109,7 +109,7 @@ cf. https://docs.microsoft.com/en-us/cli/azure/keyvault?view=azure-cli-latest#az
 az keyvault create --name "<your-unique-keyvault-name>" --resource-group "RG-AdminZone" --location "eastus2"
 ```
 
-- Création d'un secret "MySecret" dans Azure Key Vault
+- Création d'un secret __"MySecret"__ dans Azure Key Vault
 
 cf. https://docs.microsoft.com/en-us/cli/azure/keyvault/secret?view=azure-cli-latest#az-keyvault-secret-set 
 
