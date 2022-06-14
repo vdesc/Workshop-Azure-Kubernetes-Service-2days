@@ -87,6 +87,20 @@ cf. https://www.terraform.io/language/settings/backends/azurerm
 az storage container create --name "tfstate" --account-name "<your-unique-storageaccount-name>" --resource-group "RG-AdminZone" --public-access "off"
 ```
 
+- Création d'un token SAS pour le container tfstate du compte de stockage
+cf. https://docs.microsoft.com/en-us/azure/storage/blobs/storage-blob-user-delegation-sas-create-cli#create-a-user-delegation-sas-for-a-container
+cf. https://docs.microsoft.com/en-us/cli/azure/storage/container?view=azure-cli-latest#az-storage-container-generate-sas
+
+```bash
+az storage container generate-sas \
+    --account-name "<your-unique-storageaccount-name>" \
+    --name "tfstate" \
+    --permissions acdlrw \
+    --start "2022-06-13" \
+    --expiry "2022-06-19"  \
+    --auth-mode key
+```
+
 - Création d'un Azure Key Vault dans RG_AdminZone
 
 cf. https://docs.microsoft.com/en-us/cli/azure/keyvault?view=azure-cli-latest#az-keyvault-create
@@ -95,36 +109,57 @@ cf. https://docs.microsoft.com/en-us/cli/azure/keyvault?view=azure-cli-latest#az
 az keyvault create --name "<your-unique-keyvault-name>" --resource-group "RG-AdminZone" --location "eastus2"
 ```
 
-- Création d'un secret monsecret dans Azure Key Vault
+- Création d'un secret "MySecret" dans Azure Key Vault
 
 cf. https://docs.microsoft.com/en-us/cli/azure/keyvault/secret?view=azure-cli-latest#az-keyvault-secret-set 
 
 ```bash
-az keyvault secret set --name "MySecretName" --vault-name "<your-unique-keyvault-name>" --value "<laveurdemonsecret>"
+az keyvault secret set --name "MySecret" --vault-name "<your-unique-keyvault-name>" --value "<laveurdemonsecret>"
 ```
 
 
 ## Déploiement du Cluster AKS
 
-1. Log to your Azure subscription (az login)
+1. Ouvrir une session Bash et se connecter à votre abonnement Azure
+
+```bash
+az login
+```
+
 2. Create an Azure Key Vault and create all secrets defined in datasource.tf
 3. Define the value of each variable in .tf and/or .tfvars files
-4. Initialize your terraform deployment : `terraform init`
-5. Plan your terraform deployment : `terraform plan --var-file=myconf.tfvars`
-6. Apply your terraform deployment : `terraform apply --var-file=myconf.tfvars`
+4. Initialize your terraform deployment
+
+```bash
+terraform init
+```
+
+5. Plan your terraform deployment
+
+```bash
+terraform plan --var-file=myconf.tfvars
+```
+
+6. Apply your terraform deployment
+
+```bash
+terraform apply --var-file=myconf.tfvars
+```
 
 
 ## Vérification du déploiement du cluster
 
 After deployment is succeeded, you can check your cluster using portal or better with azure cli and the following command: 
 
+Une fois le déploiement effectué, vérifier le cluster en utilisant le portail Azure ou mieux avec Azure CLI
+
 ```bash
-az aks show --resource-group NAMEOFYOURRESOURCEGROUP --name NAMEOFYOURAKSCLUSTER -o jsonc
+az aks show --resource-group "<your-AKS-resource-group-name>" --name "<your-AKS-cluster-name>" -o jsonc
 ```
 
 Get your kubeconfig using :
 
 ```bash
-az aks get-credentials --resource-group NAMEOFYOURRESOURCEGROUP --name NAMEOFYOURAKSCLUSTER --admin
+az aks get-credentials --resource-group "<your-AKS-resource-group-name>" --name "<your-AKS-cluster-name>" --admin
 ```
 
