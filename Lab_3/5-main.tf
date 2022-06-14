@@ -22,7 +22,7 @@ resource "azurerm_resource_group" "Terra_aks_rg" {
 #    \ \/ / | | '__| __| | | |/ _` | |  | . ` |/ _ \ __\ \ /\ / / _ \| '__| |/ /   / _` | '_ \ / _` |   \___ \| | | | '_ \| '_ \ / _ \ __/ __|
 #     \  /  | | |  | |_| |_| | (_| | |  | |\  |  __/ |_ \ V  V / (_) | |  |   <   | (_| | | | | (_| |   ____) | |_| | |_) | | | |  __/ |_\__ \
 #      \/   |_|_|   \__|\__,_|\__,_|_|  |_| \_|\___|\__| \_/\_/ \___/|_|  |_|\_\   \__,_|_| |_|\__,_|  |_____/ \__,_|_.__/|_| |_|\___|\__|___/                                                                                                                                     
-                                                                                                                                          
+
 
 resource "azurerm_virtual_network" "Terra_aks_vnet" {
   name                = var.aks_vnet_name
@@ -196,10 +196,10 @@ resource "azurerm_kubernetes_cluster" "Terra_aks" {
   resource_group_name       = azurerm_resource_group.Terra_aks_rg.name
   dns_prefix                = var.dns_name
   kubernetes_version        = var.kubernetes_version
-  automatic_channel_upgrade = var.automatic_channel_upgrade # this feature can not be used with Azure Spot nodes
+  # automatic_channel_upgrade = var.automatic_channel_upgrade # this feature can not be used with Azure Spot nodes
   # Enable Azure Policy  cf. https://docs.microsoft.com/en-us/azure/governance/policy/concepts/policy-for-kubernetes
   # azure_policy_enabled = var.enable-AzurePolicy
-  enable_pod_security_policy = var.defaultpool-securitypolicy
+  # enable_pod_security_policy = var.defaultpool-securitypolicy ==> DEPRECATED
   sku_tier                   = var.sku-controlplane # possible values are Free and Paid
   private_cluster_enabled    = var.enable-privatecluster
   # private_dns_zone_id = "" 
@@ -213,7 +213,7 @@ resource "azurerm_kubernetes_cluster" "Terra_aks" {
   depends_on = [azurerm_log_analytics_workspace.Terra-LogsWorkspace]
 
   default_node_pool {
-    name                   = var.defaultpool-name
+    name = var.defaultpool-name
     # node_count             = var.defaultpool-nodecount
     vm_size                = var.defaultpool-vmsize
     os_disk_size_gb        = var.defaultpool-osdisksizegb
@@ -258,9 +258,9 @@ resource "azurerm_kubernetes_cluster" "Terra_aks" {
     outbound_type = "loadBalancer"
     # Optional : Possible values are IPv4 and/or IPv6. IPv4 must always be specified.load_balancer_profile {
     # To configure dual-stack networking ip_versions should be set to ["IPv4", "IPv6"]
-     ip_versions = ["IPv4"]
-    }
-  
+    ip_versions = ["IPv4"]
+  }
+
 
   # Config OMS agent for Telemetry / Observability
   oms_agent {
@@ -304,7 +304,6 @@ resource "azurerm_kubernetes_cluster" "Terra_aks" {
   identity {
     type = "SystemAssigned"
   }
-
 
   # Optional. cf. https://docs.microsoft.com/en-us/azure/aks/csi-secrets-store-driver
   # cf. https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/kubernetes_cluster#:~:text=SystemAssigned%2C%20UserAssigned.-,A,-key_vault_secrets_provider%20block%20supports
@@ -364,12 +363,6 @@ resource "azurerm_kubernetes_cluster" "Terra_aks" {
 # }
 
 
-
-
-
-
-
-
 #               _     _ _ _   _                         _                   _                          _ 
 #      /\      | |   | (_) | (_)                       | |                 | |                        | |
 #     /  \   __| | __| |_| |_ _  ___  _ __  _ __   __ _| |    _ __   ___   __| | ___   _ __   ___   ___ | |
@@ -379,42 +372,31 @@ resource "azurerm_kubernetes_cluster" "Terra_aks" {
 #                                                                                   | |                  
 #                                                                                   |_|                 
 
-
 # AKS Agent node-pool cf. https://www.terraform.io/docs/providers/azurerm/r/kubernetes_cluster_node_pool.html
-# resource "azurerm_kubernetes_cluster_node_pool" "Terra-AKS-NodePools" {
-#   kubernetes_cluster_id = azurerm_kubernetes_cluster.Terra_aks.id
-#   name                  = var.windowspool-name
-#   depends_on            = [azurerm_kubernetes_cluster.Terra_aks]
-#   node_count            = var.windowspool-nodecount     # static number or initial number of nodes. Must be between 1 to 100
-#   enable_auto_scaling   = var.winpool-enableautoscaling # use this parameter if you want an AKS Cluster with Node autoscale. Need also min_count and max_count
-#   min_count             = var.winpool-mincount          # minimum number of nodes with AKS Autoscaler
-#   max_count             = var.winpool-maxcount          # maximum number of nodes with AKS Autoscaler
-#   vm_size               = var.windowspool-vmsize
-#   availability_zones    = var.winpool-availabilityzones # example : [1, 2, 3]
-#   os_type               = var.windowspool-ostype        # Possible values :linux, windows
-#   os_disk_size_gb       = var.windowspool-osdisksizegb
-#   # max_pods              = var.winpool-maxpods         # between 30 and 250. BUT must 30 max for Windows Node
-#   vnet_subnet_id = azurerm_subnet.Terra_aks_subnet.id
-#   node_taints    = var.winpool-nodetaints               # cf. https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/
-#   mode = "User"
-#   # priority = Regular or Spot
-#   priority = "Spot"                                     # not compatible with cluster autoupgrade
-#   eviction_policy = "Delete"                            # possible value : Delete, Deallocate
-#   spot_max_price  = "-1"
-#   # node_labels = "kubernetes.azure.com/scalesetpriority:spot"
-#   # node_taints = "kubernetes.azure.com/scalesetpriority=spot:NoSchedule"
-# }
-
-
-
-
-# Role Assignment to give AKS managed identity Contributor permissions on the ACI resource group - Required for Virtual Kubelet
-# cf. https://docs.microsoft.com/en-us/azure/aks/kubernetes-service-principal#delegate-access-to-other-azure-resources
-# cf. https://docs.microsoft.com/en-us/azure/aks/kubernetes-service-principal#azure-container-instances 
-# resource "azurerm_role_assignment" "Terra-aks-aci-role" {
-#   scope                = azurerm_resource_group.Terra_aks_rg.id
-#   role_definition_name = "Contributor"
-#   principal_id         = azurerm_kubernetes_cluster.Terra_aks.kubelet_identity.0.object_id
-# }
-
+resource "azurerm_kubernetes_cluster_node_pool" "Terra-AKS-NodePools" {
+  kubernetes_cluster_id = azurerm_kubernetes_cluster.Terra_aks.id
+  name                  = var.windowspool-name
+  depends_on            = [azurerm_kubernetes_cluster.Terra_aks]
+  node_count            = var.windowspool-nodecount     # static number or initial number of nodes. Must be between 1 to 100
+  enable_auto_scaling   = var.winpool-enableautoscaling # use this parameter if you want an AKS Cluster with Node autoscale. Need also min_count and max_count
+  min_count             = var.winpool-mincount          # minimum number of nodes with AKS Autoscaler
+  max_count             = var.winpool-maxcount          # maximum number of nodes with AKS Autoscaler
+  vm_size               = var.windowspool-vmsize
+  zones                 = var.winpool-availabilityzones # example : [1, 2, 3]
+  os_type               = var.windowspool-ostype        # Possible values :linux, windows
+  os_disk_size_gb       = var.windowspool-osdisksizegb
+  # max_pods              = var.winpool-maxpods         # between 30 and 250. BUT must 30 max for Windows Node
+  vnet_subnet_id = azurerm_subnet.Terra_aks_subnet.id
+  node_taints    = var.winpool-nodetaints # cf. https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/
+  mode           = "User"
+  # priority = Regular or Spot
+  priority        = "Spot"   # not compatible with cluster autoupgrade
+  eviction_policy = "Delete" # possible value : Delete, Deallocate
+  spot_max_price  = "-1"
+  # node_labels = "kubernetes.azure.com/scalesetpriority:spot"
+  # node_taints = "kubernetes.azure.com/scalesetpriority=spot:NoSchedule"
+  tags = {
+    Environment = "Lab"
+  }
+}
 

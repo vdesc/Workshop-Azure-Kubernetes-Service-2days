@@ -29,13 +29,13 @@ Les ressources déployées par ce code Terraform sont les suivantes :
 
 - Un Azure Resource Group
 - Un cluster Azure Kubernetes Services Cluster with 1 node pool (1 Virtual Machine ScaleSet) linux
-- Un node pool Windows Server 2019 (1 Virtual Machine ScaleSet)
+- Un node pool Windows Server 2019 (1 Virtual Machine ScaleSet) --> optionnel
 - Deux Managed Identities (une par VMSS)
 - Un Azure Load Balancer Standard SKU
 - Une Azure Public IP
 - Un Virtual Network avec ses Subnets (subnet pour les pods AKS, de subnets pour AzureBastion,Azure Firewall, Azure Application Gateway
 - Un Azure Log Analytics Workspace (used for Azure Monitor Container Insight)
-- Azure Application Gateway + Application Gateway Ingress Controller AKS add-on
+- Azure Application Gateway + Application Gateway Ingress Controller AKS add-on --> optionnel
 - An Azure Log Analytics Workspace (used for Azure Monitor Container Insight)
 
 On Kubernetes, these Terraform files will :
@@ -171,4 +171,3 @@ Get your kubeconfig using :
 ```bash
 az aks get-credentials --resource-group "<your-AKS-resource-group-name>" --name "<your-AKS-cluster-name>" --admin
 ```
-
