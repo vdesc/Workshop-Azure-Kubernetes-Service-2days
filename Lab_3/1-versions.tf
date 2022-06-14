@@ -9,6 +9,12 @@
 
 terraform {
   required_version = "= 1.2.2"
+  backend "azurerm" {
+    resource_group_name  = "RG-AKSCluster" # mettre ici le nom du resource group de vos ressource
+    storage_account_name = "terraformstan" # /!\ mettre le nom du compte de stockage créer dans le lab 1
+    container_name       = "tfstate"
+    key                  = "aks.terraform.tfstate"
+  }
   required_providers {
     azurerm = {
       # The "hashicorp" namespace is the new home for the HashiCorp-maintained
@@ -95,5 +101,3 @@ provider "grafana" {
   url  = "http://${var.a-record-dns-ingress}.${var.dns-zone-name-for-ingress}"
   auth = "${var.grafana_admin_username}:${data.azurerm_key_vault_secret.grafana_admin_password.value}"
 }
-
-
