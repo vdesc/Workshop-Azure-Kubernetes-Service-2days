@@ -117,6 +117,11 @@ cf. https://docs.microsoft.com/en-us/cli/azure/keyvault/secret?view=azure-cli-la
 az keyvault secret set --name "MySecret" --vault-name "<your-unique-keyvault-name>" --value "<laveurdemonsecret>"
 ```
 
+Création d'un secret __"ClePubliqueSSH"__ dans Azure Key Vault Mettre votre clé SSH publique (contenu de .ssh/id_rsa.pub)
+
+```bash
+az keyvault secret set --name "ClePubliqueSSH" --vault-name "<your-unique-keyvault-name>" --value "<laveurdevotrecleSSHpublique>"
+```
 
 ## Déploiement du Cluster AKS
 
@@ -126,24 +131,28 @@ az keyvault secret set --name "MySecret" --vault-name "<your-unique-keyvault-nam
 az login
 ```
 
-2. Create an Azure Key Vault and create all secrets defined in datasource.tf
-3. Define the value of each variable in .tf and/or .tfvars files
-4. Initialize your terraform deployment
+2. Editer le fichier __configuration.tfvars__ et compléter avec vos valeurs
+
+3. Editer le fichier __1-versions.tf__ et modifier les paramètres relatifs au Remote Backend terraform
+
+4- Visualiser et modifier si besoin le fichier __"3-vars.tf"__
+
+5. Initialiser le déploiement terraform
 
 ```bash
 terraform init
 ```
 
-5. Plan your terraform deployment
+6. Planifier le déploiement terraform
 
 ```bash
-terraform plan --var-file=myconf.tfvars
+terraform plan --var-file=myconfiguration.tfvars
 ```
 
 6. Apply your terraform deployment
 
 ```bash
-terraform apply --var-file=myconf.tfvars
+terraform apply --var-file=myconfiguration.tfvars
 ```
 
 

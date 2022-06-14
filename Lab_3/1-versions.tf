@@ -66,7 +66,6 @@ provider "azurerm" {
   }
 }
 
-
 # Configure the Kubernetes Provider
 provider "kubernetes" {
   host                   = azurerm_kubernetes_cluster.Terra_aks.kube_config.0.host
@@ -96,8 +95,52 @@ provider "time" {
 
 # Configuration provider Grafana
 # cf. https://registry.terraform.io/providers/grafana/grafana/latest/docs
-provider "grafana" {
-  # url  = "http://grafana.example.com/"
-  url  = "http://${var.a-record-dns-ingress}.${var.dns-zone-name-for-ingress}"
-  auth = "${var.grafana_admin_username}:${data.azurerm_key_vault_secret.grafana_admin_password.value}"
-}
+# provider "grafana" {
+#   # url  = "http://grafana.example.com/"
+#   url  = "http://${var.a-record-dns-ingress}.${var.dns-zone-name-for-ingress}"
+#   auth = "${var.grafana_admin_username}:${data.azurerm_key_vault_secret.grafana_admin_password.value}"
+# }
+
+
+
+
+
+# A remote backend must be used for production (especially if deployments are done through CI/CD pipelines) 
+# or if you are not working only with yourself as a lone ranger :)
+
+
+###################################################################################
+# Option 1 for Terraform Remote Backend : use Terraform Cloud Remote State Management
+# https://www.hashicorp.com/blog/introducing-terraform-cloud-remote-state-management
+# create your account here : https://app.terraform.io/session
+####################################################################################
+# Using a single workspace in Terraform Cloud Remote State / Terraform Enterprise
+# terraform {
+#   backend "remote" {
+#     hostname = "app.terraform.io"
+#     organization = "Insert here your organization name"
+#     token = "Insert here your Token"
+#     workspaces {
+#       name = "deploiementVM-AKS"
+#     }
+#   }
+# }
+
+
+###################################################################################
+# Option 2 for Terraform Remote Backend : use an Azure Storage Account
+# ref : https://www.terraform.io/docs/backends/types/azurerm.html
+####################################################################################
+# You need as a prerequisite :
+# A storage Account with a blob container into your deployment region
+# Enable Secure Transfert Required option to force TLS usage
+# create a blob container named terraform-state
+
+# data "terraform_remote_state" "Terra-Backend-Stan1" {
+#    backend = "azure"
+#    config {
+#        storage_account_name = "mettre ici le nom du compte de stockage"
+#        container_name = "terraform-state"
+#        key = "prod.terraform.tfstate"
+#    }
+# }
