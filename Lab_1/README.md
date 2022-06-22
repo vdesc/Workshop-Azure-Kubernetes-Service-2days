@@ -24,7 +24,7 @@ Dans la console Azure :
 - <a href="https://docs.microsoft.com/en-us/azure/aks/manage-azure-rbac">Use Azure RBAC for Kubernetes Authorization</a><br>
 - <a href="https://docs.microsoft.com/en-us/azure/aks/azure-ad-rbac">Control access to cluster resources using Kubernetes role-based access control and Azure Active Directory identities in Azure Kubernetes Service</a><br><br><br><br>
 <img width='800' src='../images/Lab_1/Lab_1_8.png'/>
-- <a href="https://docs.microsoft.com/en-us/azure/aks/configure-azure-cni">Configure Azure CNI networking in Azure Kubernetes Service</a><br><br>
+- <a href="https://docs.microsoft.com/en-us/azure/aks/configure-azure-cni">Configure Azure CNI networking in Azure Kubernetes Service</a><br><br><br><br>
 <img width='800' src='../images/Lab_1/Lab_1_9.png'/>
 - <a href="https://docs.microsoft.com/en-us/azure/aks/load-balancer-standard">Use a public Standard Load Balancer in Azure Kubernetes Service</a>
 - <a href="https://docs.microsoft.com/en-us/azure/aks/http-application-routing">HTTP application routing</a>
