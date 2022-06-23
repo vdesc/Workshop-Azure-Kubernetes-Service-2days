@@ -12,8 +12,8 @@
 2. Création d'un "resource group"<br>
 ```
 az group create \
-    --location westeurope \
-    --resource-group RG-AKS-CLI
+    --location "westeurope" \
+    --resource-group "RG-AKS-CLI"
 ```
 3. Création d'une "Public Ip" <br>
 ```
@@ -78,6 +78,27 @@ IDENTITY_ID=$(az identity create \
     --query id \
     --output tsv)
 ```
+10. Création du "cluster AKS" <br>
+```
+az aks create \
+    --resource-group RG-AKS-CLI \
+    --name AKS-CLI \
+    --location westeurope \
+    --network-plugin azure \
+    --generate-ssh-keys \
+    --node-count 1 \
+    --enable-cluster-autoscaler \
+    --min-count 1 \
+    --max-count 3 \
+    --vnet-subnet-id $SUBNET_ID \
+    --outbound-type userAssignedNATGateway \
+    --enable-managed-identity \
+    --assign-identity $IDENTITY_ID \
+    --enable-addons monitoring \
+    --workspace-resource-id ${AKS_MONITORING_LOG_ANALYTICS_WORKSPACE_ID} \
+    --attach-acr acrakscli00 \
+```
+
 
 
 
