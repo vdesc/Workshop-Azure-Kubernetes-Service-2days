@@ -18,8 +18,8 @@ az group create
 3. Création d'une "Public Ip" <br>
 ```
 az network public-ip create \
-    --resource-group ${AKS_RESOURCE_GROUP} \
+    --resource-group RG-AKS-CLI \
     --name natGatewaypIpAks \
-    --location ${AKS_REGION} \
+    --location westeurope \
     --sku standard  
 ```
