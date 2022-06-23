@@ -35,9 +35,9 @@ az network nat gateway create \
 5. Création d'un "Virtual Network" <br>
 ```
 az network vnet create \
-    --resource-group ${AKS_RESOURCE_GROUP} \
+    --resource-group RG-AKS-CLI \
     --name AKSvnet \
-    --location ${AKS_REGION} \
+    --location westeurope \
     --address-prefixes 172.16.0.0/20
 ```
 
