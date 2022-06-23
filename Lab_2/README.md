@@ -1,7 +1,5 @@
 # Lab 2 : création d'un cluster plus avancé via Azure CLI, connexion et utilisation basique de kubectl
-1. Cloud Shell et prérequis<br>
-Allez: https://shell.azure.com<br>
-Prende le "Bash"<br>
+1. Prérequis:<br>
 Checkez votre abonnement: `az account show -o table`<br>
 Option: Pour se mettre dans son abonnement `az account set --subscription 'mon_abonnement'`<br>
 Checkez les providers: Microsoft.OperationsManagement & Microsoft.OperationalInsights<br>
