@@ -32,4 +32,13 @@ az network nat gateway create \
     --public-ip-addresses natGatewaypIpAks
 
 ```
+5. Création d'un "Virtual Network" <br>
+```
+az network vnet create \
+    --resource-group ${AKS_RESOURCE_GROUP} \
+    --name AKSvnet \
+    --location ${AKS_REGION} \
+    --address-prefixes 172.16.0.0/20
+```
+
 
