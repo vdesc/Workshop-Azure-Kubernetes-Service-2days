@@ -69,5 +69,15 @@ az acr create \
   --resource-group RG-AKS-CLI \
   --sku basic
 ```
+9. Création d'une "Managed Identity" <br>
+```
+IDENTITY_ID=$(az identity create \
+    --resource-group RG-AKS-CLI \
+    --name idAks \
+    --location westeurope \
+    --query id \
+    --output tsv)
+```
+
 
 
