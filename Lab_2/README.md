@@ -62,5 +62,12 @@ AKS_MONITORING_LOG_ANALYTICS_WORKSPACE_ID=$(
       -o tsv
 )
 ```
+8. Création d'une "Azure Container Registry" <br>
+```
+az acr create \
+  --name ${AKS_ACR} \
+  --resource-group ${AKS_RESOURCE_GROUP} \
+  --sku basic
+```
 
 
