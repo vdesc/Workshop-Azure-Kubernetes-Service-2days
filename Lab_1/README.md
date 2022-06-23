@@ -64,6 +64,6 @@ Settings
 Ressources du cluster AKS
 <img width='800' src='../images/Lab_1/Lab_1_34.png'/>
 <img width='800' src='../images/Lab_1/Lab_1_35.png'/>
-Test de connexion
+Test du cluster AKS
 
 
