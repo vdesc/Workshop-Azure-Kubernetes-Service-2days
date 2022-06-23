@@ -10,7 +10,11 @@
 `az provider register --namespace Microsoft.OperationalInsights`<br>
 
 2. Création d'un "resource group"<br>
-`az group create --location westeurope --resource-group RG-AKS-CLI`
+````
+az group create
+    --location westeurope \
+    --resource-group RG-AKS-CLI
+```
 3. Création d'une "Public Ip" <br>
 ```
 az network public-ip create \
