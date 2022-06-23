@@ -23,3 +23,13 @@ az network public-ip create \
     --location westeurope \
     --sku standard  
 ```
+4. Création d'une "Azure nat Gateway" <br>
+```
+az network nat gateway create \
+    --resource-group RG-AKS-CLI \
+    --name natGatewayAks \
+    --location westeurope \
+    --public-ip-addresses natGatewaypIpAks
+
+```
+
