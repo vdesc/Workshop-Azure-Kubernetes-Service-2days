@@ -40,5 +40,16 @@ az network vnet create \
     --location westeurope \
     --address-prefixes 172.16.0.0/20
 ```
+6. Création d'un "subnet avec le paramétrage de la nat Gateway" <br>
+```
+SUBNET_ID=$(az network vnet subnet create \
+    --resource-group RG-AKS-CLI \
+    --vnet-name AKSvnet \
+    --name natclusterAKS \
+    --address-prefixes 172.16.0.0/22 \
+    --nat-gateway natGatewayAks \
+    --query id \
+    --output tsv)
+```
 
 
