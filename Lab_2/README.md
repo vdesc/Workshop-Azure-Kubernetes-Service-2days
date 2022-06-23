@@ -1,5 +1,5 @@
 # Lab 2 : création d'un cluster plus avancé via Azure CLI, connexion et utilisation basique de kubectl
-1. Prérequis:<br>
+1. Prérequis:
 - Checkez votre abonnement: `az account list -o table`<br>
 - Option: Pour se mettre dans son abonnement `az account set --subscription 'mon_abonnement'`<br>
 - Checkez les providers: Microsoft.OperationsManagement & Microsoft.OperationalInsights<br>
@@ -10,7 +10,7 @@
 `az provider register --namespace Microsoft.OperationalInsights`<br>
 
 2. Création d'un "resource group"<br>
-`az group create --location westeurope --resource-group RG-AKS-CLI`
+`az group create --location westeurope --resource-group RG-AKS-CLI`<br>
 3. Création du cluster AKS<br>
 Voir les commandes:  `az aks --help` & `az aks create --help`<br>
 Création d'un simple cluster: <br>
