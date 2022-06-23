@@ -10,7 +10,7 @@
 `az provider register --namespace Microsoft.OperationalInsights`<br>
 
 2. Création d'un "resource group"<br>
-````
+```
 az group create
     --location westeurope \
     --resource-group RG-AKS-CLI
