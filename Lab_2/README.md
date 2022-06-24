@@ -99,7 +99,7 @@ az aks create \
     --attach-acr acrakscli00
 ```
 11. Test du Cluster AKS <br>
-- Connexion au cluster
+- Connexion au cluster <br>
 `az aks get-credentials --resource-group RG-AKS-CLI --name AKS-CLI `
 
 
