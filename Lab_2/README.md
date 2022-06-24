@@ -100,7 +100,9 @@ az aks create \
 ```
 11. Test du Cluster AKS <br>
 - Connexion au cluster <br>
-`az aks get-credentials --resource-group RG-AKS-CLI --name AKS-CLI `
+`az aks get-credentials --resource-group RG-AKS-CLI --name AKS-CLI ` <br>
+- Liste des nodes du cluster <br>
+`kubectl get nodes` <br>
 
 
 
