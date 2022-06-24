@@ -73,3 +73,4 @@ az aks create \
     --enable-addons monitoring \
     --workspace-resource-id ${AKS_MONITORING_LOG_ANALYTICS_WORKSPACE_ID} \
     --attach-acr ${AKS_ACR} \
+    --yes
