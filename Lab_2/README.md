@@ -30,7 +30,6 @@ az network nat gateway create \
     --name natGatewayAks \
     --location westeurope \
     --public-ip-addresses natGatewaypIpAks
-
 ```
 5. Création d'un "Virtual Network" <br>
 ```
