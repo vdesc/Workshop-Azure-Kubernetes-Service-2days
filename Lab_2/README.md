@@ -98,6 +98,9 @@ az aks create \
     --workspace-resource-id ${AKS_MONITORING_LOG_ANALYTICS_WORKSPACE_ID} \
     --attach-acr acrakscli00
 ```
+11. Test du Cluster AKS <br>
+- Connexion au cluster
+`az aks get-credentials --resource-group RG-AKS-CLI --name AKS-CLI `
 
 
 
