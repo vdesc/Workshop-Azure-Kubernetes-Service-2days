@@ -73,5 +73,11 @@ Test du cluster AKS
 <img width='800' src='../images/Lab_1/Lab_1_38.png'/>
 <img width='800' src='../images/Lab_1/Lab_1_39.png'/>
 <img width='800' src='../images/Lab_1/Lab_1_40.png'/>
+<img width='800' src='../images/Lab_1/Lab_1_41.png'/>
+<img width='800' src='../images/Lab_1/Lab_1_42.png'/>
+<img width='800' src='../images/Lab_1/Lab_1_43.png'/>
+<img width='800' src='../images/Lab_1/Lab_1_44.png'/>
+<img width='800' src='../images/Lab_1/Lab_1_45.png'/>
+<img width='800' src='../images/Lab_1/Lab_1_46.png'/>
 
 
