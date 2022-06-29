@@ -6,7 +6,7 @@ Dans la console Azure :
 <img width='800' src='../images/Lab_1/Lab_1_0.png'/>
 2. **Aller dans "Containers" et cliquez dans "Create" (Kubernetes Service)**
 <img width='800' src='../images/Lab_1/Lab_1_1.png'/>
-3. **Paramétrage du Cluster**
+3. **Parametrage du Cluster**
 <img width='800' src='../images/Lab_1/Lab_1_2.png'/>
 <img width='800' src='../images/Lab_1/Lab_1_3.png'/>
 <img width='800' src='../images/Lab_1/Lab_1_4.png'/>
@@ -56,17 +56,17 @@ Kubernetes resources
 <img width='800' src='../images/Lab_1/Lab_1_25.png'/>
 <img width='800' src='../images/Lab_1/Lab_1_26.png'/>
 <img width='800' src='../images/Lab_1/Lab_1_27.png'/>
-Settings
+**Settings**
 <img width='800' src='../images/Lab_1/Lab_1_28.png'/>
 <img width='800' src='../images/Lab_1/Lab_1_29.png'/>
 <img width='800' src='../images/Lab_1/Lab_1_30.png'/>
 <img width='800' src='../images/Lab_1/Lab_1_31.png'/>
 <img width='800' src='../images/Lab_1/Lab_1_32.png'/>
 <img width='800' src='../images/Lab_1/Lab_1_33.png'/>
-Ressources du cluster AKS
+**Ressources du cluster AKS**
 <img width='800' src='../images/Lab_1/Lab_1_34.png'/>
 <img width='800' src='../images/Lab_1/Lab_1_35.png'/>
-Test du cluster AKS
+**Test du cluster AKS**
 <img width='800' src='../images/Lab_1/Lab_1_36.png'/>
 <img width='800' src='../images/Lab_1/Lab_1_36_bis.png'/>
 <img width='800' src='../images/Lab_1/Lab_1_37.png'/>
