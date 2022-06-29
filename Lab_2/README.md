@@ -90,7 +90,7 @@ az aks create \
     --location "eastus2" \
     --network-plugin azure \
     --generate-ssh-keys \
-    --node-count 1 \
+    --node-count 2 \
     --enable-cluster-autoscaler \
     --min-count 1 \
     --max-count 3 \
