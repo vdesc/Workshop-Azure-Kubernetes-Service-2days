@@ -66,5 +66,9 @@ Ressources du cluster AKS
 <img width='800' src='../images/Lab_1/Lab_1_35.png'/>
 Test du cluster AKS
 <img width='800' src='../images/Lab_1/Lab_1_36.png'/>
+<img width='800' src='../images/Lab_1/Lab_1_37.png'/>
+<img width='800' src='../images/Lab_1/Lab_1_38.png'/>
+<img width='800' src='../images/Lab_1/Lab_1_39.png'/>
+<img width='800' src='../images/Lab_1/Lab_1_40.png'/>
 
 
