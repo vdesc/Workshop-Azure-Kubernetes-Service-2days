@@ -85,7 +85,7 @@ IDENTITY_ID=$(az identity create \
 10. Création du "cluster AKS" <br>
 ```
 az aks create \
-    --resource-group RG-AKS-CLI \
+    --resource-group "RG-AKS-CLI" \
     --name "AKS-CLI" \
     --location "eastus2" \
     --network-plugin azure \
