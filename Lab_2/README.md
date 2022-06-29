@@ -123,9 +123,12 @@ az acr import \
   --source mcr.microsoft.com/azuredocs/azure-vote-front:v1 \
   --image azure-vote-front:v1
 ```
-- Allez dans le fichier ./Manifest/config.yml <br>
-acrakscli00.azurecr.io/redis:6.0.8 <br>
-acrakscli00.azurecr.io/azure-vote-front:v1 <br>
+13. Création du fichier Manifest <br>
+- créez un fichier config.yml (ex : `touch config.yml`) <br>
+- Dans le repo, allez dans le fichier ./Manifest/config.yml <br>
+- remplacer (vi, nano, ...)  <br>
+mcr.microsoft.com/oss/bitnami/redis:6.0.8 -> acrakscli00.azurecr.io/redis:6.0.8 <br>
+mcr.microsoft.com/azuredocs/azure-vote-front:v1 -> acrakscli00.azurecr.io/azure-vote-front:v1 <br>
 
 
 
