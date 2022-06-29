@@ -17,37 +17,37 @@ Remarque: Il n'est pas possible de le faire dans la console.
 2. Création d'un "resource group"<br>
 ```
 az group create \
-    --location "westeurope" \
+    --location "eastus2" \
     --resource-group "RG-AKS-CLI"
 ```
 3. Création d'une "Public Ip" <br>
 ```
 az network public-ip create \
-    --resource-group RG-AKS-CLI \
+    --resource-group "RG-AKS-CLI" \
     --name natGatewaypIpAks \
-    --location westeurope \
+    --location "eastus2" \
     --sku standard  
 ```
 4. Création d'une "Azure nat Gateway" <br>
 ```
 az network nat gateway create \
-    --resource-group RG-AKS-CLI \
+    --resource-group "RG-AKS-CLI" \
     --name natGatewayAks \
-    --location westeurope \
+    --location "eastus2" \
     --public-ip-addresses natGatewaypIpAks
 ```
 5. Création d'un "Virtual Network" <br>
 ```
 az network vnet create \
-    --resource-group RG-AKS-CLI \
+    --resource-group "RG-AKS-CLI" \
     --name AKSvnet \
-    --location westeurope \
+    --location "eastus2" \
     --address-prefixes 172.16.0.0/20
 ```
 6. Création d'un "subnet avec le paramétrage de la nat Gateway" <br>
 ```
 SUBNET_ID=$(az network vnet subnet create \
-    --resource-group RG-AKS-CLI \
+    --resource-group "RG-AKS-CLI" \
     --vnet-name AKSvnet \
     --name natclusterAKS \
     --address-prefixes 172.16.0.0/22 \
@@ -59,9 +59,9 @@ SUBNET_ID=$(az network vnet subnet create \
 ```
 AKS_MONITORING_LOG_ANALYTICS_WORKSPACE_ID=$(
    az monitor log-analytics workspace create \
-      --resource-group RG-AKS-CLI  \
+      --resource-group "RG-AKS-CLI"  \
       --workspace-name Workspace-AKS-CLI \
-      --location westeurope \
+      --location "eastus2" \
       --query id \
       -o tsv
 )
@@ -69,16 +69,16 @@ AKS_MONITORING_LOG_ANALYTICS_WORKSPACE_ID=$(
 8. Création d'une "Azure Container Registry" <br>
 ```
 az acr create \
-  --name acrakscli00 \
-  --resource-group RG-AKS-CLI \
+  --name "acrakscli00" \
+  --resource-group "RG-AKS-CLI" \
   --sku basic
 ```
 9. Création d'une "Managed Identity" <br>
 ```
 IDENTITY_ID=$(az identity create \
-    --resource-group RG-AKS-CLI \
+    --resource-group "RG-AKS-CLI" \
     --name idAks \
-    --location westeurope \
+    --location "eastus2" \
     --query id \
     --output tsv)
 ```
@@ -86,8 +86,8 @@ IDENTITY_ID=$(az identity create \
 ```
 az aks create \
     --resource-group RG-AKS-CLI \
-    --name AKS-CLI \
-    --location westeurope \
+    --name "AKS-CLI" \
+    --location "eastus2" \
     --network-plugin azure \
     --generate-ssh-keys \
     --node-count 1 \
@@ -100,7 +100,7 @@ az aks create \
     --assign-identity $IDENTITY_ID \
     --enable-addons monitoring \
     --workspace-resource-id ${AKS_MONITORING_LOG_ANALYTICS_WORKSPACE_ID} \
-    --attach-acr acrakscli00
+    --attach-acr "acrakscli00"
 ```
 11. Test du Cluster AKS <br>
 - Connexion au cluster <br>
