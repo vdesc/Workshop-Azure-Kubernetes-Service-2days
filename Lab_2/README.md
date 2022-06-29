@@ -107,6 +107,10 @@ az aks create \
 `az aks get-credentials --resource-group "RG-AKS-CLI" --name "AKS-CLI" ` <br>
 - Liste des nodes du cluster <br>
 `kubectl get nodes` <br>
+12. Importation d'image dans votre Azure Container Registry <br>
+- Connexion à l' Azure Container Registry <br>
+`az acr login --name "acrakscli00" --expose-token`
+
 
 
 
