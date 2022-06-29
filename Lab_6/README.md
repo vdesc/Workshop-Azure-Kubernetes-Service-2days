@@ -13,7 +13,7 @@ Azure Application Gateway sera piloté par AGIC (Azure Application Gateway Ingre
 
 Plus d'informations sur AGIC : https://docs.microsoft.com/en-us/azure/application-gateway/ingress-controller-overview
 
-<img width='800' src='./images/architecture-AGIC.png'/> 
+<img width='800' src='../images/architecture-AGIC.png'/>
 
 Les règles de routage http(s) seront définies dans des objets Ingress dans Kubernetes.
 
