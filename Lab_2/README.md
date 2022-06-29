@@ -117,6 +117,13 @@ az acr import \
   --source mcr.microsoft.com/oss/bitnami/redis:6.0.8 \
   --image redis:6.0.8
 ```
+```
+az acr import \
+  --name "acrakscli00" \
+  --source mcr.microsoft.com/azuredocs/azure-vote-front:v1 \
+  --image azure-vote-front:v1
+```
+
 
 
 
