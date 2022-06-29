@@ -1,8 +1,8 @@
 # Lab 1 : Création d'un cluster AKS via le portail Azure + visualisation des ressources via le portail Azure
-**Objectif:**<br/>
+Objectif:<br/>
 L'objectif de ce lab est de vous faire déployer un premier cluster Azure Kubernetes Services en utilisant la console. Une fois le cluster déployé, nous naviguerons dans la console et installerons une application.<br> 
 Dans la console Azure :
-1. **"Create a resource"**
+1. "Create a resource"
 <img width='800' src='../images/Lab_1/Lab_1_0.png'/>
 2. **Aller dans "Containers" et cliquez dans "Create" (Kubernetes Service)**
 <img width='800' src='../images/Lab_1/Lab_1_1.png'/>
@@ -42,7 +42,7 @@ Dans la console Azure :
 <img width='800' src='../images/Lab_1/Lab_1_13.png'/>
 <img width='800' src='../images/Lab_1/Lab_1_14.png'/>
 <img width='800' src='../images/Lab_1/Lab_1_15.png'/>
-4. **visualisation des ressources via le portail Azure**
+4. visualisation des ressources via le portail Azure
 <img width='800' src='../images/Lab_1/Lab_1_16.png'/>
 <img width='800' src='../images/Lab_1/Lab_1_17.png'/>
 Kubernetes resources
@@ -56,17 +56,17 @@ Kubernetes resources
 <img width='800' src='../images/Lab_1/Lab_1_25.png'/>
 <img width='800' src='../images/Lab_1/Lab_1_26.png'/>
 <img width='800' src='../images/Lab_1/Lab_1_27.png'/>
-**Settings**
+Settings
 <img width='800' src='../images/Lab_1/Lab_1_28.png'/>
 <img width='800' src='../images/Lab_1/Lab_1_29.png'/>
 <img width='800' src='../images/Lab_1/Lab_1_30.png'/>
 <img width='800' src='../images/Lab_1/Lab_1_31.png'/>
 <img width='800' src='../images/Lab_1/Lab_1_32.png'/>
 <img width='800' src='../images/Lab_1/Lab_1_33.png'/>
-**Ressources du cluster AKS**
+Ressources du cluster AKS
 <img width='800' src='../images/Lab_1/Lab_1_34.png'/>
 <img width='800' src='../images/Lab_1/Lab_1_35.png'/>
-**Test du cluster AKS**
+Test du cluster AKS
 <img width='800' src='../images/Lab_1/Lab_1_36.png'/>
 <img width='800' src='../images/Lab_1/Lab_1_36_bis.png'/>
 <img width='800' src='../images/Lab_1/Lab_1_37.png'/>
@@ -79,5 +79,6 @@ Kubernetes resources
 <img width='800' src='../images/Lab_1/Lab_1_44.png'/>
 <img width='800' src='../images/Lab_1/Lab_1_45.png'/>
 <img width='800' src='../images/Lab_1/Lab_1_46.png'/>
-
-
+<br>
+Supprimer le "Resource group" du cluster AKS<br>
+Fin du lab
