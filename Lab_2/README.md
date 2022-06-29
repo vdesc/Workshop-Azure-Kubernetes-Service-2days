@@ -1,5 +1,6 @@
 # Lab 2 : création d'un cluster plus avancé via Azure CLI, connexion et utilisation basique de kubectl
 Objectif:
+blabla
 
 1. Prérequis:<br>
 - Checkez votre abonnement:<br> `az account list -o table`
