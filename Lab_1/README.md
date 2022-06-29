@@ -4,9 +4,9 @@ L'objectif de ce lab est de vous faire déployer un premier cluster Azure Kubern
 Dans la console Azure :
 1. "Create a resource"
 <img width='800' src='../images/Lab_1/Lab_1_0.png'/>
-2. **Aller dans "Containers" et cliquez dans "Create" (Kubernetes Service)**
+2. Aller dans "Containers" et cliquez dans "Create" (Kubernetes Service)
 <img width='800' src='../images/Lab_1/Lab_1_1.png'/>
-3. **Parametrage du Cluster**
+3. Parametrage du Cluster
 <img width='800' src='../images/Lab_1/Lab_1_2.png'/>
 <img width='800' src='../images/Lab_1/Lab_1_3.png'/>
 <img width='800' src='../images/Lab_1/Lab_1_4.png'/>
