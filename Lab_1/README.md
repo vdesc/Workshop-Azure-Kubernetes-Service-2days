@@ -1,8 +1,8 @@
 # Lab 1 : Création d'un cluster AKS via le portail Azure + visualisation des ressources via le portail Azure
-Objectif:<br/>
+**Objectif:**<br/>
 L'objectif de ce lab est de vous faire déployer un premier cluster Azure Kubernetes Services en utilisant la console. Une fois le cluster déployé, nous naviguerons dans la console et installerons une application.<br> 
 Dans la console Azure :
-1. "Create a resource"
+1. **"Create a resource"**
 <img width='800' src='../images/Lab_1/Lab_1_0.png'/>
 2. Aller dans "Containers" et cliquez dans "Create" (Kubernetes Service)
 <img width='800' src='../images/Lab_1/Lab_1_1.png'/>
