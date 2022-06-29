@@ -123,7 +123,9 @@ az acr import \
   --source mcr.microsoft.com/azuredocs/azure-vote-front:v1 \
   --image azure-vote-front:v1
 ```
-
+- Allez dans le fichier ./Manifest/config.yml <br>
+acrakscli00.azurecr.io/redis:6.0.8 <br>
+acrakscli00.azurecr.io/azure-vote-front:v1 <br>
 
 
 
