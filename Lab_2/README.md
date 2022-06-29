@@ -110,6 +110,13 @@ az aks create \
 12. Importation d'image dans votre Azure Container Registry <br>
 - Connexion à l' Azure Container Registry <br>
 `az acr login --name "acrakscli00" --expose-token`
+- Importation d'images <br>
+```
+az acr import \
+  --name "acrakscli00" \
+  --source mcr.microsoft.com/oss/bitnami/redis:6.0.8 \
+  --image redis:6.0.8
+```
 
 
 
