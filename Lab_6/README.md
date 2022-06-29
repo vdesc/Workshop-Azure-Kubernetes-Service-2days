@@ -13,6 +13,8 @@ Azure Application Gateway sera piloté par AGIC (Azure Application Gateway Ingre
 
 Plus d'informations sur AGIC : https://docs.microsoft.com/en-us/azure/application-gateway/ingress-controller-overview
 
+<img width='800' src='./images/architecture-AGIC.png'/> 
+
 Les règles de routage http(s) seront définies dans des objets Ingress dans Kubernetes.
 
 Plus d'informations sur les objets Ingress : https://kubernetes.io/docs/concepts/services-networking/ingress/
@@ -22,7 +24,9 @@ L'installation d'Azure Application Gateway et d'AGIC sera faite via l'utilisatio
 
 Azure Application Gateway peut être installé en mode GreenField lors de l'installation du cluster AKS si on active l'add on AGIC. Les ressources Azure associée seront alors dans le Resource Group où sont les VMScaleSet des node pools. Dans ce cas, le cycle de vie d'Azure Application Gateway sera celui du cluster AKS.
 
-Une Azure Application Gateway existante peut être piloté par AGIC en activant le add-on sur un cluster AKS existant. Plus d'information : https://docs.microsoft.com/en-us/azure/application-gateway/tutorial-ingress-controller-add-on-existing
+Une Azure Application Gateway existante peut être piloté par AGIC en activant le add-on sur un cluster AKS existant. 
+
+Plus d'information : https://docs.microsoft.com/en-us/azure/application-gateway/tutorial-ingress-controller-add-on-existing
 
 Dans ce lab, pour des raisons de simplicité, l'option _Greenfield_ est retenue.
 
