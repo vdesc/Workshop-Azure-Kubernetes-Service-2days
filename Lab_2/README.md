@@ -125,9 +125,15 @@ az acr import \
 12. Création du fichier Manifest <br>
 - créez un fichier config.yml (ex : `touch config.yml`) <br>
 - Dans le repo, allez dans le fichier ./Manifest/config.yml, éditez le dans l'interface GitHub en "raw" et copier le contenue dans votre fichier config.yml avec vi ou nano ... <br>
-- Changer IMAGE_REDIS & IMAGE_FRONT avec vos images dans votre ACR
+- Changer IMAGE_REDIS & IMAGE_FRONT avec vos images dans votre ACR <br>
 IMAGE_REDIS -> acrakscli00.azurecr.io/redis:6.0.8 <br>
 IMAGE_FRONT -> acrakscli00.azurecr.io/azure-vote-front:v1 <br>
+
+13. Installation de l'application <br>
+- Connexion au cluster <br>
+`az aks get-credentials --resource-group "RG-AKS-CLI" --name "AKS-CLI" ` <br>
+- Installation de l'application <br>
+`kubectl apply -f config.yml`
 
 11. Test du Cluster AKS <br>
 - Connexion au cluster <br>
