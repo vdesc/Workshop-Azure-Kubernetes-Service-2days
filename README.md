@@ -24,6 +24,7 @@ Découverte de Kubernetes dans Azure avec des exercices pratiques
 - Lab 4 : Activation du monitoring avec Azure Monitor
 - Lab 5 : Azure Container Registry : configuration, importation et utilisation avec AKS 
 - Lab 6 : Installation d'AGIC, déploiement d'Azure Application Gateway et déploiement d'une application basique
+- Lab 7 : Utilisation du Secret Store CSI Driver avec Azure Key Vault
 
 
 ## Jour 2
