@@ -199,7 +199,7 @@ Les configuration  Flux (GitOps) peuvent être gérées / créée via Azure CLI
 cf. https://docs.microsoft.com/en-us/cli/azure/k8s-configuration/flux?view=azure-cli-latest
 
 ```bash
-az k8s-configuration flux list --cluster-name myCluster --cluster-type managedClusters --resource-group "RG-LabX" -o table
+az k8s-configuration flux list --cluster-name myCluster --cluster-type managedClusters --resource-group "RG-Lab12" -o table
 ```
 
 le résultat doit ressembler à ça:
