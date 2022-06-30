@@ -24,7 +24,7 @@
           beta.kubernetes.io/os: linux
         containers:
           - name: azure-vote-back
-            image: mcr.microsoft.com/oss/bitnami/redis:6.0.8
+            image: IMAGE_REDIS
             env:
               - name: ALLOW_EMPTY_PASSWORD
                 value: 'yes'
@@ -67,7 +67,7 @@
           beta.kubernetes.io/os: linux
         containers:
           - name: azure-vote-front
-            image: mcr.microsoft.com/azuredocs/azure-vote-front:v1
+            image: IMAGE_FRONT
             resources:
               requests:
                 cpu: 100m
