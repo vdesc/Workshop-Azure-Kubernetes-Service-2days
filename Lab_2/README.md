@@ -13,7 +13,7 @@ Remarque: Il n'est pas possible de le faire dans la console.
 - Option: Pour enregistrer les providers<br>
 `az provider register --namespace Microsoft.OperationsManagement`<br>
 `az provider register --namespace Microsoft.OperationalInsights`<br>
-- Pour faire ce Lab mettre ses propres paramètres dans les "double cote" (ex: "RG-AKS-CLI" -> "mon-resource-group") <br>
+- Pour faire ce Lab, mettre ses propres paramètres dans les "double cote" (ex: "RG-AKS-CLI" -> "mon-resource-group") <br>
 - Vous pouvez lancer les commandes une par une ou faite un script <br>
 
 2. Création d'un "resource group"<br>
