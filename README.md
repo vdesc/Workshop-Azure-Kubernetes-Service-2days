@@ -35,7 +35,7 @@ Découverte de Kubernetes dans Azure avec des exercices pratiques
 - Automatisation des déploiements applicatifs et configurations Kubernetes : Deployment Center, Pipelines avec GitHub, GitOps, Kustomize
 - Lab 10 : Pipeline CI/CD Kubernetes YAML 
 ### après midi
-- Lab 11 : Pipline avec Kustomize (Pierre)
+- Lab 11 : Pipeline avec Kustomize (Pierre)
 - Lab 12 : GitOps avec AKS et Fluxv2 
 - Autoscaling quelles options ? HPA, KEDA, Virtual Kubelet...
 - Conclusion - Tour de table
