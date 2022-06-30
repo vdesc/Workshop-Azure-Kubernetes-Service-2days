@@ -104,12 +104,8 @@ az aks create \
     --workspace-resource-id ${AKS_MONITORING_LOG_ANALYTICS_WORKSPACE_ID} \
     --attach-acr "acrakscli00"
 ```
-11. Test du Cluster AKS <br>
-- Connexion au cluster <br>
-`az aks get-credentials --resource-group "RG-AKS-CLI" --name "AKS-CLI" ` <br>
-- Liste des nodes du cluster <br>
-`kubectl get nodes` <br>
-12. Importation d'image dans votre Azure Container Registry <br>
+
+11. Importation d'image dans votre Azure Container Registry <br>
 - Connexion à l' Azure Container Registry <br>
 `az acr login --name "acrakscli00" --expose-token`
 - Importation d'images <br>
@@ -125,12 +121,18 @@ az acr import \
   --source mcr.microsoft.com/azuredocs/azure-vote-front:v1 \
   --image azure-vote-front:v1
 ```
-13. Création du fichier Manifest <br>
+12. Création du fichier Manifest <br>
 - créez un fichier config.yml (ex : `touch config.yml`) <br>
 - Dans le repo, allez dans le fichier ./Manifest/config.yml <br>
 - remplacer (vi, nano, ...)  <br>
 mcr.microsoft.com/oss/bitnami/redis:6.0.8 -> acrakscli00.azurecr.io/redis:6.0.8 <br>
 mcr.microsoft.com/azuredocs/azure-vote-front:v1 -> acrakscli00.azurecr.io/azure-vote-front:v1 <br>
+
+11. Test du Cluster AKS <br>
+- Connexion au cluster <br>
+`az aks get-credentials --resource-group "RG-AKS-CLI" --name "AKS-CLI" ` <br>
+- Liste des nodes du cluster <br>
+`kubectl get nodes` <br>
 
 
 
