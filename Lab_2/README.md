@@ -5,6 +5,7 @@ Remarque: Il n'est pas possible de le faire dans la console.
 
 
 1. Prérequis:<br>
+- Authentification `az login`
 - Checkez votre abonnement:<br> `az account list -o table`
 - Option: Pour se mettre dans son abonnement <br> `az account set --subscription 'mon_abonnement'`
 - Checkez les providers: Microsoft.OperationsManagement & Microsoft.OperationalInsights<br>
