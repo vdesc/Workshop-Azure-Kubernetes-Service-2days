@@ -135,7 +135,10 @@ Vérification:<br>
 `kubectl get deployments --all-namespaces=true`<br>
 `kubectl get service --namespace=azure-vote --watch`<br>
 Attendre la récupération de "l'EXTERNAL-IP" & crt+c <br>
-Aller avec votre navigateur sur "l'EXTERNAL-IP"
+Aller avec votre navigateur sur "l'EXTERNAL-IP"<br>
+Voir les logs "d'azure-vote-front" `kubectl logs -l app=azure-vote-front --namespace azure-vote`
+
+13. Fin du Lab 2
 
 
 
