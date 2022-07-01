@@ -56,6 +56,8 @@ az aks create \
     --assign-identity $IDENTITY_ID \
     --yes
 ```
+<img width='800' src='../images/Lab_4/Lab_1_1.png'/>
+
 - Installez l'application azure-vote (option) <br>
 Comme dans le Lab_1 à l'aide de la console Azure :<br>
 -> Dans la ressource du cluster AKS
