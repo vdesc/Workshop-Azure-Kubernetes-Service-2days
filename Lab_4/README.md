@@ -57,6 +57,7 @@ az aks create \
     --yes
 ```
 <img width='800' src='../images/Lab_4/Lab_4_1.png'/>
+Pour l'instant le monitoring n'est pas activé
 
 - Installez l'application azure-vote (option) <br>
 Comme dans le Lab_1 à l'aide de la console Azure :<br>
