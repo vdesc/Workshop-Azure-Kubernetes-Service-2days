@@ -93,6 +93,9 @@ az aks enable-addons \
 <img width='800' src='../images/Lab_4/Lab_4_1.png'/>
 3. Monitoring<br>
 cf: https://docs.microsoft.com/fr-fr/azure/aks/monitor-aks <br>
+- Les Insights<br>
+<img width='800' src='../images/Lab_4/Lab_4_2.png'/>
+Naviguez dans :<br>
 Exemple de requetes "Kusto" : <br>
 ```
 // Container CPU 
