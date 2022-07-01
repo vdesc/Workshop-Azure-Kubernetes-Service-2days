@@ -102,7 +102,11 @@ Naviguez dans :<br>
 
 - Exemple de requetes "Kusto" : <br>
 <img width='800' src='../images/Lab_4/Lab_4_3.png'/>
-Lancer les quatre requêtes "Kusto"
+Lancer les quatre requêtes "Kusto" <br><br>
+- Les alerts
+
+
+
 
 
 
