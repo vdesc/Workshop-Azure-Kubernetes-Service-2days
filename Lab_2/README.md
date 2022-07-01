@@ -132,10 +132,9 @@ Vérification:<br>
 - Déploiement du Front (azure-vote-front)<br>
 `kubectl apply -f Deployment-front.yml --namespace=azure-vote`<br>
 `kubectl apply -f Service-front.yml --namespace=azure-vote`<br>
-Vérification `kubectl get deployments --all-namespaces=true`<br>
-Vérification du service azure-vote-front
-
-
+Vérification:<br>
+`kubectl get deployments --all-namespaces=true`<br>
+`kubectl get service --namespace=azure-vote`<br>
 
 
 
