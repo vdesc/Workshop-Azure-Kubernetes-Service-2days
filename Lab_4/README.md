@@ -79,4 +79,15 @@ az aks enable-addons \
    --workspace-resource-id $AKS_MONITORING_LOG_ANALYTICS_WORKSPACE_ID
 ```
 3. Monitoring<br>
-cf: https://docs.microsoft.com/fr-fr/azure/aks/monitor-aks
+cf: https://docs.microsoft.com/fr-fr/azure/aks/monitor-aks <br>
+Exemple de requetes "Kusto" <br>
+```
+// Container CPU 
+// View all the container CPU usage averaged over 30mins. 
+// To create an alert for this query, click '+ New alert rule'
+//Select the Line chart display option: can we calculate percentage?
+Perf
+| where ObjectName == "K8SContainer" and CounterName == "cpuUsageNanoCores"
+| summarize AvgCPUUsageNanoCores = avg(CounterValue) by bin(TimeGenerated, 30m), InstanceName, _ResourceId
+```
+
