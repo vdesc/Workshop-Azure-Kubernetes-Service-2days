@@ -55,8 +55,10 @@ az aks create \
     --enable-managed-identity \
     --assign-identity $IDENTITY_ID \
     --yes
-
 ```
+- Installez l'application azure-vote (option) <br>
+Comme dans le Lab_1 à l'aide de la console Azure :<br>
+
 2. Activation du monitoring
 - Création d'un "Log Analytics workspace" <br>
 ```
