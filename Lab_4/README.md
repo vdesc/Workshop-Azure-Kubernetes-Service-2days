@@ -92,7 +92,7 @@ az aks enable-addons \
 ```
 <img width='800' src='../images/Lab_4/Lab_4_1.png'/>
 3. Monitoring<br>
-- Les Insights<br>
+- Les Insights
 <img width='800' src='../images/Lab_4/Lab_4_2.png'/>
 Naviguez dans :<br>
 -> Reports -> Node Monitoring -> Disk Capacity <br>
