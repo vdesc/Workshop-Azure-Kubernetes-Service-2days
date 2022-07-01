@@ -62,7 +62,7 @@ SUBNET_ID=$(az network vnet subnet create \
 AKS_MONITORING_LOG_ANALYTICS_WORKSPACE_ID=$(
    az monitor log-analytics workspace create \
       --resource-group "RG-AKS-CLI"  \
-      --workspace-name Workspace-AKS-CLI \
+      --workspace-name "Workspace-AKS-CLI" \
       --location "eastus2" \
       --query id \
       -o tsv
