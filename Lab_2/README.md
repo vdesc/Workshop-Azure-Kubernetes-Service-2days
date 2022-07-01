@@ -126,7 +126,7 @@ liste les Namespace <br>
 - Déploiement du Redis (azure-vote-back) <br>
 `kubectl apply -f Deployment-redis.yml --namespace=azure-vote`<br>
 `kubectl apply -f Service-redis.yml --namespace=azure-vote`<br>
-Vérification <br>
+Vérification:<br>
 `kubectl get deployments --all-namespaces=true`<br>
 `kubectl get service --namespace=azure-vote`<br>
 - Déploiement du Front (azure-vote-front)<br>
