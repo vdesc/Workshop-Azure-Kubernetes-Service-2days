@@ -31,3 +31,30 @@ SUBNET_ID=$(az network vnet subnet create \
     --query id \
     --output tsv)
 ```
+- Création d'une "Managed Identity" <br>
+```
+IDENTITY_ID=$(az identity create \
+    --resource-group "RG-AKS-Lab-4" \
+    --name idAks \
+    --location "eastus2" \
+    --query id \
+    --output tsv)
+```
+Création du "cluster AKS" <br>
+```
+az aks create \
+    --resource-group "RG-AKS-Lab-4" \
+    --name "AKS-Lab-4" \
+    --location "eastus2" \
+    --network-plugin azure \
+    --generate-ssh-keys \
+    --node-count 2 \
+    --enable-cluster-autoscaler \
+    --min-count 1 \
+    --max-count 3 \
+    --vnet-subnet-id $SUBNET_ID \
+    --enable-managed-identity \
+    --assign-identity $IDENTITY_ID \
+    --yes
+
+```
