@@ -102,4 +102,40 @@ Perf
 | where AvgUsedRssMemoryBytes > threshold 
 | render timechart
 ```
+```
+// Avg node CPU usage percentage per minute  
+// For your cluster view avg node CPU usage percentage per minute over the last hour. 
+// To create an alert for this query, click '+ New alert rule'
+//Modify the startDateTime & endDateTime to customize the timerange
+let endDateTime = now();
+let startDateTime = ago(1h);
+let trendBinSize = 1m;
+let capacityCounterName = 'cpuCapacityNanoCores';
+let usageCounterName = 'cpuUsageNanoCores';
+KubeNodeInventory
+| where TimeGenerated < endDateTime
+| where TimeGenerated >= startDateTime
+// cluster filter would go here if multiple clusters are reporting to the same Log Analytics workspace
+| distinct ClusterName, Computer, _ResourceId
+| join hint.strategy=shuffle (
+  Perf
+  | where TimeGenerated < endDateTime
+  | where TimeGenerated >= startDateTime
+  | where ObjectName == 'K8SNode'
+  | where CounterName == capacityCounterName
+  | summarize LimitValue = max(CounterValue) by Computer, CounterName, bin(TimeGenerated, trendBinSize)
+  | project Computer, CapacityStartTime = TimeGenerated, CapacityEndTime = TimeGenerated + trendBinSize, LimitValue
+) on Computer
+| join kind=inner hint.strategy=shuffle (
+  Perf
+  | where TimeGenerated < endDateTime + trendBinSize
+  | where TimeGenerated >= startDateTime - trendBinSize
+  | where ObjectName == 'K8SNode'
+  | where CounterName == usageCounterName
+  | project Computer, UsageValue = CounterValue, TimeGenerated
+) on Computer
+| where TimeGenerated >= CapacityStartTime and TimeGenerated < CapacityEndTime
+| project ClusterName, Computer, TimeGenerated, UsagePercent = UsageValue * 100.0 / LimitValue, _ResourceId
+| summarize AggregatedValue = avg(UsagePercent) by bin(TimeGenerated, trendBinSize), ClusterName, _ResourceId
+```
 
