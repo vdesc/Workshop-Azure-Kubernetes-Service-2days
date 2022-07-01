@@ -56,8 +56,8 @@ az aks create \
     --assign-identity $IDENTITY_ID \
     --yes
 ```
-<img width='800' src='../images/Lab_4/Lab_4_1.png'/>
-Pour l'instant le monitoring n'est pas activé
+<img width='800' src='../images/Lab_4/Lab_4_0.png'/>
+Pour l'instant le monitoring n'est pas activé !<br>
 
 - Installez l'application azure-vote (option) <br>
 Comme dans le Lab_1 à l'aide de la console Azure :<br>
@@ -90,6 +90,7 @@ az aks enable-addons \
    --resource-group "RG-AKS-Lab-4" \
    --workspace-resource-id $AKS_MONITORING_LOG_ANALYTICS_WORKSPACE_ID
 ```
+<img width='800' src='../images/Lab_4/Lab_4_1.png'/>
 3. Monitoring<br>
 cf: https://docs.microsoft.com/fr-fr/azure/aks/monitor-aks <br>
 Exemple de requetes "Kusto" : <br>
