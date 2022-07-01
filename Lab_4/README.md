@@ -70,7 +70,7 @@ Comme dans le Lab_1 à l'aide de la console Azure :<br>
 -> Close
 -> Keep
 
-2. **Activation du monitoring**
+2. **Activation du monitoring**<br>
 **_Création d'un "Log Analytics workspace":_**
 ```
 AKS_MONITORING_LOG_ANALYTICS_WORKSPACE_ID=$(
