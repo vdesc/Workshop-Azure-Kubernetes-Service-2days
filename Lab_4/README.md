@@ -96,7 +96,12 @@ cf: https://docs.microsoft.com/fr-fr/azure/aks/monitor-aks <br>
 - Les Insights<br>
 <img width='800' src='../images/Lab_4/Lab_4_2.png'/>
 Naviguez dans :<br>
-Exemple de requetes "Kusto" : <br>
+-> Reports -> Node Monitoring -> Disk Capacity <br>
+-> Nodes -> aks-nodepool1-xxxxxxxx-vmssxxxxxx -> selectionnez azure-vote-front-xxxxxxxxxxx -> azure-vote-front -> Live Logs (azure-vote dans votre navigateur pour voir des Live Logs) <br>
+-> Controllers -> azure-vote-front-xxxxxxxxx (replicaSet) <br>
+-> Containers <br>
+
+- Exemple de requetes "Kusto" : <br>
 ```
 // Container CPU 
 // View all the container CPU usage averaged over 30mins. 
