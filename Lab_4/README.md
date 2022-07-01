@@ -11,7 +11,6 @@ Savoir utiliser Azure Monitor pour surveiller l’intégrité et les performance
 az group create \
     --location "eastus2" \
     --resource-group "RG-AKS-Lab-4"
-
 ```
 - Déploiement d'un virtual network
 ```
