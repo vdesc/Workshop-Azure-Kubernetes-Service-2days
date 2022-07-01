@@ -78,3 +78,5 @@ az aks enable-addons \
    --resource-group "RG-AKS-Lab-4" \
    --workspace-resource-id $AKS_MONITORING_LOG_ANALYTICS_WORKSPACE_ID
 ```
+3. Monitoring
+cf: https://docs.microsoft.com/fr-fr/azure/aks/monitor-aks
