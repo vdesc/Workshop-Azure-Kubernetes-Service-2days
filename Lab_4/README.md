@@ -70,8 +70,8 @@ Comme dans le Lab_1 à l'aide de la console Azure :<br>
 -> Close
 -> Keep
 
-2. Activation du monitoring
-- Création d'un "Log Analytics workspace" <br>
+2. **Activation du monitoring**
+**_Création d'un "Log Analytics workspace":_**
 ```
 AKS_MONITORING_LOG_ANALYTICS_WORKSPACE_ID=$(
    az monitor log-analytics workspace create \
@@ -82,7 +82,7 @@ AKS_MONITORING_LOG_ANALYTICS_WORKSPACE_ID=$(
       -o tsv
 )
 ```
-- Activation du monitoring du cluster AKS avec le "Log Analytics workspace"
+**_Activation du monitoring du cluster AKS avec le "Log Analytics workspace":_**
 ```
 az aks enable-addons \
    --addons monitoring \
@@ -91,7 +91,7 @@ az aks enable-addons \
    --workspace-resource-id $AKS_MONITORING_LOG_ANALYTICS_WORKSPACE_ID
 ```
 <img width='800' src='../images/Lab_4/Lab_4_1.png'/>
-3. Monitoring<br>
+3. **Monitoring**
 - Les Insights
 <img width='800' src='../images/Lab_4/Lab_4_2.png'/>
 Naviguez dans :<br>
