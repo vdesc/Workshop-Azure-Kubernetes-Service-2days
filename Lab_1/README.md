@@ -78,7 +78,7 @@ Test du cluster AKS
 <img width='800' src='../images/Lab_1/Lab_1_43.png'/>
 <img width='800' src='../images/Lab_1/Lab_1_44.png'/>
 <img width='800' src='../images/Lab_1/Lab_1_45.png'/>
-<img width='800' src='../images/Lab_1/Lab_1_46.png'/><br>
+<img width='800' src='../images/Lab_1/Lab_1_46.png'/>
 Dans votre navigateur allez sur "l'External IP"
 
 5. Supprimer le "Resource group" du cluster AKS<br>
