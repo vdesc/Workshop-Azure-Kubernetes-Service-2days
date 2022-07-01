@@ -104,41 +104,21 @@ az aks create \
     --yes
 
 ```
-
-11. Importation d'image dans votre Azure Container Registry <br>
-- Connexion à l' Azure Container Registry <br>
-`az acr login --name "acrakscli00" --expose-token`
-- Importation d'images: Image Redis & Front <br>
-```
-az acr import \
-  --name "acrakscli00" \
-  --source mcr.microsoft.com/oss/bitnami/redis:6.0.8 \
-  --image redis:6.0.8
-```
-```
-az acr import \
-  --name "acrakscli00" \
-  --source mcr.microsoft.com/azuredocs/azure-vote-front:v1 \
-  --image azure-vote-front:v1
-```
-12. Création du fichier Manifest <br>
-- créez un fichier config.yml (ex : `touch config.yml`) <br>
-- Dans le repo, allez dans le fichier ./Manifest/config.yml, éditez le dans l'interface GitHub en "raw" et copier le contenue dans votre fichier config.yml avec vi ou nano ... <br>
-- Changer IMAGE_REDIS & IMAGE_FRONT avec vos images dans votre ACR <br>
-IMAGE_REDIS -> acrakscli00.azurecr.io/redis:6.0.8 <br>
-IMAGE_FRONT -> acrakscli00.azurecr.io/azure-vote-front:v1 <br>
-
-13. Installation de l'application <br>
-- Connexion au cluster <br>
-`az aks get-credentials --resource-group "RG-AKS-CLI" --name "AKS-CLI" ` <br>
-- Installation de l'application <br>
-`kubectl apply -f config.yml`
-
 11. Test du Cluster AKS <br>
 - Connexion au cluster <br>
 `az aks get-credentials --resource-group "RG-AKS-CLI" --name "AKS-CLI" ` <br>
 - Liste des nodes du cluster <br>
 `kubectl get nodes` <br>
+- Liste les dépoiements dans tous les namespaces <br>
+`kubectl get deployments --all-namespaces=true`
+
+12. Installation d'une application avec les fichiers Manifests
+Dans le répertoire ./Manifest
+
+
+
+
+
 
 
 
