@@ -12,7 +12,7 @@ az group create \
     --location "eastus2" \
     --resource-group "RG-AKS-Lab-4"
 ```
-- Déploiement d'un virtual network
+**_Déploiement d'un virtual network_**
 ```
 az network vnet create \
     --resource-group "RG-AKS-Lab-4" \
@@ -20,7 +20,7 @@ az network vnet create \
     --location "eastus2" \
     --address-prefixes 10.0.0.0/8
 ```
-- Déploiement du subnet
+**_Déploiement du subnet_**
 ```
 SUBNET_ID=$(az network vnet subnet create \
     --resource-group "RG-AKS-Lab-4" \
