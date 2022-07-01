@@ -6,7 +6,7 @@ Savoir utiliser Azure Monitor pour surveiller l’intégrité et les performance
 - configurer des alertes pour être informé de manière proactive des problèmes critiques <br>
 
 1. **Création de l'environnement de démonstration** <br>
-**_Déploiement du "resource group"_**<br>
+**_Déploiement du "resource group"_**
 ```
 az group create \
     --location "eastus2" \
