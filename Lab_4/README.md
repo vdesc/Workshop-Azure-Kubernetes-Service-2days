@@ -6,13 +6,13 @@ Savoir utiliser Azure Monitor pour surveiller l’intégrité et les performance
 - configurer des alertes pour être informé de manière proactive des problèmes critiques <br>
 
 1. **Création de l'environnement de démonstration** <br>
-**_Déploiement du "resource group"_**
+**_Déploiement du "resource group":_**
 ```
 az group create \
     --location "eastus2" \
     --resource-group "RG-AKS-Lab-4"
 ```
-**_Déploiement d'un virtual network_**
+**_Déploiement d'un virtual network:_**
 ```
 az network vnet create \
     --resource-group "RG-AKS-Lab-4" \
@@ -20,7 +20,7 @@ az network vnet create \
     --location "eastus2" \
     --address-prefixes 10.0.0.0/8
 ```
-**_Déploiement du subnet_**
+**_Déploiement du subnet_:**
 ```
 SUBNET_ID=$(az network vnet subnet create \
     --resource-group "RG-AKS-Lab-4" \
@@ -30,7 +30,7 @@ SUBNET_ID=$(az network vnet subnet create \
     --query id \
     --output tsv)
 ```
-**_Création d'une "Managed Identity"_**
+**_Création d'une "Managed Identity":_**
 ```
 IDENTITY_ID=$(az identity create \
     --resource-group "RG-AKS-Lab-4" \
@@ -39,7 +39,7 @@ IDENTITY_ID=$(az identity create \
     --query id \
     --output tsv)
 ```
-**_Création du "cluster AKS"_**
+**_Création du "cluster AKS":_**
 ```
 az aks create \
     --resource-group "RG-AKS-Lab-4" \
@@ -59,7 +59,7 @@ az aks create \
 <img width='800' src='../images/Lab_4/Lab_4_0.png'/>
 Pour l'instant le monitoring n'est pas activé !<br>
 
-- Installez l'application azure-vote (option) <br>
+**_Installez l'application azure-vote:_** <br>
 Comme dans le Lab_1 à l'aide de la console Azure :<br>
 -> Dans la ressource du cluster AKS
 -> Get started
