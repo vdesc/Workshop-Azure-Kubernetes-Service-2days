@@ -80,7 +80,7 @@ az aks enable-addons \
 ```
 3. Monitoring<br>
 cf: https://docs.microsoft.com/fr-fr/azure/aks/monitor-aks <br>
-Exemple de requetes "Kusto" <br>
+Exemple de requetes "Kusto" : <br>
 ```
 // Container CPU 
 // View all the container CPU usage averaged over 30mins. 
@@ -89,5 +89,17 @@ Exemple de requetes "Kusto" <br>
 Perf
 | where ObjectName == "K8SContainer" and CounterName == "cpuUsageNanoCores"
 | summarize AvgCPUUsageNanoCores = avg(CounterValue) by bin(TimeGenerated, 30m), InstanceName, _ResourceId
+```
+```
+// Container memory 
+// View container CPU averaged over 30 mins intervals. 
+// To create an alert for this query, click '+ New alert rule'
+//Select the Line chart display option: can we calculate percentage?
+let threshold = 75000000; // choose a threshold 
+Perf
+| where ObjectName == "K8SContainer" and CounterName == "memoryRssBytes"
+| summarize AvgUsedRssMemoryBytes = avg(CounterValue) by bin(TimeGenerated, 30m), InstanceName, _ResourceId
+| where AvgUsedRssMemoryBytes > threshold 
+| render timechart
 ```
 
