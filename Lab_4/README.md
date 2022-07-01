@@ -40,7 +40,7 @@ IDENTITY_ID=$(az identity create \
     --query id \
     --output tsv)
 ```
-Création du "cluster AKS" <br>
+- Création du "cluster AKS" <br>
 ```
 az aks create \
     --resource-group "RG-AKS-Lab-4" \
