@@ -123,6 +123,16 @@ az aks create \
 `kubectl apply -f ./Namespace` <br>
 liste les Namespace <br>
 `kubectl get namespace`
+- Déploiement du Redis (azure-vote-back) <br>
+`kubectl apply -f Deployment-redis.yml --namespace=azure-vote`<br>
+`kubectl apply -f Service-redis.yml --namespace=azure-vote`<br>
+Vérification `kubectl get deployments --all-namespaces=true`
+- Déploiement du Front (azure-vote-front)<br>
+`kubectl apply -f Deployment-front.yml --namespace=azure-vote`<br>
+`kubectl apply -f Service-front.yml --namespace=azure-vote`<br>
+Vérification `kubectl get deployments --all-namespaces=true`<br>
+Vérification du service azure-vote-front
+
 
 
 
