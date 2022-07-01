@@ -97,66 +97,13 @@ cf: https://docs.microsoft.com/fr-fr/azure/aks/monitor-aks <br>
 <img width='800' src='../images/Lab_4/Lab_4_2.png'/>
 Naviguez dans :<br>
 -> Reports -> Node Monitoring -> Disk Capacity <br>
--> Nodes -> aks-nodepool1-xxxxxxxx-vmssxxxxxx -> selectionnez azure-vote-front-xxxxxxxxxxx -> azure-vote-front -> Live Logs (azure-vote -> dans votre navigateur pour voir des Live Logs) <br>
+-> Nodes -> aks-nodepool1-xxxxxxxx-vmssxxxxxx -> selectionnez azure-vote-front-xxxxxxxxxxx -> azure-vote-front -> Live Logs (azure-vote -> allez sur le site azure-vote dans votre navigateur pour voir des Live Logs) <br>
 -> Controllers -> azure-vote-front-xxxxxxxxx (replicaSet) <br>
 -> Containers <br>
 
 - Exemple de requetes "Kusto" : <br>
-```
-// Container CPU 
-// View all the container CPU usage averaged over 30mins. 
-// To create an alert for this query, click '+ New alert rule'
-//Select the Line chart display option: can we calculate percentage?
-Perf
-| where ObjectName == "K8SContainer" and CounterName == "cpuUsageNanoCores"
-| summarize AvgCPUUsageNanoCores = avg(CounterValue) by bin(TimeGenerated, 30m), InstanceName, _ResourceId
-```
-```
-// Container memory 
-// View container CPU averaged over 30 mins intervals. 
-// To create an alert for this query, click '+ New alert rule'
-//Select the Line chart display option: can we calculate percentage?
-let threshold = 75000000; // choose a threshold 
-Perf
-| where ObjectName == "K8SContainer" and CounterName == "memoryRssBytes"
-| summarize AvgUsedRssMemoryBytes = avg(CounterValue) by bin(TimeGenerated, 30m), InstanceName, _ResourceId
-| where AvgUsedRssMemoryBytes > threshold 
-| render timechart
-```
-```
-// Avg node CPU usage percentage per minute  
-// For your cluster view avg node CPU usage percentage per minute over the last hour. 
-// To create an alert for this query, click '+ New alert rule'
-//Modify the startDateTime & endDateTime to customize the timerange
-let endDateTime = now();
-let startDateTime = ago(1h);
-let trendBinSize = 1m;
-let capacityCounterName = 'cpuCapacityNanoCores';
-let usageCounterName = 'cpuUsageNanoCores';
-KubeNodeInventory
-| where TimeGenerated < endDateTime
-| where TimeGenerated >= startDateTime
-// cluster filter would go here if multiple clusters are reporting to the same Log Analytics workspace
-| distinct ClusterName, Computer, _ResourceId
-| join hint.strategy=shuffle (
-  Perf
-  | where TimeGenerated < endDateTime
-  | where TimeGenerated >= startDateTime
-  | where ObjectName == 'K8SNode'
-  | where CounterName == capacityCounterName
-  | summarize LimitValue = max(CounterValue) by Computer, CounterName, bin(TimeGenerated, trendBinSize)
-  | project Computer, CapacityStartTime = TimeGenerated, CapacityEndTime = TimeGenerated + trendBinSize, LimitValue
-) on Computer
-| join kind=inner hint.strategy=shuffle (
-  Perf
-  | where TimeGenerated < endDateTime + trendBinSize
-  | where TimeGenerated >= startDateTime - trendBinSize
-  | where ObjectName == 'K8SNode'
-  | where CounterName == usageCounterName
-  | project Computer, UsageValue = CounterValue, TimeGenerated
-) on Computer
-| where TimeGenerated >= CapacityStartTime and TimeGenerated < CapacityEndTime
-| project ClusterName, Computer, TimeGenerated, UsagePercent = UsageValue * 100.0 / LimitValue, _ResourceId
-| summarize AggregatedValue = avg(UsagePercent) by bin(TimeGenerated, trendBinSize), ClusterName, _ResourceId
-```
+<img width='800' src='../images/Lab_4/Lab_4_3.png'/>
+Lancer les quatre requêtes "Kusto"
+
+
 
