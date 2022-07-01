@@ -58,6 +58,14 @@ az aks create \
 ```
 - Installez l'application azure-vote (option) <br>
 Comme dans le Lab_1 à l'aide de la console Azure :<br>
+-> Dans la ressource du cluster AKS
+-> Get started
+-> Create
+-> Create a basic web application
+-> Deploy
+-> Attendre le deploiement
+-> Close
+-> Keep
 
 2. Activation du monitoring
 - Création d'un "Log Analytics workspace" <br>
