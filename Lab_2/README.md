@@ -113,12 +113,13 @@ az aks create \
 `kubectl get deployments --all-namespaces=true`
 
 12. Installation d'une application avec les fichiers Manifests<br>
-Dans le répertoire ./Manifest il y a cinq fichiers: <br>
-- `Namespace.yml` (création du namespace)
-- `Deployment-redis.yml` (déploiement d'une base Redis)
-- `Service-redis.yml` (déploiement du service Redis)
-- `Deployment-front.yml` (déploiement du Front)
-- `Service-front.yml` (déploiement du service Front)
+- Dans le répertoire ./Manifest il y a cinq fichiers: <br>
+`Namespace.yml` (création du namespace) <br>
+`Deployment-redis.yml` (déploiement d'une base Redis) <br>
+`Service-redis.yml` (déploiement du service Redis) <br>
+`Deployment-front.yml` (déploiement du Front) <br>
+`Service-front.yml` (déploiement du service Front) <br>
+- Créez dans votre environnemnt (Azure Cloud Shell ou Bash) les cinq fichiers (ex: touch Namespace.yml)
 
 
 
