@@ -119,7 +119,10 @@ az aks create \
 `Service-redis.yml` (déploiement du service Redis) <br>
 `Deployment-front.yml` (déploiement du Front) <br>
 `Service-front.yml` (déploiement du service Front) <br>
-- Créez dans votre environnemnt (Azure Cloud Shell ou Bash) les cinq fichiers (ex: touch Namespace.yml)
+- Création du Namespace <br>
+`kubectl apply -f ./Namespace` <br>
+liste les Namespace <br>
+`kubectl get namespace`
 
 
 
