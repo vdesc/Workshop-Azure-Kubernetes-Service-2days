@@ -120,7 +120,7 @@ az aks create \
 `Deployment-front.yml` (déploiement du Front) <br>
 `Service-front.yml` (déploiement du service Front) <br>
 - Création du Namespace <br>
-`kubectl apply -f ./Namespace` <br>
+`kubectl apply -f ./Namespace.yml` <br>
 liste les Namespace <br>
 `kubectl get namespace`
 - Déploiement du Redis (azure-vote-back) <br>
