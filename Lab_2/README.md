@@ -5,7 +5,7 @@ Remarque: Il n'est pas possible de le faire dans la console.
 
 
 1. Prérequis:<br>
-- Authentification `az login`
+- Authentification `az login` (pas nécessaire avec Azure Cloud Shell)
 - Checkez votre abonnement:<br> `az account list -o table`
 - Option: Pour se mettre dans son abonnement <br> `az account set --subscription 'mon_abonnement'`
 - Checkez les providers: Microsoft.OperationsManagement & Microsoft.OperationalInsights<br>
@@ -112,8 +112,13 @@ az aks create \
 - Liste les dépoiements dans tous les namespaces <br>
 `kubectl get deployments --all-namespaces=true`
 
-12. Installation d'une application avec les fichiers Manifests
-Dans le répertoire ./Manifest
+12. Installation d'une application avec les fichiers Manifests<br>
+Dans le répertoire ./Manifest il y a cinq fichiers: <br>
+- `Namespace.yml` (création du namespace)
+- `Deployment-redis.yml` (déploiement d'une base Redis)
+- `Service-redis.yml` (déploiement du service Redis)
+- `Deployment-front.yml` (déploiement du Front)
+- `Service-front.yml` (déploiement du service Front)
 
 
 
