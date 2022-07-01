@@ -64,7 +64,7 @@ az aks create \
 AKS_MONITORING_LOG_ANALYTICS_WORKSPACE_ID=$(
    az monitor log-analytics workspace create \
       --resource-group "RG-AKS-CLI"  \
-      --workspace-name Workspace-AKS-CLI \
+      --workspace-name "Workspace-AKS-Lab-4" \
       --location "eastus2" \
       --query id \
       -o tsv
