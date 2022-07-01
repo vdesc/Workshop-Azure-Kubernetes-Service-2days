@@ -1,7 +1,6 @@
 # Lab 2 : création d'un cluster plus avancé via Azure CLI, connexion et utilisation basique de kubectl
 ## Objectif:
-L'objectif de ce Lab 2, c'est de déployer un cluster AKS en Az CLI avec une configuration de type de "NAT Gateway", c'est à dire, d'avoir le contrôle de l'IP publique sortantes des "Node Pool". L'objectif de ce Lab 2, c'est également de manipuler avec KUBECTL (Kubernetes command-line tool)<br>
-Remarque: Il n'est pas possible de le faire dans la console. 
+L'objectif de ce Lab 2, c'est de déployer un cluster AKS en Az CLI avec une configuration de type de "NAT Gateway", c'est à dire, d'avoir le contrôle de l'IP publique sortantes des "Node Pool" (Remarque: Il n'est pas possible de le faire dans la console). L'objectif de ce Lab 2, c'est également de manipuler avec KUBECTL (Kubernetes command-line tool)<br> 
 
 
 1. Prérequis:<br>
