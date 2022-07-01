@@ -134,7 +134,11 @@ Vérification:<br>
 `kubectl apply -f ./Service-front.yml --namespace=azure-vote`<br>
 Vérification:<br>
 `kubectl get deployments --all-namespaces=true`<br>
-`kubectl get service --namespace=azure-vote`<br>
+`kubectl get service --namespace=azure-vote --watch`<br>
+Attendre la récupération de "l'EXTERNAL-IP" & crt+c <br>
+Aller avec votre navigateur sur "l'EXTERNAL-IP"
+
+
 
 
 
