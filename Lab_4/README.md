@@ -59,7 +59,7 @@ az aks create \
 
 ```
 2. Activation du monitoring
-- Création d'un "Workspace Logs analytic <br>
+- Création d'un "Log Analytics workspace" <br>
 ```
 AKS_MONITORING_LOG_ANALYTICS_WORKSPACE_ID=$(
    az monitor log-analytics workspace create \
@@ -69,4 +69,12 @@ AKS_MONITORING_LOG_ANALYTICS_WORKSPACE_ID=$(
       --query id \
       -o tsv
 )
+```
+- Activation du monitoring du cluster AKS avec le "Log Analytics workspace"
+```
+az aks enable-addons \
+   --addons monitoring \
+   --name "AKS-Lab-4" \
+   --resource-group "RG-AKS-Lab-4" \
+   --workspace-resource-id $AKS_MONITORING_LOG_ANALYTICS_WORKSPACE_ID
 ```
