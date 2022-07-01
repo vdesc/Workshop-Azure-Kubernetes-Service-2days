@@ -101,9 +101,8 @@ az aks create \
     --outbound-type userAssignedNATGateway \
     --enable-managed-identity \
     --assign-identity $IDENTITY_ID \
-    --enable-addons monitoring \
-    --workspace-resource-id ${AKS_MONITORING_LOG_ANALYTICS_WORKSPACE_ID} \
-    --attach-acr "acrakscli00"
+    --yes
+
 ```
 
 11. Importation d'image dans votre Azure Container Registry <br>
