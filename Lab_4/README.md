@@ -91,7 +91,7 @@ az aks enable-addons \
    --workspace-resource-id $AKS_MONITORING_LOG_ANALYTICS_WORKSPACE_ID
 ```
 <img width='800' src='../images/Lab_4/Lab_4_1.png'/><br>
-3. **Monitoring**
-**_Les Insights_**
+3. **Monitoring**<br>
+**_Les Insights_**<br>
 <img width='800' src='../images/Lab_4/Lab_4_2.png'/>
 
