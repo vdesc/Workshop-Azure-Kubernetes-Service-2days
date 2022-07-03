@@ -98,7 +98,7 @@ Naviguez dans :<br>
 -> Reports -> Node Monitoring -> Disk Capacity <br>
 -> Nodes -> aks-nodepool1-xxxxxxxx-vmssxxxxxx -> selectionnez azure-vote-front-xxxxxxxxxxx -> azure-vote-front -> Live Logs (azure-vote -> allez sur le site azure-vote dans votre navigateur pour voir des Live Logs) <br>
 -> Controllers -> azure-vote-front-xxxxxxxxx (replicaSet) <br>
--> Containers <br><br>
+-> Containers <br>
 **_Exemple de requetes "Kusto":_**<br>
 <img width='800' src='../images/Lab_4/Lab_4_3.png'/>
 Lancer les quatre requêtes "Kusto" <br><br>
