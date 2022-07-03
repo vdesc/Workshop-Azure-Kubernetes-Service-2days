@@ -92,5 +92,6 @@ az aks enable-addons \
 ```
 <img width='800' src='../images/Lab_4/Lab_4_1.png'/><br>
 3. **Monitoring**
-
+**_Les Insights_**
+<img width='800' src='../images/Lab_4/Lab_4_2.png'/>
 
