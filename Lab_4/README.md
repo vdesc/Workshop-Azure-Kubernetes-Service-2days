@@ -100,6 +100,6 @@ Naviguez dans :<br>
 -> Controllers -> azure-vote-front-xxxxxxxxx (replicaSet) <br>
 -> Containers <br>
 **_Exemple de requetes "Kusto":_**<br>
-<img width='800' src='../images/Lab_4/Lab_4_3.png'/>
-Lancer les quatre requêtes "Kusto" <br><br>
+<img width='800' src='../images/Lab_4/Lab_4_3.png'/><br>
+Lancer les quatre requêtes "Kusto" <br>
 
