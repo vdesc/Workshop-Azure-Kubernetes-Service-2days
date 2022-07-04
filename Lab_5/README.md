@@ -54,7 +54,7 @@ az aks create \
     --yes
 ```
 Dans ce scénario on intègre une Azure Container Registry avec un cluster AKS déjà déployé. Cela aurait pu être fait lors de la création du cluster<br>
-**_Création de l'"Azure Container Registry":_**
+2. **_Création de l'"Azure Container Registry":_**
 ```
 az acr create \
   --name "acrakslab5" \
@@ -70,4 +70,5 @@ az aks update \
 ```
 Allez dans l'Azure Container Registry créée : <br>
 <img width='800' src='../images/Lab_5/Lab_5_0.png'/>
-<img width='800' src='../images/Lab_5/Lab_5_1.png'/>Ò
+<img width='800' src='../images/Lab_5/Lab_5_1.png'/><br>
+On constate que le pool agent à le rôle "ACRPull" pour venir récupérer des images dans l'Azure Container Registry
