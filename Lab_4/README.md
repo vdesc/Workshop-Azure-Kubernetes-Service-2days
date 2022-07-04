@@ -103,4 +103,4 @@ Naviguez dans :<br>
 <img width='800' src='../images/Lab_4/Lab_4_3.png'/><br>
 Lancer les quatre requêtes "Kusto" <br>
 **_Alerts**<br>
-
+<img width='800' src='../images/Lab_4/Lab_4_4.png'/><br>
