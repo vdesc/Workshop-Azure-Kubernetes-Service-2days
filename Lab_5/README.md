@@ -92,12 +92,13 @@ az aks get-credentials \
 ```
 
 Créez un fichier "acr-nginx.yml" (ex: `touch acr-ngnix.yml`)<br>
+Copiez le contenu du fichier ci-dessous (vi ou nano ...)<br>
 ```
 ---
 apiVersion: v1
 kind: Namespace
 metadata:
-   name: nginx0-Namespace
+   name: nginx0namespace
 spec:
   finalizers:
     - kubernetes
@@ -106,10 +107,11 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: nginx0-deployment
+  namespace: nginx0namespace
   labels:
     app: nginx0-deployment
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: nginx0
@@ -120,9 +122,32 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: <acr-name>.azurecr.io/nginx:v1
+        image: acrakslab5.azurecr.io/nginx:v1
         ports:
         - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx0-service
+  namespace: nginx0namespace
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 80
+  selector:
+    app: nginx0
 ```
+Exécutez ce déploiement dans votre cluster AKS <br>
+`kubectl apply -f ./acr-nginx.yml`<br>
+Test du déploiement: <br>
+`kubectl get pods --namespace=nginx0namespace`<br>
+`kubectl get service --namespace=nginx0namespace`<br>
+`curl http://<EXTERNAL-IP>`<br>
 
-
+4. **_Fin du Lab 5_**
+```
+az group delete \
+   --name "RG-AKS-Lab-5" \
+   --yes
+```
