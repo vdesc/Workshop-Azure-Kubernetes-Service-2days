@@ -140,7 +140,7 @@ spec:
 ```
 Exécutez ce déploiement dans votre cluster AKS <br>
 `kubectl apply -f ./acr-nginx.yml`<br>
-Test du déploiement: <br>
+Tests du déploiement: <br>
 `kubectl get pods --namespace=nginx0namespace`<br>
 `kubectl get service --namespace=nginx0namespace`<br>
 `curl http://<EXTERNAL-IP>`<br>
