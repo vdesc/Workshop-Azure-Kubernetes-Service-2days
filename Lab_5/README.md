@@ -73,7 +73,7 @@ Allez dans l'Azure Container Registry créée : <br>
 <img width='800' src='../images/Lab_5/Lab_5_1.png'/><br>
 On constate que le pool agent à le rôle "ACRPull" pour venir récupérer des images dans l'Azure Container Registry<br>
 
-.3 **_Importer une image dans votre instance ACR_**
+3. **_Importer une image dans votre instance ACR_**
 ```
 az acr import \
   --name "acrakslab5" \
@@ -83,6 +83,46 @@ az acr import \
 <img width='800' src='../images/Lab_5/Lab_5_2.png'/><br>
 <img width='800' src='../images/Lab_5/Lab_5_3.png'/><br>
 
+4. **_Déployer l’exemple d’image depuis ACR vers AKS_**
+**Identification**<br>
+```
+az aks get-credentials \
+  --resource-group "RG-AKS-Lab-5" \
+  --name "AKS-Lab-5"
+```
 
+Créez un fichier "acr-nginx.yml" (ex: `touch acr-ngnix.yml`)<br>
+```
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+   name: nginx0-Namespace
+spec:
+  finalizers:
+    - kubernetes
+---    
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx0-deployment
+  labels:
+    app: nginx0-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: nginx0
+  template:
+    metadata:
+      labels:
+        app: nginx0
+    spec:
+      containers:
+      - name: nginx
+        image: <acr-name>.azurecr.io/nginx:v1
+        ports:
+        - containerPort: 80
+```
 
 
