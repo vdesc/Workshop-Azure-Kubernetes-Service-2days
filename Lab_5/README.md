@@ -71,4 +71,13 @@ az aks update \
 Allez dans l'Azure Container Registry créée : <br>
 <img width='800' src='../images/Lab_5/Lab_5_0.png'/>
 <img width='800' src='../images/Lab_5/Lab_5_1.png'/><br>
-On constate que le pool agent à le rôle "ACRPull" pour venir récupérer des images dans l'Azure Container Registry
+On constate que le pool agent à le rôle "ACRPull" pour venir récupérer des images dans l'Azure Container Registry<br>
+
+.3 **_Importer une image dans votre instance ACR_**
+```
+az acr import \
+  --name "acrakslab5" \
+  --source docker.io/library/nginx:latest \
+  --image nginx:v1
+```
+
