@@ -110,4 +110,13 @@ Lancer les quatre requêtes "Kusto" <br>
 <img width='800' src='../images/Lab_4/Lab_4_8.png'/><br>
 <img width='800' src='../images/Lab_4/Lab_4_9.png'/><br>
 <img width='800' src='../images/Lab_4/Lab_4_10.png'/><br>
+<img width='800' src='../images/Lab_4/Lab_4_11.png'/><br>
+<img width='800' src='../images/Lab_4/Lab_4_12.png'/><br>
+<img width='800' src='../images/Lab_4/Lab_4_13.png'/><br>
+<img width='800' src='../images/Lab_4/Lab_4_14.png'/><br>
+<img width='800' src='../images/Lab_4/Lab_4_15.png'/><br>
+<img width='800' src='../images/Lab_4/Lab_4_16.png'/><br>
+<img width='800' src='../images/Lab_4/Lab_4_17.png'/><br>
+<img width='800' src='../images/Lab_4/Lab_4_18.png'/><br>
+<img width='800' src='../images/Lab_4/Lab_4_19.png'/><br>
 
