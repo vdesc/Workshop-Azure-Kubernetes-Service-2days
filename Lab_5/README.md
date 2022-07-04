@@ -53,7 +53,7 @@ az aks create \
     --assign-identity $IDENTITY_ID \
     --yes
 ```
-Danc ce scénario on intègre une Azure Container Registry avec un cluster AKS déjà déployé. Cela aurait pu être fait à la création du cluster<br>
+Danc ce scénario on intègre une Azure Container Registry avec un cluster AKS déjà déployé. Cela aurait pu être fait lors de la création du cluster<br>
 **_Création de l'"Azure Container Registry":_**
 ```
 az acr create \
