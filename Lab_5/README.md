@@ -80,4 +80,9 @@ az acr import \
   --source docker.io/library/nginx:latest \
   --image nginx:v1
 ```
+<img width='800' src='../images/Lab_5/Lab_5_2.png'/><br>
+<img width='800' src='../images/Lab_5/Lab_5_3.png'/><br>
+
+
+
 
