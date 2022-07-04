@@ -64,7 +64,7 @@ az acr create \
 **_Intégration du cluster AKS à l'"Azure Container Registry":_**
 ```
 az aks update \
-   --nane "AKS-Lab-5" \
+   --name "AKS-Lab-5" \
    --resource-group "RG-AKS-Lab-5" \
    --attach-acr "acrakslab5"
 ```
