@@ -1,4 +1,4 @@
-# Lab 7 - Utilisation du Secret Store CSI Driver avec Azure Key Vault 
+# Lab 7 - Utilisation du Secret Store CSI Driver avec Azure Key Vault
 
 ## Objectifs
 Utiliser le  provider Azure Key Vault pour le Secret Store CSI Driver afin d'intégrer Azure Key Vault comme magasin de secrets dans un cluster AKs via les volumes CSI.
@@ -23,16 +23,16 @@ az login
 
 az group create --name "RG-Lab7" --location "eastus2"
 
-az aks create -n "myCluster" -g "RG-Lab7" --network-plugin azure --enable-addons azure-keyvault-secrets-provider --enable-managed-identity  --generate-ssh-keys 
+az aks create -n "myCluster" -g "RG-Lab7" --network-plugin azure --enable-addons azure-keyvault-secrets-provider --enable-managed-identity --location "eastus2"  
 
-az aks get-credential -n "myCluster" -g "RG-Lab7" 
+az aks get-credentials -n "myCluster" -g "RG-Lab7" 
 ```
 
 Une user-managed identity appelée *azurekeyvaultsecretsprovider-*  a été créée par le add-on. Elle va permettre d'accéder à des ressources Azure.
 
 ## Vérification de la bonne installation de l'Azure Key Vault Provider for Secret Store CSI Driver
 ```bash
-kubectl get pods -n kube-system -l 'app in (secrets-store-csi-driver, secrets-store-provider-azure)'
+kubectl get pods -n kube-system -l 'app in (secrets-store-csi-driver, secrets-store-provider-azure)' -o wide
 ```
 
 Pour chaque noeud du cluster, Il doit y avoir un pod Secret Store CSI driver et un pod Azure Key Vault Provider 
@@ -50,6 +50,7 @@ az keyvault list -g "RG-Lab7"
 ```
 
 Créer un secret dans l'Azure Key Vault. 
+
 Rappel : un secret dans Azure Key Vault est une chaine de caractères. Les secrets d'Azure Key Vault peuvent servir pour stocker des mots de passe, des chaines de connexion, des clés d'API... 
 
 ```bash
@@ -74,7 +75,7 @@ Pour avoir l'ensemble des informations sur le cluster, exécuter la commande sui
 az aks show --resource-group "RG-Lab7" --name "myCluster" -o jsonc
 ```
 
-Noter la présence d'une user-managed identity pour le secret store Driver
+Parcourir le résultat de la commande et noter la présence d'une user-managed identity pour le secret store Driver
 
 Récupérer l'id de la managed identity associée à l'Azure Key Vault Secret Provider
 
@@ -121,7 +122,13 @@ az keyvault set-policy -n <keyvault-name> --certificate-permissions get --spn <i
 
 ## Création d'une SecretProviderClass
 
-Créer un fichier SecretProviderClass.yaml et copier coller le contenu ci dessous dedans. 
+Récupérer l'Id du tenant associé à la subscription Azure
+
+```bash
+az account list -o jsonc
+```
+
+Editer le fichier SecretProviderClass.yaml  
 
 ```yml
 # This is a SecretProviderClass example using user-assigned identity to access your key vault
@@ -151,8 +158,8 @@ spec:
 ```
 
 Puis modifier les valeurs avec :
-- le nom du keyvault
 - l'id de la user managed identity
+- le nom du keyvault
 - le nom du secret : MonSecret
 - l'id du tenant (=ID de l'Azure Active Directory)
 
@@ -200,6 +207,8 @@ Sauvegarder les modifications et appliquer le manifest.
 
 ```bash 
 kubectl apply -f pod.yaml 
+
+kubectl get pods
 ```
 
 Une fois que le pod est démarré, le secret doit être monté dans le chemin configuré précédemment
