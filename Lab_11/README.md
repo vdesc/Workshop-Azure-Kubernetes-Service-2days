@@ -1,0 +1,69 @@
+## Lab 11 : Pipeline avec Kustomize
+## Objectif:
+kustomize est un outil Kubernetes qui vous permet de personnaliser les fichiers YAML bruts de vos ressources k8s d'origine à des fins multiples (ex: différents environnements, différentes variables/répliques/ressources informatique, etc ...), en laissant les fichiers YAML d'origines intacts et utilisables tel quel.<br>
+L'objectif de ce Lab 11, c'est d'utiliser Kustomize pour générer plusieurs manifestes à partir d'une seule configuration <br>
+1. **Création de l'environnement de démonstration** <br>
+**_Déploiement du "resource group":_**
+```
+az group create \
+    --location "eastus2" \
+    --resource-group "RG-AKS-Lab-11"
+```
+**_Déploiement d'un virtual network:_**
+```
+az network vnet create \
+    --resource-group "RG-AKS-Lab-11" \
+    --name AKSvnet \
+    --location "eastus2" \
+    --address-prefixes 10.0.0.0/8
+```
+**_Déploiement du subnet_:**
+```
+SUBNET_ID=$(az network vnet subnet create \
+    --resource-group "RG-AKS-Lab-11" \
+    --vnet-name AKSvnet \
+    --name subnetAKS \
+    --address-prefixes 10.240.0.0/16 \
+    --query id \
+    --output tsv)
+```
+**_Création d'une "Managed Identity":_**
+```
+IDENTITY_ID=$(az identity create \
+    --resource-group "RG-AKS-Lab-11" \
+    --name idAks \
+    --location "eastus2" \
+    --query id \
+    --output tsv)
+```
+**_Création du "cluster AKS":_**
+```
+az aks create \
+    --resource-group "RG-AKS-Lab-11" \
+    --name "AKS-Lab-11" \
+    --location "eastus2" \
+    --network-plugin azure \
+    --generate-ssh-keys \
+    --node-count 2 \
+    --enable-cluster-autoscaler \
+    --min-count 1 \
+    --max-count 3 \
+    --vnet-subnet-id $SUBNET_ID \
+    --enable-managed-identity \
+    --assign-identity $IDENTITY_ID \
+    --yes
+```
+1. **Sans Kustomize** <br>
+Regarder les manifestes:<br>
+- ./Manifest/base/deployment.yaml
+- ./Manifest/base/service.yaml
+
+Création des ressources:<br>
+`az aks get-credentials --resource-group RG-AKS-Lab-11 --name AKS-Lab-11`
+`kubectl apply -f base/`
+Vérifications:
+`kubectl get deploy`<br>
+`kubectl get service`<br>
+test
+
+
