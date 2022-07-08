@@ -80,6 +80,35 @@ deployment.apps "http-test-kustomize" deleted
 service "http-test-kustomize" deleted
 ```
 3. **Avec Kustomize**<br>
+Modifier les fichiers `deployment.yaml` et `service.yaml`<br>
+Pour le fichier `deployment.yaml`:<br>
+```
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: http-test-kustomize
+spec:
+  template:
+    spec:
+      containers:
+      - name: http-test-kustomize
+        image: nginx
+        ports:
+        - name: http
+          containerPort: 8080
+          protocol: TCP
+```
+Pour le fichier `service.yaml`:<br>
+```
+apiVersion: v1
+kind: Service
+metadata:
+  name: http-test-kustomize
+spec:
+  ports:
+    - name: http
+      port: 8080
+```
 
 
 
