@@ -1,7 +1,7 @@
 ## Lab 11 : Pipeline avec Kustomize
 ## Objectif:
 kustomize est un outil Kubernetes qui vous permet de personnaliser les fichiers YAML bruts de vos ressources k8s d'origine à des fins multiples (ex: différents environnements, différentes variables/répliques/ressources informatique, etc ...), en laissant les fichiers YAML d'origines intacts et utilisables tel quel.<br>
-L'objectif de ce Lab 11, c'est d'utiliser Kustomize pour générer plusieurs manifestes à partir d'une seule configuration. <br>
+L'objectif de ce Lab 11, c'est d'utiliser Kustomize pour générer un fichier de configuration avec des paramètres à partir de plusieurs fichiers manisfestes sans les modifier. <br>
 https://kubectl.docs.kubernetes.io/guides/introduction/kustomize/
 1. **Création de l'environnement de démonstration** <br>
 **_Déploiement du "resource group":_**
@@ -64,7 +64,7 @@ Tout le lab se fera depuis ./Manifest
 
 Création des ressources:<br>
 `az aks get-credentials --resource-group RG-AKS-Lab-11 --name AKS-Lab-11`<br>
-`kubectl apply -f base/`(Vous serez peut être obliger de lancer deux fois la commande)<br>
+`kubectl apply -f base/`(Vous serez peut être obligé de lancer deux fois la commande)<br>
 Vérifications:<br>
 `kubectl get deploy --namespace test-kustomize`<br>
 ```
@@ -145,14 +145,15 @@ On doit avoir une arborescence:<br>
 ```
 Vérification du yaml qui sera généré:<br>
 `kubectl kustomize ./base`<br>
-Les Labels,Selectors et le namespace on été généré ...
-Application de la configuration<br>
-`kubectl apply -k base`
+Les Labels,Selectors et le namespace on été généré ...<br>
+Application de la configuration:<br>
+`kubectl apply -k base`<br>
 Test:<br>
 `kubectl get service --namespace test-kustomize`<br>
 `curl htt://<EXTERNAL-IP>`
 
 3. **Fin du Lab**<br>
+az group delete --name RG-AKS-Lab-11
 
 
 
