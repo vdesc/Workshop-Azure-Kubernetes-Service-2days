@@ -1,7 +1,8 @@
 ## Lab 11 : Pipeline avec Kustomize
 ## Objectif:
 kustomize est un outil Kubernetes qui vous permet de personnaliser les fichiers YAML bruts de vos ressources k8s d'origine à des fins multiples (ex: différents environnements, différentes variables/répliques/ressources informatique, etc ...), en laissant les fichiers YAML d'origines intacts et utilisables tel quel.<br>
-L'objectif de ce Lab 11, c'est d'utiliser Kustomize pour générer plusieurs manifestes à partir d'une seule configuration <br>
+L'objectif de ce Lab 11, c'est d'utiliser Kustomize pour générer plusieurs manifestes à partir d'une seule configuration. <br>
+https://kubectl.docs.kubernetes.io/guides/introduction/kustomize/
 1. **Création de l'environnement de démonstration** <br>
 **_Déploiement du "resource group":_**
 ```
@@ -57,6 +58,8 @@ az aks create \
 Regarder les manifestes:<br>
 - ./Manifest/base/deployment.yaml
 - ./Manifest/base/service.yaml
+- ./Manifest/base/namespace.yaml
+Tout le lab se fera depuis ./Manifest
 
 Création des ressources:<br>
 `az aks get-credentials --resource-group RG-AKS-Lab-11 --name AKS-Lab-11`<br>
@@ -111,19 +114,32 @@ spec:
 ```
 Les fichiers ne seront jamais modifiés, on applique simplement une personnalisation au-dessus d'eux grâce à l'outil kustomize pour créer de nouvelles définitions des ressources.<br>
 Creez un fichier `kustomization.yaml`au même niveau que `service.yaml` et `deployment.yaml`<br>
-`kustomization.yaml`<br>
+`kustomization.yaml`:<br>
 ```
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
+namespace: test-kustomize
 commonLabels:
   app: http-test-kustomize
 
 resources:
   - service.yaml
   - deployment.yaml
+  - namespace.yaml
 ```
-
+On doit avoir une arborescence:<br>
+```
+|__ base
+    |__ deployment.yaml
+    |__ namespace.yaml
+    |__ service.yaml
+    |__ kustomization.yaml
+```
+Vérification du yaml qui sera généré:<br>
+`kubectl kustomize ./base`
+Application de la configuration<br>
+`kubectl apply -k base`
 
 
 
