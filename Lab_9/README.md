@@ -65,5 +65,5 @@ az aks create \
 API blue: <br>
 Allez dans ./API_Blue et lancer cette commande<br>
 ```
-az acr build -t api/blue:1.0.0 -r "acrlab009" .
+az acr build -t api/api:1.0.0 -r "acrlab009" .
 ```
