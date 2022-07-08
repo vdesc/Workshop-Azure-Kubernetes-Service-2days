@@ -46,7 +46,7 @@ az keyvault create -n "Choisirunnomunique" -g "RG-Lab7" -l "eastus2"
 Vérifier que le keyvault est bien créé:
 
 ```bash
-az keyvault list -g "RG-Lab7"
+az keyvault list -g "RG-Lab7 -o table"
 ```
 
 Créer un secret dans l'Azure Key Vault. 
@@ -83,19 +83,10 @@ Récupérer l'id de la managed identity associée à l'Azure Key Vault Secret Pr
 az aks show -g "RG-Lab7" -n "myCluster" --query addonProfiles.azureKeyvaultSecretsProvider.identity.clientId -o tsv
 ```
 
-
-
-
-Récupérer la valeur du clientId de la user-managed identity de l'agent pool myCluster-agentpool
-
-Pour obtenir l'Id de la managed system-assigned Identity, exécuter la commande suivante :
-
-```bash 
-az aks show --resource-group "RG-Lab7" --name "myCluster" -o jsonc | grep principalId
-```
+La liste des user managed identities associées à un VMSS est disponible via la commande:
 
 ```bash
-az vmss identity show -g MC_RG-Lab7_myCluster_eastus2  -n aks-nodepool1-32582820-vmss -o jsonc
+az vmss identity show -g MC_RG-Lab7_myCluster_eastus2  -n aks-nodepool1-XXXXXXX-vmss -o jsonc
 ```
 
 
@@ -108,7 +99,7 @@ Pour ce lab, le but est d'utiliser un secret.
 
 ```bash
 # set policy to access keys in your key vault
-az keyvault set-policy -n "<keyvault-name>" --key-permissions get --spn "<identity-client-id>"
+az keyvault set-policy -n "<keyvault-name>" --secret-permissions get --spn "<identity-client-id>"
 ```
 
 Si il y a besoin d'accéder à des clés ou des certificats dans l'Azure Key Vault, alors exécuter les commandes suivantes :
@@ -158,7 +149,7 @@ spec:
 ```
 
 Puis modifier les valeurs avec :
-- l'id de la user managed identity
+- l'id de la user managed identity (client-id)
 - le nom du keyvault
 - le nom du secret : MonSecret
 - l'id du tenant (=ID de l'Azure Active Directory)
@@ -173,9 +164,8 @@ kubectl apply -f SecretProviderClass.yaml
 
 ## Vérification du bon fonctionnement du CSI Secret Store Driver
 
-Créer un nouveau manifest Kubernetes pod.yaml
+Appliquer le manifest Kubernetes pod.yaml
 
-Copier/Coller le contenu ci dessous:\
 
 ```yaml
 # This is a sample pod definition for using SecretProviderClass and the user-assigned identity to access your key vault
@@ -203,7 +193,6 @@ spec:
           secretProviderClass: "azure-kvname-user-msi"
 ```
 
-Sauvegarder les modifications et appliquer le manifest.
 
 ```bash 
 kubectl apply -f pod.yaml 
@@ -211,14 +200,14 @@ kubectl apply -f pod.yaml
 kubectl get pods
 ```
 
-Une fois que le pod est démarré, le secret doit être monté dans le chemin configuré précédemment
+Une fois que le pod est démarré (état Running), le secret doit être monté dans le chemin configuré précédemment
 
 ```bash
 ## show secrets held in secrets-store
-kubectl exec busybox-secrets-store-inline -- ls /mnt/secrets-store/
+kubectl exec busybox-secrets-store-inline-user-msi -- ls /mnt/secrets-store/
 
 ## print a test secret 'ExampleSecret' held in secrets-store
-kubectl exec busybox-secrets-store-inline -- cat /mnt/secrets-store/MonSecret
+kubectl exec busybox-secrets-store-inline-user-msi -- cat /mnt/secrets-store/MonSecret
 ```
 
 Lectures additionnelles:
