@@ -28,14 +28,15 @@ Découverte de Kubernetes dans Azure avec des exercices pratiques
 
 
 ## Jour 2
-### matinée
+### Matinée
 - Gestion des montées de version :  du cluster à l'application 
 - Lab 8 : Montées de versions dans AKS
 - Lab 9 : Montées de version de l'application  => Rolling update, Blue Green, Canary
-- Automatisation des déploiements applicatifs et configurations Kubernetes : Deployment Center, Pipelines avec GitHub, GitOps, Kustomize
-- Lab 10 : Pipeline CI/CD Kubernetes YAML 
-### après midi
-- Lab 11 : Pipeline avec Kustomize
+- Automatisation des déploiements applicatifs et configurations Kubernetes : Deployment Center, Pipelines avec GitHub, GitOps
+- Lab 10 : Pipeline basique CI/CD Kubernetes YAML 
+### Après midi
+- Introduction à Kustomize
+- Lab 11 : Introduction à Kustomize et Pipeline avec Kustomize
 - Lab 12 : GitOps avec AKS et Fluxv2 
 - Autoscaling quelles options ? HPA, KEDA, Virtual Kubelet...
 - Conclusion - Tour de table
