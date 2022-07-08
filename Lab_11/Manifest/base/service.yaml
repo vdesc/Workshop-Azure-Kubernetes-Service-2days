@@ -4,9 +4,8 @@ metadata:
   name: http-test-kustomize
   namespace: test-kustomize
 spec:
-  type: LoadBalancer
   ports:
     - name: http
-      port: 8080
+      port: 80
   selector:
     app: http-test-kustomize

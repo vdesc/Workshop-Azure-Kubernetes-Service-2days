@@ -64,23 +64,27 @@ Tout le lab se fera depuis ./Manifest
 
 Création des ressources:<br>
 `az aks get-credentials --resource-group RG-AKS-Lab-11 --name AKS-Lab-11`<br>
-`kubectl apply -f base/`<br>
+`kubectl apply -f base/`(Vous serez peut être obliger de lancer deux fois la commande)<br>
 Vérifications:<br>
-`kubectl get deploy`<br>
+`kubectl get deploy --namespace test-kustomize`<br>
 ```
 NAME                  READY   UP-TO-DATE   AVAILABLE   AGE
 http-test-kustomize   1/1     1            1           13m
 ```
-`kubectl get service`<br>
+`kubectl get service --namespace test-kustomize`<br>
 ```
-NAME                  TYPE        CLUSTER-IP   EXTERNAL-IP   PORT(S)    AGE
-http-test-kustomize   ClusterIP   10.0.72.84   <none>        8080/TCP   13m
-kubernetes            ClusterIP   10.0.0.1     <none>        443/TCP    20h
+NAME                  TYPE           CLUSTER-IP   EXTERNAL-IP   PORT(S)        AGE
+http-test-kustomize   LoadBalancer   10.0.6.249   20.22.64.91   80:32130/TCP   60s
+```
+Test:<br>
+```
+curl htt://<EXTERNAL-IP>
 ```
 Ok on supprime:<br>
 `kubectl delete -f base/`
 ```
 deployment.apps "http-test-kustomize" deleted
+namespace "test-kustomize" deleted
 service "http-test-kustomize" deleted
 ```
 3. **Avec Kustomize**<br>
@@ -99,7 +103,7 @@ spec:
         image: nginx
         ports:
         - name: http
-          containerPort: 8080
+          containerPort: 80
           protocol: TCP
 ```
 Pour le fichier `service.yaml`:<br>
@@ -109,9 +113,10 @@ kind: Service
 metadata:
   name: http-test-kustomize
 spec:
+  type: LoadBalancer
   ports:
     - name: http
-      port: 8080
+      port: 80
 ```
 Les fichiers ne seront jamais modifiés, on applique simplement une personnalisation au-dessus d'eux grâce à l'outil kustomize pour créer de nouvelles définitions des ressources.<br>
 Creez un fichier `kustomization.yaml`au même niveau que `service.yaml` et `deployment.yaml`<br>
@@ -129,6 +134,7 @@ resources:
   - deployment.yaml
   - namespace.yaml
 ```
+
 On doit avoir une arborescence:<br>
 ```
 |__ base
@@ -138,9 +144,18 @@ On doit avoir une arborescence:<br>
     |__ kustomization.yaml
 ```
 Vérification du yaml qui sera généré:<br>
-`kubectl kustomize ./base`
+`kubectl kustomize ./base`<br>
+Les Labels,Selectors et le namespace on été généré ...
 Application de la configuration<br>
 `kubectl apply -k base`
+Test:<br>
+`kubectl get service --namespace test-kustomize`<br>
+`curl htt://<EXTERNAL-IP>`
+
+3. **Fin du Lab**<br>
+
+
+
 
 
 
