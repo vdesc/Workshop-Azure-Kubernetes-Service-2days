@@ -59,9 +59,9 @@ Regarder les manifestes:<br>
 - ./Manifest/base/service.yaml
 
 Création des ressources:<br>
-`az aks get-credentials --resource-group RG-AKS-Lab-11 --name AKS-Lab-11`
-`kubectl apply -f base/`
-Vérifications:
+`az aks get-credentials --resource-group RG-AKS-Lab-11 --name AKS-Lab-11`<br>
+`kubectl apply -f base/`<br>
+Vérifications:<br>
 `kubectl get deploy`<br>
 `kubectl get service`<br>
 test
