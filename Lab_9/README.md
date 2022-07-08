@@ -59,6 +59,7 @@ az aks create \
     --yes
 
 **_Connexion au cluster AKS_**
+
 `az aks get-credentials --resource-group RG-AKS-Lab-9 --name AKS-Lab-9`  
 
 2. **Build and Push les deux versions d'application** <br>
