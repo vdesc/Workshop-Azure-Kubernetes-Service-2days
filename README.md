@@ -29,7 +29,7 @@ Découverte de Kubernetes dans Azure avec des exercices pratiques
 
 ## Jour 2
 ### Matinée
-- Gestion des montées de version :  du cluster à l'application 
+- Gestion des montées de version : du cluster à l'application 
 - Lab 8 : Montées de versions dans AKS
 - Lab 9 : Montées de version de l'application  => Rolling update, Blue Green, Canary
 - Automatisation des déploiements applicatifs et configurations Kubernetes : Deployment Center, Pipelines avec GitHub, GitOps
