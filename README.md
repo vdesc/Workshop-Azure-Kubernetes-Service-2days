@@ -11,7 +11,7 @@ Découverte de Kubernetes dans Azure avec des exercices pratiques
 
 ## Agenda
 ### jour 1
-#### matinée
+#### Matinée
 - Introduction de l'atelier, programme des 2 journées
 - Rappels rapides sur les architectures cloud natives, 12 factors apps, pet vs cattle, baking vs frying....
 - Rappels rapides sur les basiques de Kubernetes
