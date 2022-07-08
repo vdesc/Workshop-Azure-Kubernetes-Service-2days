@@ -58,7 +58,7 @@ az aks create \
 Regarder les manifestes:<br>
 - ./Manifest/base/deployment.yaml
 - ./Manifest/base/service.yaml
-- ./Manifest/base/namespace.yaml
+- ./Manifest/base/namespace.yaml<br>
 Tout le lab se fera depuis ./Manifest
 
 Création des ressources:<br>
