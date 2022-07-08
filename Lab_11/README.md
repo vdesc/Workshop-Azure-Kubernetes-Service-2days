@@ -109,6 +109,20 @@ spec:
     - name: http
       port: 8080
 ```
+Les fichiers ne seront jamais modifiés, on applique simplement une personnalisation au-dessus d'eux grâce à l'outil kustomize pour créer de nouvelles définitions des ressources.<br>
+Creez un fichier `kustomization.yaml`au même niveau que `service.yaml` et `deployment.yaml`<br>
+`kustomization.yaml`<br>
+```
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+commonLabels:
+  app: http-test-kustomize
+
+resources:
+  - service.yaml
+  - deployment.yaml
+```
 
 
 
