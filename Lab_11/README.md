@@ -53,7 +53,7 @@ az aks create \
     --assign-identity $IDENTITY_ID \
     --yes
 ```
-1. **Sans Kustomize** <br>
+2. **Sans Kustomize** <br>
 Regarder les manifestes:<br>
 - ./Manifest/base/deployment.yaml
 - ./Manifest/base/service.yaml
@@ -63,7 +63,24 @@ Création des ressources:<br>
 `kubectl apply -f base/`<br>
 Vérifications:<br>
 `kubectl get deploy`<br>
+```
+NAME                  READY   UP-TO-DATE   AVAILABLE   AGE
+http-test-kustomize   1/1     1            1           13m
+```
 `kubectl get service`<br>
-test
+```
+NAME                  TYPE        CLUSTER-IP   EXTERNAL-IP   PORT(S)    AGE
+http-test-kustomize   ClusterIP   10.0.72.84   <none>        8080/TCP   13m
+kubernetes            ClusterIP   10.0.0.1     <none>        443/TCP    20h
+```
+Ok on supprime:<br>
+`kubectl delete -f base/`
+```
+deployment.apps "http-test-kustomize" deleted
+service "http-test-kustomize" deleted
+```
+3. **Avec Kustomize**<br>
+
+
 
 
