@@ -1,8 +1,6 @@
 # Local .terraform directories
 **/.terraform/*
 
-**/*.lock.*
-
 # .tfstate files
 *.tfstate
 *.tfstate.*
@@ -10,11 +8,17 @@
 # Crash log files
 crash.log
 
+# Lockfile
+**/*.lock.*
+
+
 # Ignore any .tfvars files that are generated automatically for each Terraform run. Most
 # .tfvars files are managed as part of configuration and so should be included in
 # version control.
 #
 # example.tfvars
+*.tfvars
+
 
 # Ignore override files as they are usually used to override resources locally and so
 # are not checked in
@@ -30,4 +34,5 @@ override.tf.json
 # Include tfplan files to ignore the plan output of command: terraform plan -out=tfplan
 # example: *tfplan*
 
-
+# Fucking Mac OS
+**/.DS_Store
