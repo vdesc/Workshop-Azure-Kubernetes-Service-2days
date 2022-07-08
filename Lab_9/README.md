@@ -63,8 +63,8 @@ az aks create \
 `az aks get-credentials --resource-group RG-AKS-Lab-9 --name AKS-Lab-9`  
 
 2. **Build and Push les deux versions d'application** <br>
-API blue: <br>
-Allez dans ./API_Blue et lancer cette commande<br>
+API v1: <br>
+Allez dans ./API/v1 et lancer cette commande<br>
 ```
 az acr build -t api/api:1.0.0 -r "acrlab009" .
 ```
