@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: coolapi-service
+  namespace: namespacelab9
+spec:
+  type: LoadBalancer
+  selector:
+    app: api
+  ports:
+  - port: 80
+    targetPort: 3000

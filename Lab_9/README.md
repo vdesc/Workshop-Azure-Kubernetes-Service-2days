@@ -64,7 +64,54 @@ az aks create \
 
 2. **Build and Push les deux versions d'application** <br>
 API v1: <br>
-Allez dans ./API/v1 et lancer cette commande<br>
+-> Allez dans ./API/v1 et lancer cette commande<br>
 ```
 az acr build -t api/api:1.0.0 -r "acrlab009" .
 ```
+API v2: <br>
+-> Allez dans ./API/v2 et lancer cette commande<br>
+```
+az acr build -t api/api:2.0.0 -r "acrlab009" .
+```
+Tests des pushs:<br>
+`az acr repository show --name acrlab009 --image api/api:1.0.0`<br>
+Résultat :<br>
+```
+{
+  "changeableAttributes": {
+    "deleteEnabled": true,
+    "listEnabled": true,
+    "readEnabled": true,
+    "writeEnabled": true
+  },
+  "createdTime": "2022-07-08T14:51:53.3792719Z",
+  "digest": "sha256:75106dbd2bc220c28a98f1d799291eb75d658deeff177796baed45d482d56212",
+  "lastUpdateTime": "2022-07-08T14:51:53.3792719Z",
+  "name": "1.0.0",
+  "signed": false
+}
+```
+`az acr repository show --name acrlab009 --image api/api:2.0.0`<br>
+````
+Résultat :
+```
+{
+  "changeableAttributes": {
+    "deleteEnabled": true,
+    "listEnabled": true,
+    "readEnabled": true,
+    "writeEnabled": true
+  },
+  "createdTime": "2022-07-08T14:53:20.6463052Z",
+  "digest": "sha256:0634ebe8a090b69fec4e72e58c6553fcf19534bd7bc760d684a0e948c6ed5fd6",
+  "lastUpdateTime": "2022-07-08T14:53:20.6463052Z",
+  "name": "2.0.0",
+  "signed": false
+}
+```
+<br>
+3. **_baba_**
+
+
+
+

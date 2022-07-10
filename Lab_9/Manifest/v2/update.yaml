@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: apiv1-deployment
+  namespace: namespacelab9
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: apiv1
+  template:
+    metadata:
+      labels:
+        app: apiv1
+    spec:
+      containers:
+      - name: apiv1
+        image: acrlab009.azurecr.io/api/api:1.0.0
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 3000
