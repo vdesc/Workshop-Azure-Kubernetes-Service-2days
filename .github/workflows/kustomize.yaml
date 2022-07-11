@@ -1,4 +1,4 @@
-name: 1. Deploy d'une application avec Kustomize
+name: 1. Deploiement d'une application avec Kustomize
 on:
   workflow_dispatch:
 
@@ -27,4 +27,5 @@ jobs:
 
       - name: Check kustomize
         run: |
-          cd ./Lab11/Manifest/ && kubectl kustomize ./base
+          cd ./Lab11/Manifest/
+          ls -lisa
