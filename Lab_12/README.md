@@ -97,7 +97,11 @@ Aller dans le portail Azure dans la partie services Kubernetes : https://portal.
 
 Aller dans le cluster AKS créé en début de lab puis aller dans la partie Settings -> GitOps
 
+<img width='800' src='../images/Lab_12/GitOps1.jpg'/>
+
 Cliquer sur Create
+
+<img width='800' src='../images/Lab_12/GitOps2.jpg'/>
 
 Donner un nom à la configuration. 
 - Exemple : lab-gitops
@@ -108,6 +112,8 @@ Donner un nom de namespace où seront créées les resources custom flux
 Mettre le scope sur Cluster
 
 Cliquer sur Next
+
+<img width='800' src='../images/Lab_12/GitOps3.jpg'/>
 
 Sélectionner Source kind : Git Repository
 - Un bucket est un espace de stockage pour artifacts (AWS S3, Azure, GCP, solutions compatibles API S3). cf. https://fluxcd.io/docs/components/source/buckets/
@@ -124,20 +130,35 @@ Modifier la configuration de synchronisation à 1 minute (au lieu de 10)
 
 Cliquer sur Next
 
+<img width='800' src='../images/Lab_12/GitOps4.jpg'/>
+
 Cliquer sur Create
 Laisser les valeurs par défaut et modifier les Sync interval pour les mettre à 1 minute
 
 Cocher Prune
 - Cette option de flux permet la suppression des objets instanciés dans le cluster Kubernetes si les définitions de ces objets sont supprimées du repo. cf. https://fluxcd.io/docs/components/kustomize/kustomization/#garbage-collection
 
+<img width='800' src='../images/Lab_12/GitOps5.jpg'/>
+
 Cliquer sur Save
+
+<img width='800' src='../images/Lab_12/GitOps6.jpg'/>
+
 Cliquer sur Next
+
+<img width='800' src='../images/Lab_12/GitOps7.jpg'/>
 
 Cliquer sur Create
 
+<img width='800' src='../images/Lab_12/GitOps8.jpg'/>
+
 Cliquer sur Refresh
 
+<img width='800' src='../images/Lab_12/GitOps9.jpg'/>
+
 Attendre une ou deux minutes :)
+
+<img width='800' src='../images/Lab_12/GitOps10.jpg'/>
 
 Lister les extensions installées dans le cluster AKS
 
