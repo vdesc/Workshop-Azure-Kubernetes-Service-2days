@@ -57,25 +57,7 @@ SUBNET_ID=$(az network vnet subnet create \
     --query id \
     --output tsv)
 ```
-7. Création d'un "Workspace Logs Analytics" <br>
-```
-AKS_MONITORING_LOG_ANALYTICS_WORKSPACE_ID=$(
-   az monitor log-analytics workspace create \
-      --resource-group "RG-AKS-CLI"  \
-      --workspace-name "Workspace-AKS-CLI" \
-      --location "eastus2" \
-      --query id \
-      -o tsv
-)
-```
-8. Création d'une "Azure Container Registry" <br>
-```
-az acr create \
-  --name "acrakscli00" \
-  --resource-group "RG-AKS-CLI" \
-  --sku basic
-```
-9. Création d'une "Managed Identity" <br>
+7. Création d'une "Managed Identity" <br>
 ```
 IDENTITY_ID=$(az identity create \
     --resource-group "RG-AKS-CLI" \
@@ -84,7 +66,7 @@ IDENTITY_ID=$(az identity create \
     --query id \
     --output tsv)
 ```
-10. Création du "cluster AKS" <br>
+8. Création du "cluster AKS" <br>
 ```
 az aks create \
     --resource-group "RG-AKS-CLI" \
@@ -103,7 +85,7 @@ az aks create \
     --yes
 
 ```
-11. Test du Cluster AKS <br>
+9. Test du Cluster AKS <br>
 - Connexion au cluster <br>
 `az aks get-credentials --resource-group "RG-AKS-CLI" --name "AKS-CLI" ` <br>
 - Liste des nodes du cluster <br>
@@ -111,7 +93,7 @@ az aks create \
 - Liste les dépoiements dans tous les namespaces <br>
 `kubectl get deployments --all-namespaces=true`
 
-12. Installation d'une application avec les fichiers Manifests<br>
+10. Installation d'une application avec les fichiers Manifests<br>
 - Dans le répertoire ./Manifest il y a cinq fichiers: <br>
 `Namespace.yml` (création du namespace) <br>
 `Deployment-redis.yml` (déploiement d'une base Redis) <br>
@@ -138,7 +120,8 @@ Attendre la récupération de "l'EXTERNAL-IP" & crt+c <br>
 Aller avec votre navigateur sur "l'EXTERNAL-IP"<br>
 Voir les logs "d'azure-vote-front" `kubectl logs -l app=azure-vote-front --namespace azure-vote`
 
-13. Fin du Lab 2
+11. Fin du Lab 2
+az group delete --name "RG-AKS-CLI"
 
 
 

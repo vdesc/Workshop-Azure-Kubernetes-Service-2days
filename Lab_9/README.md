@@ -148,21 +148,5 @@ Vous devez avoir une fois sur 1 fois sur quatre:<br>
 ```
 {"message":"hello API Green"}
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+5. **Fin du Lab_9**
+az group delete --name "RG-AKS-Lab-9"
