@@ -1,0 +1,26 @@
+name: 2. Buil application
+on:
+  workflow_dispatch:
+
+jobs:
+
+  Analyse-Code:
+    runs-on: ubuntu-latest
+    permissions: # https://docs.github.com/en/actions/using-jobs/assigning-permissions-to-jobs
+      actions: read # only required for workflows in private repositories https://github.com/github/codeql-action
+      contents: read # only required for workflows in private repositories https://github.com/github/codeql-action
+      security-events: write # required for all workflows https://github.com/github/codeql-action
+    strategy:
+      fail-fast: false # s'arrête s'il a une erreur dans la definition de la matrice
+      matrix: # https://docs.github.com/en/actions/using-jobs/using-a-build-matrix-for-your-jobs
+        language: [ 'javascript' ]
+    
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@v2 # https://github.com/github/codeql-action
+        with:
+          languages: ${{ matrix.language }} # https://docs.github.com/en/actions/using-jobs/using-a-build-matrix-for-your-jobs
