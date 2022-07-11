@@ -30,3 +30,11 @@ jobs:
           kubectl apply -f ./Lab_10/Manifest/namespace.yaml
           kubectl apply -f ./Lab_10/Manifest/deployment.yaml
           kubectl apply -f ./Lab_10/Manifest/service.yaml
+
+      - name: recuperation de IP Publique
+        id: ip-pub
+        run: |
+          sleep 30s
+          IP_SERVICE=$(kubectl get services -n "coolapi-service" -o json | jq -r '.items[] | select(.metadata.name == "coolnode") | .status.loadBalancer?|.ingress[]?|.ip')
+          echo "$IP_SERVICE"
+          echo "::set-output name=service-url::http://$IP_SERVICE"
