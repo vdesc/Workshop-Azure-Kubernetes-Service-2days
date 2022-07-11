@@ -8,6 +8,12 @@ spec:
   selector:
     matchLabels:
       app: api
+  strategy:
+    type: RollingUpdate   #type
+    rollingUpdate: # définition
+      maxSurge: 2  # nb de pods sup. autorisés
+      maxUnavailable: 0 # nb de pod supprimés pour la monté de version
+
   template:
     metadata:
       labels:

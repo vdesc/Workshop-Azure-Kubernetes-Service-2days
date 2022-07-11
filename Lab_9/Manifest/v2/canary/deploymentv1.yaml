@@ -1,20 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: apiv1-deployment
+  name: api-deployment-v1
   namespace: namespacelab9
+  labels:
+    app: canary-demo
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
-      app: apiv1
+      app: api
   template:
     metadata:
       labels:
-        app: apiv1
+        app: api
     spec:
       containers:
-      - name: apiv1
+      - name: api-v1
         image: acrlab009.azurecr.io/api/api:1.0.0
         resources:
           limits:

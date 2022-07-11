@@ -75,42 +75,36 @@ az acr build -t api/api:2.0.0 -r "acrlab009" .
 ```
 Tests des pushs:<br>
 `az acr repository show --name acrlab009 --image api/api:1.0.0`<br>
-Résultat :<br>
-```
-{
-  "changeableAttributes": {
-    "deleteEnabled": true,
-    "listEnabled": true,
-    "readEnabled": true,
-    "writeEnabled": true
-  },
-  "createdTime": "2022-07-08T14:51:53.3792719Z",
-  "digest": "sha256:75106dbd2bc220c28a98f1d799291eb75d658deeff177796baed45d482d56212",
-  "lastUpdateTime": "2022-07-08T14:51:53.3792719Z",
-  "name": "1.0.0",
-  "signed": false
-}
-```
-`az acr repository show --name acrlab009 --image api/api:2.0.0`<br>
-````
-Résultat :
-```
-{
-  "changeableAttributes": {
-    "deleteEnabled": true,
-    "listEnabled": true,
-    "readEnabled": true,
-    "writeEnabled": true
-  },
-  "createdTime": "2022-07-08T14:53:20.6463052Z",
-  "digest": "sha256:0634ebe8a090b69fec4e72e58c6553fcf19534bd7bc760d684a0e948c6ed5fd6",
-  "lastUpdateTime": "2022-07-08T14:53:20.6463052Z",
-  "name": "2.0.0",
-  "signed": false
-}
-```
-<br>
-3. **_baba_**
+
+
+3. **Deploiement de l'application**
+Installation de l'application:<br>
+Allez dans ./Manifest<br>
+`kubectl apply -f ./v1`
+
+Check:<br>
+`kubectl get all --namespace namespacelab9`<br>
+`curl http://<EXTERNAL-IP>`<br>
+
+4. **Mise à jour de l'application**
+**_Laisser Kube gérer lui même ma monté de version de l'application_**
+Allez dans le répertoire ./Manifest/v2 
+`kubectl apply -f ./kubefree`<br>
+Répéter la commande `kubectl get all --namespace namespacelab9` pour voir l'évolution de la mise à jour de apllication <br>
+Test: `curl http://EXTERNAL-IP`
+
+**_Mise à jour de l'application en "rolling updates" avec des stratégies_**
+Pour cet exemple,on va reppaser dans la version précédente en "rolling update" avec des strategies<br>
+Allez dans le répertoire ./Manifest/v2/rollingupdate et observer le fichier update.yaml ( au niveau "spec et strategy"<br>
+`kubectl apply -f ./rollingupdate/update.yaml`<br>
+
+
+
+
+
+
+
+
 
 
 

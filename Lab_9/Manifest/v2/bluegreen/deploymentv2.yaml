@@ -1,21 +1,24 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: api-deployment
+  name: api-deployment-v2
   namespace: namespacelab9
+  labels:
+    app: blue-green-demo
+
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: api
+      app: api-v2
   template:
     metadata:
       labels:
-        app: api
+        app: api-v2
     spec:
       containers:
-      - name: api
-        image: acrlab009.azurecr.io/api/api:1.0.0
+      - name: api-v2
+        image: acrlab009.azurecr.io/api/api:2.0.0
         resources:
           limits:
             memory: "128Mi"
