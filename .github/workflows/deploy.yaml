@@ -35,6 +35,6 @@ jobs:
         id: ip-pub
         run: |
           sleep 30s
-          IP_SERVICE=$(kubectl get services -n "coolapi-service" -o json | jq -r '.items[] | select(.metadata.name == "coolnode") | .status.loadBalancer?|.ingress[]?|.ip')
+          IP_SERVICE=$(kubectl get services -n "coolapi-service" -o json | jq -r '.items[] | select(.metadata.name == "coolapi-service") | .status.loadBalancer?|.ingress[]?|.ip')
           echo "$IP_SERVICE"
           echo "::set-output name=service-url::http://$IP_SERVICE"
