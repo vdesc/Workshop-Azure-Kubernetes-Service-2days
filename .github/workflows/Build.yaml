@@ -5,62 +5,13 @@ on:
 env:
   REGISTRY_NAME: "acrlab0010"
   APP_NAME: "coolapi"
-  IMAGE_VERSION: "1.0.0"
+  IMAGE_VERSION: 1.0.0
 
 jobs:
 
-  Analyse-Code:
-    runs-on: ubuntu-latest
-    permissions: # https://docs.github.com/en/actions/using-jobs/assigning-permissions-to-jobs
-      actions: read # only required for workflows in private repositories https://github.com/github/codeql-action
-      contents: read # only required for workflows in private repositories https://github.com/github/codeql-action
-      security-events: write # required for all workflows https://github.com/github/codeql-action
-    strategy:
-      fail-fast: false # s'arrête s'il a une erreur dans la definition de la matrice
-      matrix: # https://docs.github.com/en/actions/using-jobs/using-a-build-matrix-for-your-jobs
-        language: [ 'javascript' ]
-    
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-
-      - name: Initialize CodeQL
-        uses: github/codeql-action/init@v2 # https://github.com/github/codeql-action
-        with:
-          languages: ${{ matrix.language }} # https://docs.github.com/en/actions/using-jobs/using-a-build-matrix-for-your-jobs
-
-      - name: Perform CodeQL Analysis
-        uses: github/codeql-action/analyze@v2 # https://github.com/github/codeql-action
-
-
-  Test-Unitaire: # Deuxieme job "tests unitaires"
-    runs-on: ubuntu-latest 
-    needs: Analyse-Code # Declenchement du Job "test-unitaire" si le job "analyze-code" s"execute sans erreur 
-    strategy:
-      matrix:
-        node-version: [10.x, 12.x, 14.x, 15.x] # Matrice des versions Nodejs pour le test unitaire
-
-    steps:
-      - name: Checkout repo
-        uses: actions/checkout@v2
-
-      - name: Use Node.js
-        uses: actions/setup-node@v1 # https://github.com/actions/setup-node
-        with:
-          node-version: ${{ matrix.node-version }} # application de la matrice
-
-      - name: Installation des dependences
-        run : |
-          cd ./Lab_10/API/ && npm install
-
-      - name: Tests unitaires
-        run: |
-          cd ./Lab_10/API/ && npm test
-
-
   Build-Scan-Push:
     runs-on: ubuntu-latest 
-    needs: Test-Unitaire
+    
 
     steps:
       - name: Checkout repo
@@ -72,15 +23,5 @@ jobs:
 
       - name: Build de l'image de l'application
         run: |
-          cd ./Lab_10/API/ && docker build . -t ${{ env.REGISTRY_NAME}}.azurecr.io/${{ env.APP_NAME }}:${{ github.run_number }}
+          cd ./Lab_10/API/ && docker build . -t ${{ env.REGISTRY_NAME}}.azurecr.io/${{ env.APP_NAME }}:1.0.0
 
-      - name: Scan Image
-        uses: Azure/container-scan@v0 
-        id: container-scan
-        continue-on-error: true
-        with:
-          image-name: ${{ env.REGISTRY_NAME}}.azurecr.io/${{ env.APP_NAME }}:${{ github.run_number }}
-
-      - name: Build de l'image de l'application
-        run: |
-          cd ./Lab_10/API/ && docker build . -t ${{ env.REGISTRY_NAME}}.azurecr.io/${{ env.APP_NAME }}:${{ env.IMAGE_VERSION }}
