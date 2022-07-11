@@ -182,10 +182,9 @@ resources:
   - deployment.yaml
   - namespace.yaml
 ```
-
-
-
-
+Allez dans le workflows ./github/workflows/kustomize.yaml<br>
+Observer le workflows<br>
+Modifiez le et executez le <br>
 
 4. **Fin du Lab**<br>
 az group delete --name RG-AKS-Lab-11
