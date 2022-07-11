@@ -66,6 +66,10 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v2
 
+      - name: Login Azure Container Registry
+        run: |
+          docker login ${{ env.REGISTRY_NAME}}.azurecr.io --username ${{ secrets.CLIENTID}} --password ${{ secrets.CLIENTSECRET }}
+
       - name: Build de l'image de l'application
         run: |
           cd ./Lab_10/API/ && docker build . -t ${{ env.REGISTRY_NAME}}.azurecr.io/${{ env.APP_NAME }}:${{ env.IMAGE_VERSION }}
