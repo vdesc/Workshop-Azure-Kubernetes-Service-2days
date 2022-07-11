@@ -2,6 +2,11 @@ name: 2. Build application
 on:
   workflow_dispatch:
 
+env:
+  REGISTRY_NAME: "acrlab0010"
+  APP_NAME: "coolapi"
+  IMAGE_VERSION: "1.0.0"
+
 jobs:
 
   Analyse-Code:
@@ -27,7 +32,8 @@ jobs:
       - name: Perform CodeQL Analysis
         uses: github/codeql-action/analyze@v2 # https://github.com/github/codeql-action
 
-  test-unitaire: # Deuxieme job "tests unitaires"
+
+  Test-Unitaire: # Deuxieme job "tests unitaires"
     runs-on: ubuntu-latest 
     needs: Analyse-Code # Declenchement du Job "test-unitaire" si le job "analyze-code" s"execute sans erreur 
     strategy:
@@ -50,3 +56,16 @@ jobs:
       - name: Tests unitaires
         run: |
           cd ./Lab_10/API/ && npm test
+
+
+  Build-Scan-Push:
+    runs-on: ubuntu-latest 
+    needs: Test-Unitaire
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+
+      - name: Build de l'image de l'application
+        run: |
+          cd ./Lab_10/API/ && docker build . -t ${{ env.REGISTRY_NAME}}.azurecr.io/${{ env.APP_NAME }}:${{ env.IMAGE_VERSION }}
