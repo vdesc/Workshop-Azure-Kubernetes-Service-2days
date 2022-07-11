@@ -5,7 +5,7 @@ on:
 env:
   REGISTRY_NAME: "acrlab0010"
   APP_NAME: "coolapi"
-  IMAGE_VERSION: 1.0.0
+  IMAGE_VERSION: "1.0.0"
 
 jobs:
 
@@ -23,6 +23,6 @@ jobs:
 
       - name: Build de l'image de l'application
         run: |
-          cd ./Lab_10/API/ && docker build . -t ${{ env.REGISTRY_NAME}}.azurecr.io/${{ env.APP_NAME }}:1.0.0
+          cd ./Lab_10/API/ && docker build . -t ${{ env.REGISTRY_NAME}}.azurecr.io/${{ env.APP_NAME }}:${{ env.IMAGE_VERSION }}
           docker image ls
 
