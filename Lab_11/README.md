@@ -152,10 +152,19 @@ Test:<br>
 `kubectl get service --namespace test-kustomize`<br>
 `curl htt://<EXTERNAL-IP>`
 
-3. **Pipeline avec Kustomize**
+3. **Pipeline avec Kustomize**<br>
 Prérequis:<br>
 `az ad sp create-for-rbac --name "votrenom-demo-githubaction2022" --role "Contributor" --scopes /subscriptions/METTRE_ICI_L_ID_DE_LA_SUBSCRIPTION --sdk-auth -o jsonc`
-
+Créez un secret `AZURE_CREDENTIALS` dans le service secret de GitHub<br>
+Mettre dans `AZURE_CREDENTIALS`:<br>
+```
+{
+  "clientId": "xxxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxxx",
+  "clientSecret": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+  "subscriptionId": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxx",
+  "tenantId": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+}
+```
 
 
 4. **Fin du Lab**<br>
