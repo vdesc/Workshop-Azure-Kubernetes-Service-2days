@@ -15,7 +15,6 @@ jobs:
       matrix: # https://docs.github.com/en/actions/using-jobs/using-a-build-matrix-for-your-jobs
         language: [ 'javascript' ]
     
-
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -24,3 +23,6 @@ jobs:
         uses: github/codeql-action/init@v2 # https://github.com/github/codeql-action
         with:
           languages: ${{ matrix.language }} # https://docs.github.com/en/actions/using-jobs/using-a-build-matrix-for-your-jobs
+
+      - name: Perform CodeQL Analysis
+        uses: github/codeql-action/analyze@v1 # https://github.com/github/codeql-action
