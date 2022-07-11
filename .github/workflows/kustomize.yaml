@@ -41,5 +41,5 @@ jobs:
 
       - name: Application de la configuration
         run: |
-          cd ./Lab_11/Manifest/ && kubectl apply -k base
+          echo il ne reste plus qu'à appliquer 
               
