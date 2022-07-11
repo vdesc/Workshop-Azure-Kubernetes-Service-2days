@@ -1,4 +1,4 @@
-name: Deploy d'une application avec Kustomize
+name: 1. Deploy d'une application avec Kustomize
 on:
   workflow_dispatch:
 
