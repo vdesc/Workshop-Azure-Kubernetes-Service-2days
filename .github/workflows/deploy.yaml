@@ -5,6 +5,11 @@ env:
   RG_NAME: "RG-AKS-Lab-10"
   CLUSTER_NAME: "AKS-Lab-10"
 
+  NAMESPACE: "coolapi-namespace"
+  NAME_SERVICE: "coolapi-service"
+  
+
+
 jobs:
   Build-Manifest:
     runs-on: ubuntu-latest
@@ -31,10 +36,10 @@ jobs:
           kubectl apply -f ./Lab_10/Manifest/deployment.yaml
           kubectl apply -f ./Lab_10/Manifest/service.yaml
 
-      - name: recuperation de IP Publique
+      - name: Recuperation de IP Publique
         id: ip-pub
         run: |
           sleep 30s
-          IP_SERVICE=$(kubectl get service --namespace=coolapi-namespace -o json | jq -r '.items[] | select(.metadata.name == "coolapi-service") | .status.loadBalancer?|.ingress[]?|.ip')
+          IP_SERVICE=$(kubectl get service --namespace=${{ env.NAMESPACE}} -o json | jq -r '.items[] | select(.metadata.name == ${{ env.NAME_SERVICE }}) | .status.loadBalancer?|.ingress[]?|.ip')
           echo "$IP_SERVICE"
           echo "::set-output name=service-url::http://$IP_SERVICE"
