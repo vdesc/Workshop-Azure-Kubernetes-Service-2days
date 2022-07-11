@@ -128,6 +128,9 @@ Pour repasser à la version précédente remodifiez le fichier `service.yaml`et 
 **_Mise à jour de l'application avec la méthode "canary"_**<br>
 On va repartir sur deux déploiements <br>
 On détruit la configuration `kubectl delete namespace namespacelab9`<br><br>
+Premier déploiement:<br>
+Dans le repertoire ./Manifest/v2/canary: <br>
+
 
 
 
