@@ -136,7 +136,9 @@ Dans le repertoire ./Manifest/v2/canary: <br>
 Test:<br>
 `kubectl get all --namespace namespacelab9`<br>
 `curl EXTERNAL-IP`
-
+```
+{"message":"hello API Bleue"}
+```
 
 
 
