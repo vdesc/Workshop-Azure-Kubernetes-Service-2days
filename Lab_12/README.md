@@ -212,7 +212,7 @@ Plus d'informations sur ces différents composants : https://docs.microsoft.com/
 Les objets Kubernetes décrits dans le repo ont été créés dans le namespace monapplication
 
 ```bash
-k get pods --all-namespaces -o wide
+kubectl get pods --all-namespaces -o wide
 ```
 
 Les configuration  Flux (GitOps) peuvent être gérées / créée via Azure CLI
