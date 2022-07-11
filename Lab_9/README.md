@@ -115,6 +115,7 @@ Test:<br>
 Deuxième déploiement:<br>
 `kubectl apply -f ./deploymentv2.yaml`<br>
 Redirection des flux vers la nouvelle version<br>
+Editez le fichier `service.yaml`et modifier le "selector" et passez "app: API-v2"
 
 
 
