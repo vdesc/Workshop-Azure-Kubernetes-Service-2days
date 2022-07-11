@@ -2,15 +2,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: http-test-kustomize
-  namespace: test-kustomize
 spec:
-  selector:
-    matchLabels:
-      app: http-test-kustomize
   template:
-    metadata:
-      labels:
-        app: http-test-kustomize
     spec:
       containers:
       - name: http-test-kustomize
