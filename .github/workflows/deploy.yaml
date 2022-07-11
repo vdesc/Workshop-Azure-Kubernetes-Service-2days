@@ -11,6 +11,9 @@ env:
   MYDEPLOYMENT: "coolapi-deployment"
   NAMESERVICE: "coolapi-service"
   MYAPP: "cool-api"
+  MYACR: "acrlab0010"
+  MYIMAGE: "coolapi"
+  MYVERSION: "1.0.0"
  
   
 
@@ -43,7 +46,10 @@ jobs:
           sed -i -e "s/my-app/${{ env.MYAPP }}/g" ./service.yaml
           sed -i -e "s/my-deployment/${{ env.MYDEPLOYMENT }}/g" ./deployment.yaml
           sed -i -e "s/my-namespace/${{ env.NAMESPACE }}/g" ./deployment.yaml
-          sed -i -e "s/my-app/${{ env.MYAPP }}/g" ./deployment.yaml  
+          sed -i -e "s/my-app/${{ env.MYAPP }}/g" ./deployment.yaml
+          sed -i -e "s/my-acr/${{ env.MYACR }}/g" ./deployment.yaml
+          sed -i -e "s/my-image/${{ env.MYIMAGE }}/g" ./deployment.yaml
+          sed -i -e "s/my-version/${{ env.MYVERSION }}/g" ./deployment.yaml    
 
       - name: Deploy application
         run: |
