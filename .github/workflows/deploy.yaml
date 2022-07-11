@@ -5,9 +5,7 @@ env:
   RG_NAME: "RG-AKS-Lab-10"
   CLUSTER_NAME: "AKS-Lab-10"
 
-
 jobs:
-
   Build-Manifest:
     runs-on: ubuntu-latest
     environment:
@@ -15,10 +13,9 @@ jobs:
       url: ${{ steps.ip-pub.outputs.service-url }}
 
     steps:
-
       - name: Checkout
         uses: actions/checkout@v2
-      
+
       - name: Login Azure
         uses: Azure/login@v1
         with:
@@ -26,8 +23,9 @@ jobs:
 
       - name: Get AKS Credentials
         run: |
-          az aks get-credentials --resource-group ${{ env.RG_NAME }} --name ${{ env.CLUSTER_NAME }}      
+          az aks get-credentials --resource-group ${{ env.RG_NAME }} --name ${{ env.CLUSTER_NAME }}
 
-  
-
-
+      - name: Deploy application
+        run: |
+          kubectl apply -f ./Lab_10/Manifest/namespace.yaml
+          
