@@ -1,14 +1,14 @@
 name: 3. Deploy application
+
 on:
   workflow_dispatch:
+
 env:
   RG_NAME: "RG-AKS-Lab-10"
   CLUSTER_NAME: "AKS-Lab-10"
 
-  NAMESPACE: "coolapi-namespace"
-  NAME_SERVICE: "coolapi-service"
+  NANESPACE: "coolapi-namespace"
   
-
 
 jobs:
   Build-Manifest:
@@ -40,6 +40,6 @@ jobs:
         id: ip-pub
         run: |
           sleep 30s
-          IP_SERVICE=$(kubectl get service --namespace=${{ env.NAMESPACE}} -o json | jq -r '.items[] | select(.metadata.name == ${{ env.NAME_SERVICE }}) | .status.loadBalancer?|.ingress[]?|.ip')
+          IP_SERVICE=$(kubectl get service --namespace=${{ env.NAMESPACE }} -o json | jq -r '.items[] | select(.metadata.name == "coolapi-service") | .status.loadBalancer?|.ingress[]?|.ip')
           echo "$IP_SERVICE"
           echo "::set-output name=service-url::http://$IP_SERVICE"
