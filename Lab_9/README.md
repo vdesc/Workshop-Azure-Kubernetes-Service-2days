@@ -118,6 +118,8 @@ Redirection des flux vers la nouvelle version<br>
 Editez le fichier `service.yaml`et modifier le "selector" et passez "app: API-v2"<br>
 Appliquez la configuration:<br>
 `kubectl apply -f ./service.yaml`<br>
+Check:<br>
+`curl EXTERNAL-IP`<br>
 
 
 
