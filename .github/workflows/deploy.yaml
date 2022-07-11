@@ -41,7 +41,9 @@ jobs:
           sed -i -e "s/my-namespace/${{ env.NAMESPACE }}/g" ./service.yaml
           sed -i -e "s/my-service/${{ env.NAMESERVICE }}/g" ./service.yaml
           sed -i -e "s/my-app/${{ env.MYAPP }}/g" ./service.yaml
-          sed -i -e "s/my-namespace/${{ env.NAMESPACE }}/g" ./deployment.yaml  
+          sed -i -e "s/my-deployment/${{ env.MYDEPLOYMENT }}/g" ./deployment.yaml
+          sed -i -e "s/my-namespace/${{ env.NAMESPACE }}/g" ./deployment.yaml
+          sed -i -e "s/my-app/${{ env.MYAPP }}/g" ./deployment.yaml  
 
       - name: Deploy application
         run: |

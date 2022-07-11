@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: coolapi-deployment
+  name: my-deployment
   namespace: my-namespace
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: cool-api
+      app: my-app
   template:
     metadata:
       labels:
-        app: cool-api
+        app: my-app
     spec:
       containers:
-      - name: cool-api
+      - name: my-app
         image: acrlab0010.azurecr.io/coolapi:1.0.0
         resources:
           limits:
