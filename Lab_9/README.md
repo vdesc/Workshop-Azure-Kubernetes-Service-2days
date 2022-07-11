@@ -121,7 +121,8 @@ Redirection des flux vers le deuxième déploiement<br>
 Modifiez le fichier `service.yml` et passer le "selector" `app: api-v2`<br>
 Appliquez: `kubectl apply -f ./service.yaml`<br>
 Test:<br>
-`curl EXTERNAL-IP`<br>
+```curl EXTERNAL-IP
+```
 ```
 {"message":"hello API Green"}
 ``` 
