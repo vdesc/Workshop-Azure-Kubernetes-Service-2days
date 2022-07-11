@@ -24,3 +24,7 @@ jobs:
       - name: Get AKS Credentials
         run: |
           az aks get-credentials --resource-group ${{ env.RG_NAME }} --name ${{ env.CLUSTER_NAME }}
+
+      - name: Check kustomize
+        run: |
+          cd ./Lab11/Manifest/ && kubectl kustomize ./base
