@@ -113,6 +113,7 @@ Test:<br>
 {"message":"hello API Bleue"}
 ```
 Deuxième déploiement:<br>
+`kubectl apply -f ./deploymentv2.yaml`
 
 
 
