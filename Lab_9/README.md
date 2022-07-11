@@ -95,8 +95,23 @@ Test: `curl http://EXTERNAL-IP`
 
 **_Mise à jour de l'application en "rolling updates" avec des stratégies_**<br>
 Pour cet exemple,on va reppaser dans la version précédente en "rolling update" avec des strategies<br>
-Allez dans le répertoire ./Manifest/v2/rollingupdate et observer le fichier update.yaml ( au niveau "spec et strategy"<br>
+Allez dans le répertoire ./Manifest/v2/rollingupdate et observer le fichier update.yaml ( au niveau "spec et strategy")<br>
 `kubectl apply -f ./rollingupdate/update.yaml`<br>
+
+**_Mise à jour de l'application avec la méthode "blue green"_**<br>
+On va repartir sur deux déploiements <br>
+On détruit la configuration `kubectl delete namespace namespacelab9`<br>
+Dans le repertoire ./Manifest/v2/bluegreen: <br>
+`kubectl apply -f ./namespace.yaml`<br>
+`kubectl apply -f ./deploymentv1.yaml`<br>
+`kubectl apply -f ./service.yaml`<br>
+Test:<br>
+`kubectl get all --namespace namespacelab9`<br>
+`curl 20.22.145.231`
+
+
+
+
 
 
 
