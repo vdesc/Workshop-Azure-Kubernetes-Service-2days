@@ -33,7 +33,7 @@ jobs:
         run: |
           cd ./Lab_11/Manifest/base/
           ls -lisa
-          sed -i -e "s/mon-namespace/test-kustomize/g" ./kustomatization.yaml
+          sed -i -e "s/mon-namespace/test-kustomize/g" ./kustomization.yaml
 
       - name: Check kustomize modifié
         run: |
