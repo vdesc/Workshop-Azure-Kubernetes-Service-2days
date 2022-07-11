@@ -27,5 +27,4 @@ jobs:
 
       - name: Check kustomize
         run: |
-          cd ./Lab_11/Manifest/
-          ls -lisa
+          cd ./Lab_11/Manifest/ && kubectl kustomize ./base
