@@ -31,7 +31,7 @@ jobs:
 
       - name: Modification du fichier ./Lab_11/Manifest/base/kustomatization.yaml
         run: |
-          cd ./Lab_11/Manifest/base/kustomatization.yaml
+          cd ./Lab_11/Manifest/base/
           ls -lisa
           sed -i -e "s/mon-namespace/test-kustomize/g" ./kustomatization.yaml
 
