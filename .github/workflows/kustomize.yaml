@@ -2,6 +2,10 @@ name: 1. Deploy d'une application avec Kustomize
 on:
   workflow_dispatch:
 
+env:
+  RG_NAME: "RG-AKS-Lab-11"
+  CLUSTER_NAME: "AKS-Lab-11"
+
 
 jobs:
   Deploy-App:
@@ -16,3 +20,7 @@ jobs:
         uses: Azure/login@v1
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - name: Get AKS Credentials
+        run: |
+          az aks get-credentials --resource-group ${{ env.RG_NAME }} --name ${{ env.CLUSTER_NAME }}
