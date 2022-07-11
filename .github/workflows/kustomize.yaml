@@ -32,7 +32,7 @@ jobs:
       - name: Modification du fichier ./Lab_11/Manifest/base/kustomatization.yaml
         run: |
           cd ./Lab_11/Manifest/base/kustomatization.yaml
-          sed -i -e "s/mon-namespace/test-kustomize/g" kustomatization.yaml
+          sed -i -e "s/mon-namespace/test-kustomize/g" ./kustomatization.yaml
 
       - name: Check kustomize modifié
         run: |
