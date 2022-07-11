@@ -93,7 +93,7 @@ Allez dans le répertoire ./Manifest/v2
 Répéter la commande `kubectl get all --namespace namespacelab9` pour voir l'évolution de la mise à jour de apllication <br>
 Test: `curl http://EXTERNAL-IP`
 
-**_Mise à jour de l'application en "rolling updates" avec des stratégies_**
+**_Mise à jour de l'application en "rolling updates" avec des stratégies_**<br>
 Pour cet exemple,on va reppaser dans la version précédente en "rolling update" avec des strategies<br>
 Allez dans le répertoire ./Manifest/v2/rollingupdate et observer le fichier update.yaml ( au niveau "spec et strategy"<br>
 `kubectl apply -f ./rollingupdate/update.yaml`<br>
