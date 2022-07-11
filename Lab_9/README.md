@@ -128,7 +128,7 @@ Pour repasser à la version précédente remodifiez le fichier `service.yaml`et 
 **_Mise à jour de l'application avec la méthode "canary"_**<br>
 On va repartir sur deux déploiements <br>
 On détruit la configuration `kubectl delete namespace namespacelab9`<br><br>
-Premier déploiement:<br>
+Premier déploiement avec 3 réplicas:<br>
 Dans le repertoire ./Manifest/v2/canary: <br>
 `kubectl apply -f ./namespace.yaml`<br>
 `kubectl apply -f ./deploymentv1.yaml`<br>
@@ -139,7 +139,15 @@ Test:<br>
 ```
 {"message":"hello API Bleue"}
 ```
-
+Deuxième déploiement avec 1 réplica: (75-25)<br>
+`kubectl apply -f ./deploymentv1.yaml`<br>
+Test:<br>
+`kubectl get all --namespace namespacelab9`<br>
+Rétéper la commande `curl EXTERNAL-IP`<br>
+Vous devez avoir une fois sur 1 fois sur quatre:<br>
+```
+{"message":"hello API Green"}
+```
 
 
 
