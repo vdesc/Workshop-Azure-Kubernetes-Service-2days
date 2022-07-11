@@ -130,6 +130,12 @@ On va repartir sur deux déploiements <br>
 On détruit la configuration `kubectl delete namespace namespacelab9`<br><br>
 Premier déploiement:<br>
 Dans le repertoire ./Manifest/v2/canary: <br>
+`kubectl apply -f ./namespace.yaml`<br>
+`kubectl apply -f ./deploymentv1.yaml`<br>
+`kubectl apply -f ./service.yaml`<br>
+Test:<br>
+`kubectl get all --namespace namespacelab9`<br>
+`curl EXTERNAL-IP`
 
 
 
