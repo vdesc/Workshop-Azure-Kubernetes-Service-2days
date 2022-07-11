@@ -7,7 +7,9 @@ env:
   RG_NAME: "RG-AKS-Lab-10"
   CLUSTER_NAME: "AKS-Lab-10"
 
-  NANESPACE: "coolapi-namespace"
+  NAMESPACE: "coolapi-namespace"
+  NAMESERVICE: "coolapi-service"
+ 
   
 
 jobs:
