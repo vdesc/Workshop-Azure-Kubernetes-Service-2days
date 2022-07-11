@@ -27,5 +27,5 @@ jobs:
 
       - name: Check kustomize
         run: |
-          cd ./Lab11/Manifest/
+          cd ./Lab_11/Manifest/
           ls -lisa
