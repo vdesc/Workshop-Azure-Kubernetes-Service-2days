@@ -120,6 +120,9 @@ Appliquez la configuration:<br>
 `kubectl apply -f ./service.yaml`<br>
 Check:<br>
 `curl EXTERNAL-IP`<br>
+```
+{"message":"hello API Green"}
+```
 
 
 
