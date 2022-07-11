@@ -9,7 +9,6 @@ env:
 
   NAMESPACE: "coolapi-namespace"
   MYDEPLOYMENT: "coolapi-deployment"
-  NBREPLICA: 3
   NAMESERVICE: "coolapi-service"
   MYAPP: "cool-api"
   MYACR: "acrlab0010"
@@ -17,7 +16,6 @@ env:
   MYVERSION: "1.0.0"
  
   
-
 jobs:
   Build-Manifest:
     runs-on: ubuntu-latest
