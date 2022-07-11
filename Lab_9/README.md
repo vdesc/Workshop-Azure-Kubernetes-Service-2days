@@ -109,6 +109,25 @@ Dans le repertoire ./Manifest/v2/bluegreen: <br>
 Test:<br>
 `kubectl get all --namespace namespacelab9`<br>
 `curl EXTERNAL-IP`
+```
+{"message":"hello API Bleue"}
+```
+<br>
+Deuxième déploiement:<br>
+`kubectl apply -f ./deploymentv2.yaml`<br>
+Check:<br>
+`kubectl get all --namespace namespacelab9`<br>
+Redirection des flux vers le deuxième déploiement<br>
+Modifiez le fichier `service.yml` et passer le "selector" `app: api-v2`<br>
+Appliquez: `kubectl apply -f ./service.yaml`
+Test:<br>
+`curl EXTERNAL-IP`
+```
+{"message":"hello API Green"}
+``` 
+
+
+
 
 
 
