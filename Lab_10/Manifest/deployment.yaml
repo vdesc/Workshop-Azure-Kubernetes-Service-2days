@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: coolapi-deployment
-  namespace: coolapi-namespace
+  namespace: my-namespace
 spec:
   replicas: 3
   selector:
