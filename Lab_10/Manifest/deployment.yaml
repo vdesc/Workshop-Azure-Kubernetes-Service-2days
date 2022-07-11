@@ -14,7 +14,7 @@ spec:
         app: cool-api
     spec:
       containers:
-      - name: coolapi-v1
+      - name: cool-api
         image: acrlab0010.azurecr.io/coolapi:1.0.0
         resources:
           limits:

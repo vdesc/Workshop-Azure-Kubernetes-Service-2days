@@ -1,12 +1,12 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: coolapi-service
+  name: my-service
   namespace: my-namespace
 spec:
   type: LoadBalancer
   selector:
-    app: cool-api
+    app: my-app
   ports:
   - port: 80
     targetPort: 3000
