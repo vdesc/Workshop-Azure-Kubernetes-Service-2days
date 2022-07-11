@@ -123,6 +123,7 @@ Check:<br>
 ```
 {"message":"hello API Green"}
 ```
+Pour repasser à la version précédente remodifiez le fichier `service.yaml`et modifier le "selector" et passez "app: API-v1"<br>
 
 
 
