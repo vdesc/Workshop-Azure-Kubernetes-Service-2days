@@ -25,6 +25,15 @@ jobs:
         run: |
           az aks get-credentials --resource-group ${{ env.RG_NAME }} --name ${{ env.CLUSTER_NAME }}
 
-      - name: Check kustomize
+      - name: Check kustomize initial
+        run: |
+          cd ./Lab_11/Manifest/ && kubectl kustomize ./base
+
+      - name: Modification du fichier ./Lab_11/Manifest/base/kustomatization.yaml
+        run: |
+          cd ./Lab_11/Manifest/base/kustomatization.yaml
+          sed -i -e "s/mon-namespace/test-kustomize/g" kustomatization.yaml
+
+      - name: Check kustomize modifié
         run: |
           cd ./Lab_11/Manifest/ && kubectl kustomize ./base
