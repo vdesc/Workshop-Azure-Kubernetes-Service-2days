@@ -86,7 +86,7 @@ Check:<br>
 `kubectl get all --namespace namespacelab9`<br>
 `curl http://<EXTERNAL-IP>`<br>
 
-4. **Mise à jour de l'application** <br>
+4. **Mise à jour de l'application** <br><br>
 **_Laisser Kube gérer lui même ma monté de version de l'application_**<br>
 Allez dans le répertoire ./Manifest/v2 
 `kubectl apply -f ./kubefree`<br>
