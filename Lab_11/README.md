@@ -152,6 +152,9 @@ Test:<br>
 `kubectl get service --namespace test-kustomize`<br>
 `curl htt://<EXTERNAL-IP>`
 
+on supprime :<br>
+`kubectl delete -k base`<br>
+
 3. **Pipeline avec Kustomize**<br>
 Prérequis:<br>
 `az ad sp create-for-rbac --name "votrenom-demo-githubaction2022" --role "Contributor" --scopes /subscriptions/METTRE_ICI_L_ID_DE_LA_SUBSCRIPTION --sdk-auth -o jsonc`<br>
@@ -165,6 +168,23 @@ Mettre dans `AZURE_CREDENTIALS`:<br>
   "tenantId": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
 }
 ```
+Modifiez le fichier `kustomization.yaml`<br>
+```
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+namespace: mon-namespace
+commonLabels:
+  app: mon-app
+
+resources:
+  - service.yaml
+  - deployment.yaml
+  - namespace.yaml
+```
+
+
+
 
 
 4. **Fin du Lab**<br>

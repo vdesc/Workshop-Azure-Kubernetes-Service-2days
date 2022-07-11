@@ -1,9 +1,9 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
-namespace: test-kustomize
+namespace: mon-namespace
 commonLabels:
-  app: http-test-kustomize
+  app: mon-app
 
 resources:
   - service.yaml
