@@ -24,7 +24,7 @@ jobs:
 
       - name: Build de l'image de l'application
         run: |
-          cd ./Lab_10/API/ && docker build -t ${{ env.REGISTRY_NAME}}.azurecr.io/${{ env.APP_NAME }}:${{ github.run_number }} .
+          cd ./Lab_10/API/ && docker build -t ${{ env.REGISTRY_NAME}}.azurecr.io/${{ env.APP_NAME }}:${{ env.IMAGE_VERSION }} .
           docker image ls
 
       - name: Scan Image
@@ -32,5 +32,9 @@ jobs:
         id: container-scan
         continue-on-error: true
         with:
-          image-name: ${{ env.REGISTRY_NAME}}.azurecr.io/${{ env.APP_NAME }}:${{ github.run_number }}
+          image-name: ${{ env.REGISTRY_NAME}}.azurecr.io/${{ env.APP_NAME }}:${{ env.IMAGE_VERSION }}
+
+      - name: Push de l'image de l'application
+        run: |
+          docker push ${{ env.REGISTRY_NAME}}.azurecr.io/${{ env.APP_NAME }}:${{ env.IMAGE_VERSION }}
 
