@@ -40,6 +40,6 @@ jobs:
           cd ./Lab_11/Manifest/ && kubectl kustomize ./base
 
       - name: Application de la configuration
-        run: echo il ne reste plus qu'a déployer la configuration !
+        run: echo il ne reste plus ... !
            
               
