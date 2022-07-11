@@ -152,7 +152,13 @@ Test:<br>
 `kubectl get service --namespace test-kustomize`<br>
 `curl htt://<EXTERNAL-IP>`
 
-3. **Fin du Lab**<br>
+3. **Pipeline avec Kustomize**
+Prérequis:<br>
+`az ad sp create-for-rbac --name "votrenom-demo-githubaction2022" --role "Contributor" --scopes /subscriptions/METTRE_ICI_L_ID_DE_LA_SUBSCRIPTION --sdk-auth -o jsonc`
+
+
+
+4. **Fin du Lab**<br>
 az group delete --name RG-AKS-Lab-11
 
 
