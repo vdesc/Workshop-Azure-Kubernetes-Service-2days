@@ -32,10 +32,14 @@ jobs:
       - name: Modification du fichier ./Lab_11/Manifest/base/kustomatization.yaml
         run: |
           cd ./Lab_11/Manifest/base/
-          ls -lisa
           sed -i -e "s/mon-namespace/test-kustomize/g" ./kustomization.yaml
           sed -i -e "s/mon-app/http-test-kustomize/g" ./kustomization.yaml
 
       - name: Check kustomize modifié
         run: |
           cd ./Lab_11/Manifest/ && kubectl kustomize ./base
+
+      - name: Application de la configuration
+        run: |
+          cd ./Lab_11/Manifest/ && kubectl apply -k base
+              
