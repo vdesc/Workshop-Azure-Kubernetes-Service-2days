@@ -9,6 +9,7 @@ env:
 
   NAMESPACE: "coolapi-namespace"
   MYDEPLOYMENT: "coolapi-deployment"
+  NBREPLICA: 3
   NAMESERVICE: "coolapi-service"
   MYAPP: "cool-api"
   MYACR: "acrlab0010"
