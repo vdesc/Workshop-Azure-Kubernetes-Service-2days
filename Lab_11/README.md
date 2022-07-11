@@ -154,7 +154,7 @@ Test:<br>
 
 3. **Pipeline avec Kustomize**<br>
 Prérequis:<br>
-`az ad sp create-for-rbac --name "votrenom-demo-githubaction2022" --role "Contributor" --scopes /subscriptions/METTRE_ICI_L_ID_DE_LA_SUBSCRIPTION --sdk-auth -o jsonc`
+`az ad sp create-for-rbac --name "votrenom-demo-githubaction2022" --role "Contributor" --scopes /subscriptions/METTRE_ICI_L_ID_DE_LA_SUBSCRIPTION --sdk-auth -o jsonc`<br>
 Créez un secret `AZURE_CREDENTIALS` dans le service secret de GitHub<br>
 Mettre dans `AZURE_CREDENTIALS`:<br>
 ```
