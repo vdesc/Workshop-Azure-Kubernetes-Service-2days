@@ -28,4 +28,5 @@ jobs:
       - name: Deploy application
         run: |
           kubectl apply -f ./Lab_10/Manifest/namespace.yaml
-          
+          kubectl apply -f ./Lab_10/Manifest/deployment.yaml
+          kubectl apply -f ./Lab_10/Manifest/service.yaml
