@@ -24,4 +24,5 @@ jobs:
       - name: Build de l'image de l'application
         run: |
           cd ./Lab_10/API/ && docker build . -t ${{ env.REGISTRY_NAME}}.azurecr.io/${{ env.APP_NAME }}:1.0.0
+          docker image ls
 
