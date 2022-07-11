@@ -125,6 +125,9 @@ Check:<br>
 ```
 Pour repasser à la version précédente remodifiez le fichier `service.yaml`et modifier le "selector" et passez "app: API-v1"<br>
 
+**_Mise à jour de l'application avec la méthode "canary"_**<br>
+On va repartir sur deux déploiements <br>
+On détruit la configuration `kubectl delete namespace namespacelab9`<br><br>
 
 
 
