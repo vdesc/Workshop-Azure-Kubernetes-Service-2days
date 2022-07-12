@@ -46,7 +46,7 @@ az keyvault create -n "Choisirunnomunique" -g "RG-Lab7" -l "eastus2"
 Vérifier que le keyvault est bien créé:
 
 ```bash
-az keyvault list -g "RG-Lab7 -o table"
+az keyvault list -g "RG-Lab7" -o table
 ```
 
 Créer un secret dans l'Azure Key Vault. 
