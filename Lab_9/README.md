@@ -80,8 +80,9 @@ API v2: <br>
 az acr build -t api/api:2.0.0 -r "acrlab009" .
 ```
 Tests des pushs:<br>
-`az acr repository show --name acrlab009 --image api/api:1.0.0`<br>
-
+```
+az acr repository show --name acrlab009 --image api/api:1.0.0
+```
 
 3. **Déploiement de l'application**
 Installation de l'application:<br>
