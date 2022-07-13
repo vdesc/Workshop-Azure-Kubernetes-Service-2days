@@ -67,7 +67,7 @@ Pour mettre à jour un node pool avec la dernière version de l'image OS, cela e
 az aks nodepool upgrade \
     --resource-group "RG-Lab8" \
     --cluster-name "MyCluster" \
-    --name "MyCluster" \
+    --name "nodepool1" \
     --node-image-only \
     --no-wait
 ```
