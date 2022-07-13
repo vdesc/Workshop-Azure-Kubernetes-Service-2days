@@ -78,7 +78,7 @@ Tests des pushs:<br>
 `az acr repository show --name acrlab009 --image api/api:1.0.0`<br>
 
 
-3. **Deploiement de l'application**
+3. **Déploiement de l'application**
 Installation de l'application:<br>
 Allez dans ./Manifest<br>
 `kubectl apply -f ./v1`
@@ -88,14 +88,14 @@ Check:<br>
 `curl http://<EXTERNAL-IP>`<br>
 
 4. **Mise à jour de l'application** <br><br>
-**_Laisser Kube gérer lui même ma monté de version de l'application_**<br>
+**_Laisser Kube gérer lui même la montée de version de l'application_**<br>
 Allez dans le répertoire ./Manifest/v2 
 `kubectl apply -f ./kubefree`<br>
-Répéter la commande `kubectl get all --namespace namespacelab9` pour voir l'évolution de la mise à jour de apllication <br>
+Répéter la commande `kubectl get all --namespace namespacelab9` pour voir l'évolution de la mise à jour de application <br>
 Test: `curl http://EXTERNAL-IP`
 
 **_Mise à jour de l'application en "rolling updates" avec des stratégies_**<br>
-Pour cet exemple,on va reppaser dans la version précédente en "rolling update" avec des strategies<br>
+Pour cet exemple,on va repasser dans la version précédente en "rolling update" avec des stratégies<br>
 Allez dans le répertoire ./Manifest/v2/rollingupdate et observer le fichier update.yaml ( au niveau "spec et strategy")<br>
 `kubectl apply -f ./rollingupdate/update.yaml`<br>
 
@@ -103,7 +103,7 @@ Allez dans le répertoire ./Manifest/v2/rollingupdate et observer le fichier upd
 On va repartir sur deux déploiements <br>
 On détruit la configuration `kubectl delete namespace namespacelab9`<br><br>
 Premier déploiement:<br>
-Dans le repertoire ./Manifest/v2/bluegreen: <br>
+Dans le répertoire ./Manifest/v2/bluegreen: <br>
 `kubectl apply -f ./namespace.yaml`<br>
 `kubectl apply -f ./deploymentv1.yaml`<br>
 `kubectl apply -f ./service.yaml`<br>
@@ -116,21 +116,21 @@ Test:<br>
 Deuxième déploiement:<br>
 `kubectl apply -f ./deploymentv2.yaml`<br>
 Redirection des flux vers la nouvelle version<br>
-Editez le fichier `service.yaml`et modifier le "selector" et passez "app: API-v2"<br>
-Appliquez la configuration:<br>
+Editer le fichier `service.yaml`et modifier le "selector" et passez "app: API-v2"<br>
+Appliquer la configuration:<br>
 `kubectl apply -f ./service.yaml`<br>
 Check:<br>
 `curl EXTERNAL-IP`<br>
 ```
 {"message":"hello API Green"}
 ```
-Pour repasser à la version précédente remodifiez le fichier `service.yaml`et modifier le "selector" et passez "app: API-v1"<br>
+Pour repasser à la version précédente remodifier le fichier `service.yaml`et modifier le "selector" et passer "app: API-v1"<br>
 
 **_Mise à jour de l'application avec la méthode "canary"_**<br>
 On va repartir sur deux déploiements <br>
 On détruit la configuration `kubectl delete namespace namespacelab9`<br><br>
 Premier déploiement avec 3 réplicas:<br>
-Dans le repertoire ./Manifest/v2/canary: <br>
+Dans le répertoire ./Manifest/v2/canary: <br>
 `kubectl apply -f ./namespace.yaml`<br>
 `kubectl apply -f ./deploymentv1.yaml`<br>
 `kubectl apply -f ./service.yaml`<br>
@@ -144,8 +144,8 @@ Deuxième déploiement avec 1 réplica: (75-25)<br>
 `kubectl apply -f ./deploymentv1.yaml`<br>
 Test:<br>
 `kubectl get all --namespace namespacelab9`<br>
-Rétéper la commande `curl EXTERNAL-IP`<br>
-Vous devez avoir une fois sur 1 fois sur quatre:<br>
+Répéter la commande `curl EXTERNAL-IP`<br>
+Vous devez avoir une fois sur quatre:<br>
 ```
 {"message":"hello API Green"}
 ```
