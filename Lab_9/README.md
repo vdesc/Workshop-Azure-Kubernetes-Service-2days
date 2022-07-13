@@ -180,9 +180,11 @@ On détruit la configuration
 ```
 kubectl delete namespace namespacelab9
 ```
-<br>
+
+
 Premier déploiement avec 3 réplicas:<br>
-Dans le répertoire ./Manifest/v2/canary: <br>
+Dans le répertoire ./Manifest/v2/canary: 
+
 ```
 kubectl apply -f ./namespace.yaml
 kubectl apply -f ./deploymentv1.yaml
