@@ -1,6 +1,6 @@
 ## Lab 11 : Pipeline avec Kustomize
 ## Objectif:
-Kustomize est un outil Kubernetes qui vous permet de personnaliser les fichiers YAML bruts de vos ressources k8s d'origine à des fins multiples (ex: différents environnements, différentes variables/répliques/ressources informatique, etc ...), en laissant les fichiers YAML d'origines intacts et utilisables tel quel.<br>
+Kustomize est un outil Kubernetes qui vous permet de personnaliser les fichiers YAML bruts de vos ressources k8s d'origine à des fins multiples (ex: différents environnements, différentes variables/répliques/ressources informatiques, etc ...), en laissant les fichiers YAML d'origines intacts et utilisables tels quels.<br>
 L'objectif de ce Lab 11, c'est d'utiliser Kustomize pour générer un fichier de configuration avec des paramètres à partir de plusieurs fichiers manisfestes sans les modifier. <br>
 https://kubectl.docs.kubernetes.io/guides/introduction/kustomize/
 1. **Création de l'environnement de démonstration** <br>
@@ -119,7 +119,7 @@ spec:
       port: 80
 ```
 Les fichiers ne seront jamais modifiés, on applique simplement une personnalisation au-dessus d'eux grâce à l'outil kustomize pour créer de nouvelles définitions des ressources.<br>
-Creez un fichier `kustomization.yaml`au même niveau que `service.yaml` et `deployment.yaml`<br>
+Créez un fichier `kustomization.yaml` au même niveau que `service.yaml` et `deployment.yaml`<br>
 `kustomization.yaml`:<br>
 ```
 apiVersion: kustomize.config.k8s.io/v1beta1
@@ -143,9 +143,9 @@ On doit avoir une arborescence:<br>
     |__ service.yaml
     |__ kustomization.yaml
 ```
-Vérification du yaml qui sera généré:<br>
+Vérification du YAML qui sera généré:<br>
 `kubectl kustomize ./base`<br>
-Les Labels,Selectors et le namespace on été généré ...<br>
+Les Labels,Selectors et le namespace ont été générés ...<br>
 Application de la configuration:<br>
 `kubectl apply -k base`<br>
 Test:<br>
@@ -182,8 +182,8 @@ resources:
   - deployment.yaml
   - namespace.yaml
 ```
-Allez dans le workflows ./github/workflows/kustomize.yaml<br>
-Observer le workflows<br>
+Allez dans le workflow ./github/workflows/kustomize.yaml<br>
+Observer le workflow<br>
 Modifiez le et executez le <br>
 
 4. **Fin du Lab**<br>
