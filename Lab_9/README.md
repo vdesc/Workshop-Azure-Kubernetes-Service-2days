@@ -128,7 +128,11 @@ kubectl apply -f ./rollingupdate/update.yaml
 
 **_Mise à jour de l'application avec la méthode "blue green"_**<br>
 On va repartir sur deux déploiements <br>
-On détruit la configuration `kubectl delete namespace namespacelab9`<br><br>
+On détruit la configuration 
+```
+kubectl delete namespace namespacelab9
+```
+
 Premier déploiement:
 Dans le répertoire ./Manifest/v2/bluegreen: 
 ```
@@ -213,4 +217,6 @@ Vous devez avoir une fois sur quatre:<br>
 {"message":"hello API Green"}
 ```
 5. **Nettoyage du Lab_9**
+```
 az group delete --name "RG-AKS-Lab-9"
+```
