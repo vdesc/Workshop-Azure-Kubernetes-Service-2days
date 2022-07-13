@@ -129,52 +129,84 @@ kubectl apply -f ./rollingupdate/update.yaml
 **_Mise à jour de l'application avec la méthode "blue green"_**<br>
 On va repartir sur deux déploiements <br>
 On détruit la configuration `kubectl delete namespace namespacelab9`<br><br>
-Premier déploiement:<br>
-Dans le répertoire ./Manifest/v2/bluegreen: <br>
-`kubectl apply -f ./namespace.yaml`<br>
-`kubectl apply -f ./deploymentv1.yaml`<br>
-`kubectl apply -f ./service.yaml`<br>
+Premier déploiement:
+Dans le répertoire ./Manifest/v2/bluegreen: 
+```
+kubectl apply -f ./namespace.yaml
+kubectl apply -f ./deploymentv1.yaml
+kubectl apply -f ./service.yaml
+```
+
 Test:<br>
-`kubectl get all --namespace namespacelab9`<br>
-`curl EXTERNAL-IP`
+```
+kubectl get all --namespace namespacelab9
+```
+
+```
+curl EXTERNAL-IP
+```
+
 ```
 {"message":"hello API Bleue"}
 ```
-Deuxième déploiement:<br>
-`kubectl apply -f ./deploymentv2.yaml`<br>
+Deuxième déploiement:
+```
+kubectl apply -f ./deploymentv2.yaml
+```
+
 Redirection des flux vers la nouvelle version<br>
 Editer le fichier `service.yaml`et modifier le "selector" et passez "app: API-v2"<br>
 Appliquer la configuration:<br>
-`kubectl apply -f ./service.yaml`<br>
+```
+kubectl apply -f ./service.yaml
+```
 Check:<br>
-`curl EXTERNAL-IP`<br>
+```
+curl EXTERNAL-IP
+```
+
 ```
 {"message":"hello API Green"}
 ```
-Pour repasser à la version précédente remodifier le fichier `service.yaml`et modifier le "selector" et passer "app: API-v1"<br>
+Pour repasser à la version précédente remodifier le fichier `service.yaml` et modifier le "selector" et passer "app: API-v1"<br>
 
 **_Mise à jour de l'application avec la méthode "canary"_**<br>
 On va repartir sur deux déploiements <br>
 On détruit la configuration `kubectl delete namespace namespacelab9`<br><br>
 Premier déploiement avec 3 réplicas:<br>
 Dans le répertoire ./Manifest/v2/canary: <br>
-`kubectl apply -f ./namespace.yaml`<br>
-`kubectl apply -f ./deploymentv1.yaml`<br>
-`kubectl apply -f ./service.yaml`<br>
-Test:<br>
-`kubectl get all --namespace namespacelab9`<br>
-`curl EXTERNAL-IP`
+```
+kubectl apply -f ./namespace.yaml
+kubectl apply -f ./deploymentv1.yaml
+kubectl apply -f ./service.yaml
+```
+
+Test:
+```
+kubectl get all --namespace namespacelab9
+```
+
+```
+curl EXTERNAL-IP
+```
+
 ```
 {"message":"hello API Bleue"}
 ```
-Deuxième déploiement avec 1 réplica: (75-25)<br>
-`kubectl apply -f ./deploymentv1.yaml`<br>
-Test:<br>
-`kubectl get all --namespace namespacelab9`<br>
-Répéter la commande `curl EXTERNAL-IP`<br>
+Deuxième déploiement avec 1 réplica: (75-25)
+```
+kubectl apply -f ./deploymentv1.yaml
+```
+
+Test:
+```
+kubectl get all --namespace namespacelab9
+```
+
+Répéter la commande `curl EXTERNAL-IP` <br>
 Vous devez avoir une fois sur quatre:<br>
 ```
 {"message":"hello API Green"}
 ```
-5. **Fin du Lab_9**
+5. **Nettoyage du Lab_9**
 az group delete --name "RG-AKS-Lab-9"
