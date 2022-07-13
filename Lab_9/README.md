@@ -1,5 +1,5 @@
 ## Montées de version de l'application: Rolling update, Blue Green, Canary
-# Obectif:
+# Objectif:
 Comprendre les concepts de montées de version des applications dans un cluster Kubernetes.
 1. **Création de l'environnement de démonstration** <br>
 **_Déploiement du "resource group":_**
