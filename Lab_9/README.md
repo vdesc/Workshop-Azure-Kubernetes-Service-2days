@@ -87,11 +87,19 @@ az acr repository show --name acrlab009 --image api/api:1.0.0
 3. **Déploiement de l'application**
 Installation de l'application:<br>
 Allez dans ./Manifest<br>
-`kubectl apply -f ./v1`
+```
+kubectl apply -f ./v1
+```
 
-Check:<br>
-`kubectl get all --namespace namespacelab9`<br>
-`curl http://<EXTERNAL-IP>`<br>
+Check:
+```
+kubectl get all --namespace namespacelab9
+```
+En cas d'erreurs sur les pods (ImagePullBackOff), aller modifier le manifest de deployment et réappliquer les manifests
+
+```
+curl http://<EXTERNAL-IP>
+```
 
 4. **Mise à jour de l'application** <br><br>
 **_Laisser Kube gérer lui même la montée de version de l'application_**<br>
