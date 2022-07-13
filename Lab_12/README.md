@@ -34,7 +34,7 @@ az group create --name "RG-Lab12" --location "eastus2"
 
 az aks create -n "myCluster" -g "RG-Lab12" --network-plugin azure --enable-managed-identity  --generate-ssh-keys 
 
-az aks get-credential -n "myCluster" -g "RG-Lab12"
+az aks get-credentials -n "myCluster" -g "RG-Lab12"
 ```
 
 ## Installation de l'extension GitOps Flux v2
@@ -87,7 +87,7 @@ Néanmoins le plus simple c'est de créer une première configuration GitOps et 
 ## Créer une nouvelle configuration GitOps
 Le but  ici est de définir un ensemble de paramètres pour automatiser les déploiements de ressources dans Kubernetes depuis des manifests YAML stocké dans un repo Git.
 
-Dans votre compte GitHubm, commencez par forker le repo suivant : https://github.com/squasta/gitops-simpledemo
+Dans votre compte GitHub, commencez par forker le repo suivant : https://github.com/squasta/gitops-simpledemo
 
 Le reste des opérations liées au dépot Git sera fait sur votre repo https://github.com/VotreCompteGitHub/gitops-simpledemo
 
