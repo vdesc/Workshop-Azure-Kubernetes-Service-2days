@@ -43,6 +43,7 @@ az acr create \
   --sku basic
 ```
 **_Création du cluster AKS_**
+```
 az aks create \
     --resource-group "RG-AKS-Lab-9" \
     --name "AKS-Lab-9" \
@@ -58,6 +59,7 @@ az aks create \
     --assign-identity $IDENTITY_ID \
     --attach-acr "acrlab009" \
     --yes
+```
 
 **_Connexion au cluster AKS_**
 
