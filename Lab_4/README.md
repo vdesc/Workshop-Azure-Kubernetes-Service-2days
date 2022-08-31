@@ -120,6 +120,10 @@ Lancer les quatre requêtes "Kusto" <br>
 <img width='800' src='../images/Lab_4/Lab_4_18.png'/><br>
 <img width='800' src='../images/Lab_4/Lab_4_19.png'/><br>
 **_Installation des "Diagnostic settings" (Control Plan)_**<br>
+<img width='800' src='../images/Lab_4/Lab_4_20.png'/><br>
+<img width='800' src='../images/Lab_4/Lab_4_21.png'/><br>
+<img width='800' src='../images/Lab_4/Lab_4_22.png'/><br>
+<img width='800' src='../images/Lab_4/Lab_4_23.png'/><br>
 
 Fin du Lab 4
 
