@@ -126,8 +126,8 @@ Lancer les quatre requêtes "Kusto" <br>
 <img width='800' src='../images/Lab_4/Lab_4_23.png'/><br>
 <br><br>
 Test des "Diagnostic settings"<br>
-<img width='800' src='../images/Lab_4/Lab_4_23.png'/><br>
-Exécutez les requêtes ->
+<img width='800' src='../images/Lab_4/Lab_4_24.png'/><br>
+Exécutez les requêtes -> <br>
 Les "Diagnostic settings" disponibles sur le "Control Plan":<br>
 ```
 AzureDiagnostics
