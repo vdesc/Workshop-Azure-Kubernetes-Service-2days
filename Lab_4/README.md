@@ -124,6 +124,31 @@ Lancer les quatre requêtes "Kusto" <br>
 <img width='800' src='../images/Lab_4/Lab_4_21.png'/><br>
 <img width='800' src='../images/Lab_4/Lab_4_22.png'/><br>
 <img width='800' src='../images/Lab_4/Lab_4_23.png'/><br>
+<br><br>
+Test des "Diagnostic settings"<br>
+Les "Diagnostic settings" disponibles sur le "Control Plan":<br>
+```
+AzureDiagnostics
+| where ResourceType == "MANAGEDCLUSTERS"
+| summarize count() by Category
+```
+Evénements sur élément "kube-audit"
+```
+AzureDiagnostics 
+| where Category == "kube-audit"
+```
+Logs sur les événements de type "verb" dans "kube-audit"<br>
+```
+AzureDiagnostics
+| where Category == "kube-audit"
+| where TimeGenerated > ago(24h)
+| extend verb_ = tostring(parse_json(log_s).verb)
+| summarize count() by verb_
+| project count_, verb_
+| render piechart
+```
+
+
 
 Fin du Lab 4
 
