@@ -126,18 +126,20 @@ Lancer les quatre requêtes "Kusto" <br>
 <img width='800' src='../images/Lab_4/Lab_4_23.png'/><br>
 <br><br>
 Test des "Diagnostic settings"<br>
+<img width='800' src='../images/Lab_4/Lab_4_23.png'/><br>
+Exécutez les requêtes ->
 Les "Diagnostic settings" disponibles sur le "Control Plan":<br>
 ```
 AzureDiagnostics
 | where ResourceType == "MANAGEDCLUSTERS"
 | summarize count() by Category
 ```
-Evénements sur élément "kube-audit"
+Evénements sur élément "kube-audit":<br>
 ```
 AzureDiagnostics 
 | where Category == "kube-audit"
 ```
-Logs sur les événements de type "verb" dans "kube-audit"<br>
+Logs sur les événements de type "verb" dans "kube-audit":<br>
 ```
 AzureDiagnostics
 | where Category == "kube-audit"
@@ -151,4 +153,7 @@ AzureDiagnostics
 
 
 Fin du Lab 4
+```
+az group delete -n RG-AKS-Lab-4
+```
 
