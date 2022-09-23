@@ -205,7 +205,7 @@ curl EXTERNAL-IP
 ```
 Deuxième déploiement avec 1 réplica: (75-25)
 ```
-kubectl apply -f ./deploymentv1.yaml
+kubectl apply -f ./deploymentv2.yaml
 ```
 
 Test:
