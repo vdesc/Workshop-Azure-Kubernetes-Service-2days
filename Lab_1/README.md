@@ -19,7 +19,7 @@ Dans la console Azure :
 <img width='800' src='../images/Lab_1/Lab_1_6.png'/>
 - <a href="https://docs.microsoft.com/en-us/azure/aks/use-multiple-node-pools">Create and manage multiple node pools for a cluster in Azure Kubernetes Service</a><br>
 - <a href="https://docs.microsoft.com/en-us/azure/aks/azure-disk-customer-managed-keys">Bring your own keys (BYOK) with Azure disks in Azure Kubernetes Service</a><br><br><br><br>
-<img width='800' src='../images/Lab_1/Lab_1_7.png'/>
+<img width='800' src='../images/Lab_1/Lab_1_7_1.png'/>
 - <a href="https://docs.microsoft.com/en-us/azure/aks/kubernetes-service-principal?tabs=azure-cli">Use a service principal with Azure Kubernetes Service</a><br>
 - <a href="https://docs.microsoft.com/en-us/azure/aks/use-managed-identity">Use a managed identity in Azure Kubernetes Service</a><br>
 - <a href="https://docs.microsoft.com/en-us/azure/aks/managed-aad">AKS-managed Azure Active Directory integration</a><br>
