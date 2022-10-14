@@ -36,7 +36,7 @@ Dans la console Azure :
 <img width='800' src='../images/Lab_1/Lab_1_10.png'/>
 - <a href="https://docs.microsoft.com/en-us/azure/azure-monitor/containers">Container insights overview</a><br>
 - <a href="https://docs.microsoft.com/en-us/azure/governance/policy/concepts/policy-for-kubernetes">Understand Azure Policy for Kubernetes clusters</a><br><br><br><br>
-<img width='800' src='../images/Lab_1/Lab_1_11._1.png'/>
+<img width='800' src='../images/Lab_1/Lab_1_11_1.png'/>
 - <a href="https://docs.microsoft.com/en-us/azure/aks/csi-secrets-store-driver">Use the Azure Key Vault Provider for Secrets Store CSI Driver in an AKS cluster</a><br><br><br><br>
 <img width='800' src='../images/Lab_1/Lab_1_12.png'/>
 <img width='800' src='../images/Lab_1/Lab_1_13.png'/>
