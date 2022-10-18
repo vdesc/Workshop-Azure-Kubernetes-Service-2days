@@ -63,7 +63,7 @@ az aks create \
 
 `az aks get-credentials --resource-group RG-AKS-Lab-10 --name AKS-Lab-10`
 
-**_Prérequis:_**
+**_Prérequis:_**<br>
 `az ad sp create-for-rbac --name "votrenom-demo-githubaction2022" --role "Contributor" --scopes /subscriptions/METTRE_ICI_L_ID_DE_LA_SUBSCRIPTION --sdk-auth -o jsonc`<br>
 Créez un secret `AZURE_CREDENTIALS` dans le service secret de GitHub<br>
 Mettre dans `AZURE_CREDENTIALS`:<br>
