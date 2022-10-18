@@ -150,6 +150,10 @@ Les services frontend, redis-master et redis-replica ne doivent pas avoir d'adre
 kubectl get ingress -n default
 ```
 
+```
+wget https://raw.githubusercontent.com/kubernetes/examples/master/guestbook/all-in-one/ing-guestbook.yaml
+```
+
 Visualiser le contenu du fichier ing-guestbook.yaml puis appliquer ce fichier
 
 ```bash
