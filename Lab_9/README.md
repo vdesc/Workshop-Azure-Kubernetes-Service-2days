@@ -102,22 +102,6 @@ curl http://<EXTERNAL-IP>
 ```
 
 4. **Mise à jour de l'application** <br><br>
-**_Laisser Kube gérer lui même la montée de version de l'application_**<br>
-Allez dans le répertoire ./Manifest/v2 et modifier le manifest avec votre nom d'ACR
-```
-kubectl apply -f ./kubefree
-```
-
-Pour voir l'évolution de la mise à jour de application, répéter la commande 
-```
-kubectl get all --namespace namespacelab9
-``` 
-
-Test: 
-```
-curl http://EXTERNAL-IP
-```
-
 **_Mise à jour de l'application en "rolling updates" avec des stratégies_**<br>
 Pour cet exemple,on va repasser dans la version précédente en "rolling update" avec des stratégies<br>
 Allez dans le répertoire ./Manifest/v2/rollingupdate et observer le fichier update.yaml ( au niveau "spec et strategy").
