@@ -75,4 +75,8 @@ Mettre dans `AZURE_CREDENTIALS`:<br>
   "tenantId": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
 }
 ```
+**_Exécutions des "Workflows"_**<br>
+Regardez, modifiez puis exécutez les deux workflows:<br>
+`./github/workflows/...`<br>
+`./github/workflows/...`
   
