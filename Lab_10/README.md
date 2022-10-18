@@ -77,6 +77,6 @@ Mettre dans `AZURE_CREDENTIALS`:<br>
 ```
 **_Exécutions des "Workflows"_**<br>
 Regardez, modifiez puis exécutez les deux workflows:<br>
-`./github/workflows/...`<br>
-`./github/workflows/...`
+`./github/workflows/Build.yaml`<br>
+`./github/workflows/deploy.yaml`
   
