@@ -103,7 +103,6 @@ curl http://<EXTERNAL-IP>
 
 4. **Mise à jour de l'application** <br><br>
 **_Mise à jour de l'application en "rolling updates" avec des stratégies_**<br>
-Pour cet exemple,on va repasser dans la version précédente en "rolling update" avec des stratégies<br>
 Allez dans le répertoire ./Manifest/v2/rollingupdate et observer le fichier update.yaml ( au niveau "spec et strategy").
 ```
 cd ..
