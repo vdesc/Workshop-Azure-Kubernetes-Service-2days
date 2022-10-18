@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
       - name: api
-        image: acrlab009.azurecr.io/api/api:1.0.0
+        image: acrlab009.azurecr.io/api/api:2.0.0
         resources:
           limits:
             memory: "128Mi"
