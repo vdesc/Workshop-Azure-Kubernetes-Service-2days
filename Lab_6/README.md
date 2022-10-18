@@ -151,7 +151,7 @@ kubectl get ingress -n default
 ```
 
 ```
-wget https://raw.githubusercontent.com/Azure/application-gateway-kubernetes-ingress/master/docs/examples/guestbook/ing-guestbook.yaml
+wget https://raw.githubusercontent.com/FrenchBarbusCorp/Workshop-Azure-Kubernetes-Service-2days/main/Lab_6/ing-guestbook.yaml
 ```
 
 Visualiser le contenu du fichier ing-guestbook.yaml puis appliquer ce fichier
