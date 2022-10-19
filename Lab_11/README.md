@@ -168,7 +168,6 @@ Mettre dans `AZURE_CREDENTIALS`:<br>
   "tenantId": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
 }
 ```
-**Sur votre repo:**<br>
 Modifiez le fichier `kustomization.yaml`<br>
 ```
 apiVersion: kustomize.config.k8s.io/v1beta1
