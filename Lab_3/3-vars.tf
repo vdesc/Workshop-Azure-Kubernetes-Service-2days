@@ -7,9 +7,11 @@ variable "resource_group" {
 #KeyVault Resource Group and KeyVaultName
 variable "keyvault_rg" {
   type = string
+  default = "RG-AdminZone"
 }
 variable "keyvault_name" {
   type = string
+  default = "keyvaultmons"
 }
 
 variable "azure_region" {
@@ -17,7 +19,7 @@ variable "azure_region" {
   # To get names of Azure Region : az account list-locations
   # To check support of Availability Zone in the Azure Region see https://docs.microsoft.com/bs-latn-ba/azure/availability-zones/az-overview
   type    = string
-  default = "westeurope"
+  default = "eastus2"
 }
 
 #
@@ -96,7 +98,7 @@ variable "windows_admin_username" {
 variable "kubernetes_version" {
   description = "Version of Kubernetes to deploy"
   type        = string
-  default     = "1.23.3"
+  default     = "1.24.3"
 }
 
 

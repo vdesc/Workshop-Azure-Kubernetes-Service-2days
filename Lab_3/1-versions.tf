@@ -8,10 +8,10 @@
 #                                                                                                   |_|                                         
 
 terraform {
-  required_version = "~> 1.2.2"
+  required_version = ">= 1.3.2"
   backend "azurerm" {
     resource_group_name  = "RG-AdminZone" # mettre ici le nom du resource group de vos ressource
-    storage_account_name = "workshopstan22" # /!\ mettre le nom du compte de stockage créer dans le lab 1
+    storage_account_name = "labmons" # /!\ mettre le nom du compte de stockage créer dans le lab 1
     container_name       = "tfstate"
     key                  = "aks.terraform.tfstate"
   }
