@@ -1,0 +1,15 @@
+keyvault_rg            = "<insérer ici votre valeur>"
+keyvault_name          = "<insérer ici votre valeur>"
+azure_region           = "<insérer ici votre valeur>"
+resource_group         = "<insérer ici votre valeur>"
+cluster_name           = "<insérer ici votre valeur>"
+dns_name               = "<insérer ici votre valeur>"
+sku-controlplane       = "Free"
+admin_username         = "<insérer ici votre valeur>"
+windows_admin_username = "<insérer ici votre valeur>"
+kubernetes_version     = "1.24.3"
+aks_vnet_name          = "<insérer ici votre valeur>"
+LogsWorkspaceName      = "<insérer ici votre valeur>"
+enable-privatecluster  = false
+enable-AzurePolicy     = false
+networkpolicy_plugin   = "azure"
