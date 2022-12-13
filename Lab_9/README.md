@@ -13,7 +13,7 @@ Les patterns les plus classiques en termes de répartition de trafic entre plusi
 - le canary
     - https://blog.itaysk.com/2017/11/20/deployment-strategies-defined#:~:text=It%E2%80%99s%20described%20next.-,Canary%20Deployment,-a.k.a
 
-1. **Création de l'environnement de démonstration** <br>
+# **Création de l'environnement de démonstration** <br>
 **_Déploiement du "resource group":_**
 ```
 az group create \
@@ -79,7 +79,7 @@ az aks create \
 az aks get-credentials --resource-group RG-AKS-Lab-9 --name AKS-Lab-9
 ```  
 
-2. **Build and Push les deux versions d'application** <br>
+# **Build and Push les deux versions d'application** <br>
 API v1: <br>
 -> Allez dans ./API/v1 et lancer cette commande <br>
 ```
@@ -96,7 +96,7 @@ Tests des pushs:<br>
 az acr repository show --name acrlab009 --image api/api:1.0.0
 ```
 
-3. **Déploiement de l'application**
+# **Déploiement de l'application**
 Installation de l'application:<br>
 Allez dans ./Manifest<br>
 ```
@@ -130,7 +130,7 @@ Executer la commande:<br>
 curl http://<EXTERNAL-IP>
 ```
 
-4. **Mise à jour de l'application** <br><br>
+# **Mise à jour de l'application** <br><br>
 **_Mise à jour de l'application en "rolling updates" avec des stratégies_**<br>
 Allez dans le répertoire ./Manifest/v2/rollingupdate et observer le fichier update.yaml ( au niveau "spec et strategy").
 ```
@@ -253,7 +253,7 @@ Vous devez avoir une fois sur quatre:<br>
 ```
 {"message":"hello API Green"}
 ```
-5. **Nettoyage du Lab_9**
+# **Nettoyage du Lab_9**
 ```
 az group delete --name "RG-AKS-Lab-9"
 ```
