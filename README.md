@@ -19,7 +19,7 @@ Découverte de Kubernetes dans Azure avec des exercices pratiques
 - [Lab 1](/Lab_1/README.md) : création d'un cluster AKS via le portail Azure + visualisation des ressources via le portail Azure 
 - [Lab 2](/Lab_2/README.md) : création d'un cluster plus avancé via Azure CLI, connexion et utilisation basique de kubectl
 - [Lab 3](/Lab_3/README.md) : création d'un cluster avec plusieurs node pools avec autoscaling via Terraform + déploiement basique d'une application (service de type load balancer)
-### Après midi
+#### Après midi
 - Intégration avec d'autres services Azure : Azure Monitor, Azure Policy, Azure Container Registry, Azure Log Anaytics, Azure Application Gateway, Azure NAT Gateway, Microsoft Defender for Cloud...
 - [Lab 4](/Lab_4/README.md): Activation du monitoring avec Azure Monitor
 - [Lab 5](/Lab_5/README.md) : Azure Container Registry : configuration, importation et utilisation avec AKS 
@@ -27,14 +27,14 @@ Découverte de Kubernetes dans Azure avec des exercices pratiques
 - [Lab 7](/Lab_7/README.md) : Utilisation du Secret Store CSI Driver avec Azure Key Vault
 
 
-## Jour 2
-### Matinée
+### Jour 2
+#### Matinée
 - Gestion des montées de version : du cluster à l'application 
 - [Lab 8](/Lab_8/README.md) : Montées de versions dans AKS
 - [Lab 9](/Lab_9/README.md) : Montées de version de l'application  => Rolling update, Blue Green, Canary
 - Automatisation des déploiements applicatifs et configurations Kubernetes : Deployment Center, Pipelines avec GitHub, GitOps
 - [Lab 10](/Lab_10/README.md) : Pipeline basique CI/CD Kubernetes YAML 
-### Après midi
+#### Après midi
 - Introduction à Kustomize
 - [Lab 11](/Lab_11/README.md) : Introduction à Kustomize et Pipeline avec Kustomize
 - [Lab 12](/Lab_12/README.md) : GitOps avec AKS et Fluxv2 
