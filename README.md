@@ -52,7 +52,7 @@ Découverte de Kubernetes dans Azure avec des exercices pratiques
 - Un compte GitHub
 
 ## Optionnel (les labs peuvent être réalisés depuis l'Azure Cloud Shell)
-- un shell Bash
+- Un shell Bash
 - Azure CLI
 - git
 - kubectl
