@@ -16,7 +16,7 @@ Découverte de Kubernetes dans Azure avec des exercices pratiques
 - Rappels rapides sur les architectures cloud natives, 12 factors apps, pet vs cattle, baking vs frying....
 - Rappels rapides sur les basiques de Kubernetes
 - Présentation AKS : control plane, worker nodes, réseau, stockage
-- Lab 1 : création d'un cluster AKS via le portail Azure + visualisation des ressources via le portail Azure 
+- [Lab 1](/Lab_1/README.md) : création d'un cluster AKS via le portail Azure + visualisation des ressources via le portail Azure 
 - Lab 2 : création d'un cluster plus avancé via Azure CLI, connexion et utilisation basique de kubectl
 - Lab 3 : création d'un cluster avec plusieurs node pools avec autoscaling via Terraform + déploiement basique d'une application (service de type load balancer)
 ### Après midi
