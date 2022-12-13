@@ -129,7 +129,7 @@ Visionner la mise à jour de la version 2<br>
 ```
 watch kubectl get all --namespace namespacelab9
 ```
-attendre qu'il n'y est plus que @trois pods<br>
+attendre qu'il n'y est plus que trois pods<br>
 même procéder que pour la verion 1<br>
 ```
 kubectl rollout history deployment api-deployment --namespace namespacelab9
