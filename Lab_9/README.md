@@ -93,9 +93,10 @@ kubectl apply -f ./v1
 
 Check:
 ```
-kubectl get all --namespace namespacelab9
+watch kubectl get all --namespace namespacelab9
 ```
-En cas d'erreurs sur les pods (ImagePullBackOff), aller modifier le manifest de deployment et réappliquer les manifests
+En cas d'erreurs sur les pods (ImagePullBackOff), aller modifier le manifest de deployment et réappliquer les manifests<br>
+Executer la commande:<br>
 
 ```
 curl http://<EXTERNAL-IP>
