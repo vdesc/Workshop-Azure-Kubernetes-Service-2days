@@ -156,7 +156,8 @@ on supprime :<br>
 `kubectl delete -k base`<br>
 
 3. **Pipeline avec Kustomize**<br>
-
+A partir d'ici on est dans GitHub, on modifie dans le repo<br>
+Modifier les fichiers `deployment.yaml` et `service.yaml` (comme précédement)<br>
 Modifiez le fichier `kustomization.yaml`<br>
 ```
 apiVersion: kustomize.config.k8s.io/v1beta1
