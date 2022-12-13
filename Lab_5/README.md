@@ -1,6 +1,6 @@
 # Lab 5 : Azure Container Registry : configuration, importation et utilisation avec AKS
 ## Objectif:<br>
-Quand vous utilisez Azure Container Registry (ACR) avec Azure Kubernetes Service (AKS), vous avez besoin d’un mécanisme d’authentification. L'oblectif de ce lab, c'est d'implémentée via l’interface Az CLI  les autorisations requises à votre Azure Container Registry.<br>
+Quand vous utilisez Azure Container Registry (ACR) avec Azure Kubernetes Service (AKS), vous avez besoin d’un mécanisme d’authentification et d'authorisation pour que les noeuds du cluster AKS puissent se connecter à l'ACR pour faire un pull des images de conteneurs. L'objectif de ce lab, c'est d'implémenter via l’outil en ligne de commande Azure CLI  les autorisations requises à votre Azure Container Registry.<br>
 
 1. **Création de l'environnement de démonstration** <br>
 **_Déploiement du "resource group":_**
