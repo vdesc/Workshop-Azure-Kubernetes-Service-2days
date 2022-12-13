@@ -1,6 +1,18 @@
 ## Montées de version de l'application: Rolling update, Blue Green, Canary
 # Objectif:
 Comprendre les concepts de montées de version des applications dans un cluster Kubernetes.
+
+L'objectif de ce Lab 9 est aussi de voir comment répartir le trafic réseau entre plusieurs versions d'une application.
+
+Les patterns les plus classiques en termes de répartition de trafic entre plusieurs versions d'une application étant :
+- le Rolling Update
+- le vert/bleu (ou noir/rouge chez Netflix)
+	- https://martinfowler.com/bliki/BlueGreenDeployment.html
+- le A/B testing
+	- https://en.wikipedia.org/wiki/A/B_testing
+- le canary
+    - https://blog.itaysk.com/2017/11/20/deployment-strategies-defined#:~:text=It%E2%80%99s%20described%20next.-,Canary%20Deployment,-a.k.a
+
 1. **Création de l'environnement de démonstration** <br>
 **_Déploiement du "resource group":_**
 ```
