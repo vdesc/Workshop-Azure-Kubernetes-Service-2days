@@ -125,6 +125,29 @@ Allez dans le répertoire ./Manifest/v2/rollingupdate et observer le fichier upd
 cd ..
 kubectl apply -f ./rollingupdate/update.yaml
 ```
+Visionner la mise à jour de la version 2<br>
+```
+watch kubectl get all --namespace namespacelab9
+```
+attendre qu'il n'y est plus que @trois pods<br>
+même procéder que pour la verion 1<br>
+```
+kubectl rollout history deployment api-deployment --namespace namespacelab9
+kubectl annotate deployments.apps api-deployment kubernetes.io/change-cause="version green" --namespace namespacelab9
+kubectl rollout history deployment api-deployment --namespace namespacelab9
+```
+test<br>
+```
+curl http://<EXTERNAL-IP>
+```
+Pour revenir à la version 1<br>
+```
+kubectl rollout undo deployment.apps/api-deployment --to-revision=1 --namespace namespacelab9
+```
+test<br>
+```
+curl http://<EXTERNAL-IP>
+```
 
 **_Mise à jour de l'application avec la méthode "blue green"_**<br>
 On va repartir sur deux déploiements <br>
