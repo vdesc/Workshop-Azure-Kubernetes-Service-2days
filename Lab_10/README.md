@@ -65,8 +65,6 @@ az aks create \
 
 **_Prérequis:_**<br>
 `az ad sp create-for-rbac --name "votrenom-demo-githubaction2022" --role "Contributor" --scopes /subscriptions/METTRE_ICI_L_ID_DE_LA_SUBSCRIPTION --sdk-auth -o jsonc`<br>
-Créez un secret `AZURE_CREDENTIALS` dans le service secret de GitHub<br>
-Mettre dans `AZURE_CREDENTIALS`:<br>
 ```
 {
   "clientId": "xxxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxxx",
@@ -75,6 +73,11 @@ Mettre dans `AZURE_CREDENTIALS`:<br>
   "tenantId": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
 }
 ```
+Copiez la sortie dans un notepad <br>
+Créez un secret `` dans le service secret de GitHub<br>
+Créez un secret `` dans le service secret de GitHub<br>
+Créez un secret `AZURE_CREDENTIALS` dans le service secret de GitHub<br>
+Mettre dans `AZURE_CREDENTIALS`:<br><br>
 **_Exécutions des "Workflows"_**<br>
 Regardez, modifiez puis exécutez les deux workflows:<br>
 `./github/workflows/Build.yaml`<br>
