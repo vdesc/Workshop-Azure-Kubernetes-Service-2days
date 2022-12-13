@@ -74,10 +74,10 @@ az aks create \
 }
 ```
 Copiez la sortie dans un notepad <br>
-Créez un secret `` dans le service secret de GitHub<br>
-Créez un secret `` dans le service secret de GitHub<br>
-Créez un secret `AZURE_CREDENTIALS` dans le service secret de GitHub<br>
-Mettre dans `AZURE_CREDENTIALS`:<br><br>
+Créez un secret `CLIENTID` dans le service secret de GitHub<br>
+Créez un secret `CLIENTSECRET` dans le service secret de GitHub<br>
+Créez un secret `AZURE_CREDENTIALS` dans le service secret de GitHub<br><br>
+
 **_Exécutions des "Workflows"_**<br>
 Regardez, modifiez puis exécutez les deux workflows:<br>
 `./github/workflows/Build.yaml`<br>
