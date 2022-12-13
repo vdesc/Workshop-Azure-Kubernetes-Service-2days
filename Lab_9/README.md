@@ -95,7 +95,23 @@ Check:
 ```
 watch kubectl get all --namespace namespacelab9
 ```
-En cas d'erreurs sur les pods (ImagePullBackOff), aller modifier le manifest de deployment et réappliquer les manifests<br>
+ctl+c pour sortir <br>
+Pour visionner la version déployée <br>
+```
+kubectl rollout history deployment api-deployment --namespace namespacelab9
+```
+Pour mettre une annotation à la version (revision)<br>
+```
+kubectl annotate deployments.apps api-deployment kubernetes.io/change-cause="version blue" --namespace namespacelab9
+```
+```
+kubectl rollout history deployment api-deployment --namespace namespacelab9
+```
+```
+kubectl get all --namespace namespacelab9
+
+```
+
 Executer la commande:<br>
 
 ```
