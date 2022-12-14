@@ -51,12 +51,36 @@ Découverte de Kubernetes dans Azure avec des exercices pratiques
 - Un Abonnement Azure avec des privilèges d'administrateur
 - Un compte GitHub
 
-## Optionnel (les labs peuvent être réalisés depuis l'Azure Cloud Shell)
-- Un shell Bash
-- Azure CLI
-- git
-- kubectl
-- helm
-- terraform 
-- VS Code
-- Extension YAML VSCode
+
+## L'ensemble des labs peut être réalisé depuis l'Azure Cloud Shell
+
+Accéder au cloud shell via l'url suivante dans votre navigateur : https://shell.azure.com
+
+Ouvrir un Azure Cloud Shell. Si c'est la première utilisation d'Azure Cloud Shell, valider la création d'un compte de stockage (qui contiendra les données du profil).
+
+Informations complémentaires sur Azure Cloud Shell : https://docs.microsoft.com/en-us/azure/cloud-shell/overview 
+
+
+## Installation des composants nécessaires pour travailler sur un poste local (Optionnel)
+
+### Avoir un environnement Bash 
+- Pour ceux sous Windows 10/11 : Installation WSL2 https://docs.microsoft.com/en-us/windows/wsl/install
+
+### Avoir les outils suivants installés dans WSL : 
+- git -> https://git-scm.com/book/en/v2/Getting-Started-Installing-Git 
+- Azure CLI -> https://docs.microsoft.com/fr-fr/cli/azure/install-azure-cli-linux?pivots=apt (test: ~$  az Login)
+- terraform -> https://learn.hashicorp.com/tutorials/terraform/install-cli (test : ~$ terraform)
+
+Procédure d'installation de la CLI Terraform pour Linux (WSL Ubuntu 20.04)
+```
+sudo apt-get update && sudo apt-get install -y gnupg software-properties-common curl
+curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
+sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
+sudo apt-get update && sudo apt-get install terraform
+```
+
+- kubectl -> https://kubernetes.io/docs/tasks/tools/#kubectl  (test: ~$  kubectl version)
+- Visual Studio Code -> https://code.visualstudio.com
+- Extension Terraform pour VSCode -> Depuis le bash, exécuter « code . » et aller chercher l’extension « Hashicorp Terraform »
+- Extension WSL pour VSCode -> https://code.visualstudio.com/docs/remote/wsl-tutorial
+- Extension YAML pour VSCode -> https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml
