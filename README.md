@@ -84,3 +84,22 @@ sudo apt-get update && sudo apt-get install terraform
 - Extension Terraform pour VSCode -> Depuis le bash, exécuter « code . » et aller chercher l’extension « Hashicorp Terraform »
 - Extension WSL pour VSCode -> https://code.visualstudio.com/docs/remote/wsl-tutorial
 - Extension YAML pour VSCode -> https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml
+
+## Créer une clé SSH si vous n'en avez pas déjà 
+
+se placer sur le répertoire home : cd
+
+ssh-keygen -t rsa 
+
+
+### Créer un Service Principal dans Azure
+
+az login
+
+az account list -o table
+
+Récupérer l'ID de la subscription Azure puis exécuter la commande suivante :
+
+az ad sp create-for-rbac --name "votrenom-demo-githubaction2022" --role "Contributor" --scopes /subscriptions/METTRE_ICI_L_ID_DE_LA_SUBSCRIPTION -o jsonc
+
+Récupérer le output de la commande et le sauvegarder temporairement dans un fichier 
