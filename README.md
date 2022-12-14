@@ -92,7 +92,7 @@ se placer sur le répertoire home : cd
 ssh-keygen -t rsa 
 
 
-### Créer un Service Principal dans Azure
+## Créer un Service Principal dans Azure
 
 az login
 
