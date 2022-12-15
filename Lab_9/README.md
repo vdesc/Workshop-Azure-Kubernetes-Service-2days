@@ -6,6 +6,7 @@ L'objectif de ce Lab 9 est aussi de voir comment répartir le trafic réseau ent
 
 Les patterns les plus classiques en termes de répartition de trafic entre plusieurs versions d'une application étant :
 - le Rolling Update
+        - https://kubernetes.io/docs/tutorials/kubernetes-basics/update/update-intro/
 - le vert/bleu (ou noir/rouge chez Netflix)
 	- https://martinfowler.com/bliki/BlueGreenDeployment.html
 - le A/B testing
