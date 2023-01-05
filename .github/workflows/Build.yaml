@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
 
 env:
-  REGISTRY_NAME: "acrlab0010"
+  REGISTRY_NAME: "acrlab0010vd"
   APP_NAME: "coolapi"
   IMAGE_VERSION: "1.0.0"
 
